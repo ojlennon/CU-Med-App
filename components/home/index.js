@@ -57,13 +57,14 @@ const Home = ({ navigation }) => {
                     <TouchableOpacity onPress={() => navigation.navigate("Second", {
                         name:item.name,
                         text:item.text,
+                        subData: item.subData,
                     })}>
                          <Widget name={item.name} icon={item.icon}/>
                      </TouchableOpacity>
                 ))
             }
             <Text style={{marginLeft:"-5%",marginTop:"12%",marginBottom:"1%", fontSize:"18px", fontWeight:"400"}}>Non-Critical</Text>
-            {
+            {/* {
                 NonCrit.map((item) => (
                     <TouchableOpacity onPress={() => navigation.navigate("Second", {
                         name:item.name,
@@ -72,7 +73,7 @@ const Home = ({ navigation }) => {
                          <Widget name={item.name} icon={item.icon}/>
                      </TouchableOpacity>
                 ))
-            }
+            } */}
         </Box>
     </Box>
     </>
