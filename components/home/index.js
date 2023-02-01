@@ -29,17 +29,21 @@ const Widget = ({name, icon=""}) => {
     )
 }
 
-const Home = () => {
+const Home = ({navigation}) => {
   return (
     <>
     <TopBar/>
+    <Button
+                title="Go to Details"
+              onPress={() => navigation.navigate('Second', {name:"hello"})}
+                />
     <Box height="70%" backgroundColor="#909090" justifyContent="top" alignItems="center">
         <Box height="100%" width="100%" p="10%" marginTop="-3%">
             <Text style={{marginLeft:"-5%",marginBottom:"1%", fontSize:"18px", fontFamily:"nunito", fontWeight:"400"}}>Critical</Text>
             <Widget name="Delivery Room Management" icon="baby"/>
             <Widget name="Pre-Operative Management" icon="notes-medical"/>
             <Widget name="Post-Opperative Management" icon="bandage"/>
-
+            {/* <Text>{name}</Text> */}
             <Text style={{marginLeft:"-5%",marginTop:"12%",marginBottom:"1%", fontSize:"18px", fontFamily:"nunito", fontWeight:"400"}}>Non-Critical</Text>
             <Widget name="Delivery Room Management" icon="baby"/>
             <Widget name="Pre-Operative Management" icon="notes-medical"/>
