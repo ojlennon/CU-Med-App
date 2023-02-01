@@ -1,6 +1,7 @@
-import { View, Text } from 'react-native'
+import { View, Text, TouchableOpacity } from 'react-native'
 import React from 'react'
-import { Button, Box } from "@react-native-material/core";
+import { useState } from 'react';
+import { Button, Box, TextInput } from "@react-native-material/core";
 import TopBar from '../topBar';
 import { useFonts } from 'expo-font';
 import { FontAwesome5,MaterialIcons,Fontisto } from '@expo/vector-icons'; 
@@ -24,26 +25,35 @@ const Widget = ({name, icon=""}) => {
                 }
                 
             </Box>
+            {/* <TouchableOpacity></TouchableOpacity> */}
             <MaterialIcons name="arrow-forward-ios" size={16}/>
         </Box>
     )
 }
 
-const Home = ({navigation}) => {
+const Home = ({ navigation }) => {
+    const[nam, setName] = useState("") 
   return (
     <>
-    <TopBar/>
-    <Button
+          <TopBar />
+          {/* <TextInput label='TEXT' variant='outlined' defaultValue={nam} onChangeText={newName => setName(newName)}/>
+          
+          <Button
                 title="Go to Details"
-              onPress={() => navigation.navigate('Second', {name:"hello"})}
-                />
+              onPress={() => navigation.navigate('Second',
+                  {
+                      name: nam
+                  })}
+          /> */}
+          
+
     <Box height="70%" backgroundColor="#909090" justifyContent="top" alignItems="center">
         <Box height="100%" width="100%" p="10%" marginTop="-3%">
-            <Text style={{marginLeft:"-5%",marginBottom:"1%", fontSize:"18px", fontFamily:"nunito", fontWeight:"400"}}>Critical</Text>
-            <Widget name="Delivery Room Management" icon="baby"/>
+                  <Text style={{ marginLeft: "-5%", marginBottom: "1%", fontSize: "18px", fontFamily: "nunito", fontWeight: "400" }}>Critical</Text>
+                  <TouchableOpacity onPress={() => navigation.navigate("Second", {name:"hello"})}><Widget name="Delivery Room Management" icon="baby"/></TouchableOpacity>
+            
             <Widget name="Pre-Operative Management" icon="notes-medical"/>
             <Widget name="Post-Opperative Management" icon="bandage"/>
-            {/* <Text>{name}</Text> */}
             <Text style={{marginLeft:"-5%",marginTop:"12%",marginBottom:"1%", fontSize:"18px", fontFamily:"nunito", fontWeight:"400"}}>Non-Critical</Text>
             <Widget name="Delivery Room Management" icon="baby"/>
             <Widget name="Pre-Operative Management" icon="notes-medical"/>
