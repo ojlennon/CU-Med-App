@@ -5,6 +5,7 @@ import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './components/home'
 import SecondLayer from './components/secondLayer';
+import ThirdLayer from './components/thirdLayer';
 const Stack = createNativeStackNavigator();
 
 
@@ -13,7 +14,8 @@ export default function App() {
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
         <Stack.Screen name="Home" component={Home}/>
-        <Stack.Screen name="Second" component={SecondLayer}/>
+        <Stack.Screen name="Second" component={SecondLayer} />
+        <Stack.Screen name="Third" component={ThirdLayer}/>
       </Stack.Navigator>
     </NavigationContainer>
   )
