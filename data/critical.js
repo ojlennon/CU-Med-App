@@ -14,6 +14,7 @@ const Crit = [
         name: "Delivery Room Managment",
         icon: "baby",
         text: "lots of stuff here",
+        color:"#54428E",
         subData: [
             { 
                 name: "Respiratory",
@@ -62,6 +63,7 @@ const Crit = [
         name: "Pre-Opporation Managment",
         icon: "notes-medical",
         text: "more stuff here",
+        color:"#688B58",
         subData: [
             { 
                 name: "Respiratory",
@@ -119,6 +121,7 @@ const Crit = [
         name: "Post-Opporation Managment",
         icon: "bandage",
         text: "even more stuff here",
+        color:"#27767C",
         subData: [
             { 
                 name: "Respiratory",
