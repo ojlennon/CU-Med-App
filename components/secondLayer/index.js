@@ -40,15 +40,15 @@ const Widget = ({ name, pages }) => {
               <>
                   <Box width="110%" mt="3%" ml="-5%" p ="4%" borderRadius="5px" backgroundColor="#cccccc" flexDirection="row" justifyContent="space-between">
                       <TouchableOpacity onPress={() => toggleShown(!shown)}>
-                        <Box justifyContent="center" flexDirection="row">
+                        <Box justifyContent="space-between" flexDirection="row" alignContent="center">
                               <Text style={{ paddingLeft: "4%" }} >{name}</Text>
-                              
+                              <Entypo name="chevron-thin-down" size={16} color="black" style={{paddingRight:"5%", paddingLeft:"3%"}} />       
                         </Box>
-                        <Entypo name="chevron-thin-down" size={24} color="black" style={{paddingRight:"5%"}} />
+                       
                       </TouchableOpacity>
                       </Box>
                         {pages.map((item) => (
-                            <Box w="100%" mt="1%" backgroundColor="#f23"><Text>{item.name}</Text></Box>
+                            <Box w="100%" mt="1%" backgroundColor="#f23"><Text fontSize="20px">{item.name}</Text></Box>
                         ))}
                     
                   </>
