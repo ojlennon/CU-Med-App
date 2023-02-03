@@ -55,6 +55,7 @@ const Home = ({ navigation }) => {
           /> */}
           
 
+
     <Box height="70%" backgroundColor="#ddd" justifyContent="top" alignItems="center">
         <Box height="100%" width="100%" p="10%" marginTop="-3%">
             <Text style={{ marginLeft: "-5%", marginBottom: "1%", fontSize: "18px", fontWeight: "400" }}>Critical</Text>
