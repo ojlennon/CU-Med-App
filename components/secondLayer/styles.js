@@ -1,85 +1,88 @@
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import { View, Text } from "react-native";
 import React from "react";
 import { Box } from "@react-native-material/core";
+import { TouchableOpacity, ScrollView } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useState } from "react";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
-const Widget = ({ name, pages, color="#0F0" }) => {
+const Widget = ({ name, pages }) => {
   const [shown, toggleShown] = useState(true);
-  const navigation = useNavigation();
+  const {navigation} = useNavigation()
   return (
     <>
       {shown ? (
-        <Box>
-          <TouchableOpacity
-            onPress={() => toggleShown(!shown)}
-            style={{ borderRadius: "4px" }}
-          >
+        <>
+          <TouchableOpacity onPress={() => toggleShown(!shown)}>
             <Box
-              width="94%"
+              width="96%"
               mt="3%"
-              ml="3%"
+              ml="2%"
               p="4%"
-              borderRadius="4px"
-              backgroundColor="#DDD"
+              borderRadius="5px"
+              backgroundColor="#cccccc"
               flexDirection="row"
               justifyContent="space-between"
-              alignContent="center"
             >
-              <Text
-                style={{
-                  paddingLeft: "1%",
-                  fontSize: "20px",
-                }}
+              <Box
+                justifyContent="space-between"
+                flexDirection="row"
+                width="100%"
               >
-                {name}
-              </Text>
-
-              <AntDesign
-                name="right"
-                size={20}
-                style={{ paddingRight: "1%", marginTop: "1%" }}
-              />
+                <Text style={{ paddingLeft: "1%" }}>{name}</Text>
+                <MaterialIcons
+                  name="arrow-forward-ios"
+                  size={16}
+                  style={{ paddingRight: "0%" }}
+                />
+              </Box>
             </Box>
           </TouchableOpacity>
-        </Box>
+        </>
       ) : (
         <>
           <TouchableOpacity onPress={() => toggleShown(!shown)}>
             <Box
-              width="94%"
+              width="96%"
               mt="3%"
-              ml="3%"
+              ml="2%"
               p="4%"
               borderRadius="5px"
-              backgroundColor="#E5E4E2"
+              backgroundColor="#cccccc"
               flexDirection="row"
               justifyContent="space-between"
-              alignContent="center"
             >
-              <Text style={{ paddingLeft: "1%", fontSize: "20px" }}>
-                {name !== "F.E.N.G"
-                  ? name
-                  : "Fluids, Electrolytes, Nutrition, & Gastrointestinal"}
-              </Text>
-              <AntDesign
-                name="down"
-                size={22}
-                color="black"
-                style={{ paddingRight: "1%", marginTop: "1%" }}
-              />
+              <Box
+                flexDirection="row"
+                justifyContent="space-between"
+                width="108%"
+                ml="-3.5%"
+              >
+                <Text style={{ paddingLeft: "4%" }}>{name}</Text>
+                <AntDesign
+                  name="down"
+                  size={16}
+                  color="black"
+                  style={{ paddingRight: "5%", paddingLeft: "3%" }}
+                />
+              </Box>
             </Box>
           </TouchableOpacity>
-
+          {/* {pages.map((item) => (
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate("Third", {
+                  name: item.name,
+                  data: item.data,
+                })
+              } */}
           {pages.map((item) => (
             <TouchableOpacity
               onPress={() =>
                 navigation.navigate("Third", {
                   name: item.name,
                   data: item.data,
-                  color: color,
                 })
               }
               style={{ borderRadius: "4%", alignItems: "center" }}
@@ -87,7 +90,7 @@ const Widget = ({ name, pages, color="#0F0" }) => {
               <Box
                 w="85%"
                 mt="2%"
-                backgroundColor="#E5E4E2"
+                backgroundColor="#ddd"
                 style={{
                   justifyContent: "space-between",
                   flexDirection: "row",
@@ -113,20 +116,19 @@ const Widget = ({ name, pages, color="#0F0" }) => {
     </>
   );
 };
-const SecondTry = ({ route }) => {
+const SecondLayer = ({ route, navigation }) => {
   const { name } = route.params;
   const { text } = route.params;
   const { subData } = route.params;
   const { color } = route.params;
-  const navigation = useNavigation();
   return (
     <>
       <Box
         justifyContent="center"
         alignContent="center"
+        backgroundColor={color}
         w="100%"
         pt="10%"
-        style={{ backgroundColor: color }}
       >
         <Box pl="4%" pb="1.5%" pt="2%">
           <TouchableOpacity
@@ -148,16 +150,10 @@ const SecondTry = ({ route }) => {
           </TouchableOpacity>
         </Box>
       </Box>
-
-      <ScrollView style={{ height: "100%", p: "5%", backgroundColor: "#c8c8c8" }}>
-        <Box mb="15%">
+      <ScrollView style={{ backgroundColor: "#aaaa", height: "100%" }}>
+        <Box overflow="scroll" pb="10%" pt="2%">
           {subData.map((item) => (
-            <Widget
-              name={item.name}
-              pages={item.subPages}
-              style={{ marginLeft: "3%" }}
-              color={color}
-            />
+            <Widget name={item.name} pages={item.subPages} />
           ))}
         </Box>
       </ScrollView>
@@ -165,4 +161,4 @@ const SecondTry = ({ route }) => {
   );
 };
 
-export default SecondTry;
+export default SecondLayer;

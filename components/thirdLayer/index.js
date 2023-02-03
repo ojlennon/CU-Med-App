@@ -80,25 +80,28 @@ const Widget = ({ item }) => {
 const ThirdLayer = ({ route, navigation }) => {
   const { name } = route.params;
   const { data } = route.params;
+  const { color } = route.params
   return (
     <>
       <Box
         w="100%"
-        h="10%"
+        h="11%"
         style={{
-          backgroundColor: "#ccc",
+          backgroundColor: color,
         }}
         pt="15%"
         pl="3%"
       >
         <Box
-          style={{ backgroundColor: "#ccc4", flexDirection:"row" }}
+          style={{ backgroundColor: color, flexDirection:"row" }}
           w="100%"
+          justifyContent="space-between"
         >
           <TouchableOpacity onPress={() => navigation.goBack()}>
-            <MaterialIcons name="arrow-back-ios" size={24} color="#111" />
+            <MaterialIcons name="arrow-back-ios" size={24} color="#DDD" />
           </TouchableOpacity>
-          <Text style={{ fontSize: "23px", marginLeft: "25%" }}>{name}</Text>
+          <Text style={{ fontSize: "23px", color:"#ddd", marginTop:"-1%"}}>{name}</Text>
+          <Box w="10%"></Box>
         </Box>
       </Box>
       <ScrollView>

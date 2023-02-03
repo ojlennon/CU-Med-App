@@ -73,7 +73,7 @@ const Crit = [
             ],
           },
           {
-            name: "HFOV settings for for CMV failure",
+            name: "HFOV settings for CMV failure",
             data: [
               {
                 text: "If HR remains < 100 beats/minute with PPV via Neopuff attempt transition to HFOV and put ECMO on alert (titrate for HR>100 beats/minute)",
@@ -214,7 +214,7 @@ const Crit = [
         ],
       },
       {
-        name: "Fluids, Electrolytes, Nutrition, & Gastrointestinal",
+        name: "F.E.N.G",
         subPages: [
           { name: "Access" },
           { name: "GI" },
@@ -261,7 +261,7 @@ const Crit = [
         ],
       },
       {
-        name: "Fluids, Electrolytes, Nutrition, & Gastrointestinal",
+        name: "F.E.N.G",
         subPages: [
           { name: "IV Fluids" },
           { name: "Gastrointestinal" },
@@ -307,7 +307,7 @@ const Crit = [
         ],
       },
       {
-        name: "Fluids, Electrolytes, Nutrition, & Gastrointestinal",
+        name: "F.E.N.G",
         subPages: [
           { name: "Total Fluids" },
           { name: "GI" },
