@@ -6,18 +6,6 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { useState } from "react";
 import { AntDesign } from '@expo/vector-icons';
 
-const AccordData = ({ name, pages }) => {
-    return (
-        <>
-            <Box>
-                <TouchableOpacity>
-
-                </TouchableOpacity>
-            </Box>
-        </>  
-    );
-}
-
 const Widget = ({ name, pages }) => {
     const[shown,toggleShown] = useState(true)
   return (
@@ -48,7 +36,15 @@ const Widget = ({ name, pages }) => {
                               <AntDesign name="down" size={16} color="black" style={{paddingRight:"5%", paddingLeft:"3%"}} />       
                         </Box>
                   </Box>
-              </TouchableOpacity>
+          </TouchableOpacity>
+          {/* {pages.map((item) => (
+            <TouchableOpacity
+              onPress={() =>
+                navigation.navigate("Third", {
+                  name: item.name,
+                  data: item.data,
+                })
+              } */}
                         {pages.map((item) => (
                             <Box w="92%" mt="2%" pl="4%" pt="2.5%" pb="2.5%" ml="4%" flexDirection="row" backgroundColor="#bbb" borderRadius="5px" justifyContent="space-between">
                               <Text fontSize="20px">{item.name}</Text>
