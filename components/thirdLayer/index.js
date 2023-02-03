@@ -1,23 +1,115 @@
-import { View, Text } from 'react-native'
-import React from 'react'
+import { View, Text } from "react-native";
+import React from "react";
+import { TouchableOpacity } from "react-native";
+import { Box } from "@react-native-material/core";
+import { borderLeftColor } from "@mui/system";
+import { MaterialIcons } from "@expo/vector-icons";
+import { ScrollView } from "react-native";
 
-const Widget = ({name, pages}) => {
+const subWidget = ({ text }) => {
   return (
-      <Box mt="5%" ml="5%">
-          <Text style={{fontSize:"16px", fontWeight:"500"}}>{name}</Text>
-          <Box ml="5%">
-          {pages.map((item) => (<Text>{item.name}</Text>))} 
+    <>
+      <Text>{text}</Text>
+    </>
+  )
+}
+
+const Widget = ({ item }) => {
+  return (
+    <>
+      <Box
+        style={{
+          margin: "2%",
+          borderRadius: "4%",
+          padding: "2%",
+        }}
+      >
+        <Box style={{backgroundColor: "#cccc", padding:"1%"}}>
+          <Text style={{ fontSize: "22px" }}>{item.text}</Text>
           </Box>
+        {item.hasOwnProperty("sub") && 
+          <>
+            {item.sub.map((subInfo) => (
+              <>
+                <Box style={{ marginTop: "3%",borderRadius:"4%", marginHorizontal:"5%", backgroundColor:"#FFA500", padding:"1%"}}>
+                  <Text style={{fontSize:"18px"}}>{subInfo.text}</Text>
+                </Box>
+                </>
+            ))}
+          </>
+        }
       </Box>
-  )
-}
+    </>
+  );
+};
+// const Widget = ({ item }) => {
+//   return (
+//   <>
+//     {'sub' in item ? 
+//           <>
+//             <Box
+//         style={{
+//           backgroundColor: "#c12",
+//           margin: "5%",
+//           borderRadius: "4%",
+//           padding: "2%",
+//         }}
+//       >
+//         <Text style={{ fontSize: "20px" }}>{item.text}</Text>
+        
+//           </Box>
+//           </>
+//           : 
+//         <>
+//           <Box
+//         style={{
+//           backgroundColor: "#cc4",
+//           margin: "5%",
+//           borderRadius: "4%",
+//           padding: "2%",
+//         }}
+//       >
+//         <Text style={{ fontSize: "20px" }}>{item.text}</Text>
+//       </Box>
+//           </>
+//       }
+//       </>
+//   );
+// };
 
-const ThirdLayer = ({name}) => {
+const ThirdLayer = ({ route, navigation }) => {
+  const { name } = route.params;
+  const { data } = route.params;
   return (
-    <View>
-      <Text>ThirdLayer</Text>
-    </View>
-  )
-}
+    <>
+      <Box
+        w="100%"
+        h="10%"
+        style={{
+          backgroundColor: "#ccc",
+        }}
+        pt="15%"
+        pl="3%"
+      >
+        <Box
+          style={{ backgroundColor: "#ccc4", flexDirection:"row" }}
+          w="100%"
+        >
+          <TouchableOpacity onPress={() => navigation.goBack()}>
+            <MaterialIcons name="arrow-back-ios" size={24} color="#111" />
+          </TouchableOpacity>
+          <Text style={{ fontSize: "23px", marginLeft: "25%" }}>{name}</Text>
+        </Box>
+      </Box>
+      <ScrollView>
+      <Box w="100%" h="90%" p="5%" style={{ alignItem: "center" }}>
+        {data.map((item) => (
+          <Widget item={item} />
+        ))}
+      </Box>
+      </ScrollView>
+    </>
+  );
+};
 
-export default ThirdLayer
+export default ThirdLayer;
