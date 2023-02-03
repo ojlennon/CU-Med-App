@@ -4,7 +4,7 @@ import { Box } from "@react-native-material/core";
 import { TouchableOpacity, ScrollView } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useState } from "react";
-import { Entypo } from '@expo/vector-icons';
+import { AntDesign } from '@expo/vector-icons';
 
 const AccordData = ({ name, pages }) => {
     return (
@@ -27,11 +27,11 @@ const Widget = ({ name, pages }) => {
               {shown ?
               <>
               <TouchableOpacity onPress={() => toggleShown(!shown)}>
-                  <Box width="110%" mt="3%" ml="-5%" p ="4%" borderRadius="5px" backgroundColor="#cccccc" flexDirection="row" justifyContent="space-between">
+                  <Box width="96%" mt="3%" ml="2%" p ="4%" borderRadius="5px" backgroundColor="#cccccc" flexDirection="row" justifyContent="space-between">
                       
-                      <Box justifyContent="space-between" flexDirection="row" alignContent="center">
-                              <Text style={{ paddingLeft: "4%" }}>{name}</Text>
-                              <MaterialIcons name="arrow-forward-ios" size={16} style={{ paddingRight: "5%" }} />
+                      <Box justifyContent="space-between" flexDirection="row" width="100%">
+                              <Text style={{ paddingLeft: "1%" }}>{name}</Text>
+                              <MaterialIcons name="arrow-forward-ios" size={16} style={{ paddingRight: "0%" }} />
                         </Box>
                           
                       
@@ -41,19 +41,18 @@ const Widget = ({ name, pages }) => {
                   :
               <>
               <TouchableOpacity onPress={() => toggleShown(!shown)}>
-                  <Box width="110%" mt="3%" ml="-5%" p ="4%" borderRadius="5px" backgroundColor="#cccccc" flexDirection="row" justifyContent="space-between">
+                  <Box width="96%" mt="3%" ml="2%" p ="4%" borderRadius="5px" backgroundColor="#cccccc" flexDirection="row" justifyContent="space-between">
                       
-                        <Box justifyContent="space-between" flexDirection="row" alignContent="center">
+                        <Box flexDirection="row" justifyContent="space-between" width="108%" ml="-3.5%">
                               <Text style={{ paddingLeft: "4%" }} >{name}</Text>
-                              <Entypo name="chevron-thin-down" size={16} color="black" style={{paddingRight:"5%", paddingLeft:"3%"}} />       
+                              <AntDesign name="down" size={16} color="black" style={{paddingRight:"5%", paddingLeft:"3%"}} />       
                         </Box>
-                       
-                     
-                      </Box>
-                      </TouchableOpacity>
+                  </Box>
+              </TouchableOpacity>
                         {pages.map((item) => (
-                            <Box w="94%" mt="2%" pl="4%" pt="2.5%" pb="2.5%" ml="3%" backgroundColor="#bbb" borderRadius="5px">
+                            <Box w="92%" mt="2%" pl="4%" pt="2.5%" pb="2.5%" ml="4%" flexDirection="row" backgroundColor="#bbb" borderRadius="5px" justifyContent="space-between">
                               <Text fontSize="20px">{item.name}</Text>
+                              <MaterialIcons name="arrow-forward-ios" size={14} style={{ paddingRight: "3%" }} />
                             </Box>
                         ))}
                     
@@ -62,7 +61,7 @@ const Widget = ({ name, pages }) => {
     </>
   );
 };
-const SecondTry = ({ route, navigation }) => {
+const SecondLayer = ({ route, navigation }) => {
   const { name } = route.params;
   const { text } = route.params;
   const { subData } = route.params;
@@ -78,7 +77,7 @@ const SecondTry = ({ route, navigation }) => {
       >
         <Box
           pl="4%"
-          pb="3%"
+          pb="1.5%"
           pt="2%"
         >
           <TouchableOpacity onPress={() => navigation.goBack()} style={{flexDirection:"row"}}>
@@ -89,7 +88,7 @@ const SecondTry = ({ route, navigation }) => {
         </Box>
       </Box>
         <ScrollView style={{backgroundColor:"#aaaa", height:"100%"}}>
-          <Box overflow="scroll">
+          <Box overflow="scroll" pb="10%" pt="2%">
             
               {subData.map((item) => (
                 <Widget name={item.name} pages={item.subPages} />
@@ -100,4 +99,4 @@ const SecondTry = ({ route, navigation }) => {
   );
 };
 
-export default SecondTry;
+export default SecondLayer;

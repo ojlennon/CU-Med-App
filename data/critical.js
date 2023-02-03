@@ -57,7 +57,7 @@ const Crit = [
         ],
       },
       {
-        name: "Fluids, Electrolytes, Nutrition, & Gastrointestinal",
+        name: "F.E.N.G",
         subPages: [
           { name: "Access" },
           { name: "GI" },
@@ -76,7 +76,7 @@ const Crit = [
     ],
   },
   {
-    name: "Pre-Opporation Managment",
+    name: "Pre-Operative Managment",
     icon: "notes-medical",
     text: "more stuff here",
     color: "#688B58",
@@ -104,7 +104,7 @@ const Crit = [
         ],
       },
       {
-        name: "Fluids, Electrolytes, Nutrition, & Gastrointestinal",
+        name: "F.E.N.G",
         subPages: [
           { name: "IV Fluids" },
           { name: "Gastrointestinal" },
@@ -128,7 +128,7 @@ const Crit = [
     ],
   },
   {
-    name: "Post-Opporation Managment",
+    name: "Post-Operative Managment",
     icon: "bandage",
     text: "even more stuff here",
     color: "#27767C",
@@ -150,7 +150,7 @@ const Crit = [
         ],
       },
       {
-        name: "Fluids, Electrolytes, Nutrition, & Gastrointestinal",
+        name: "F.E.N.G",
         subPages: [
           { name: "Total Fluids" },
           { name: "GI" },

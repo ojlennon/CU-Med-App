@@ -9,27 +9,29 @@ import Crit from '../../data/critical'
 import NonCrit from '../../data/nonCritical'
 const Widget = ({name, icon="", color="#fff"}) => {
     return(
-        <Box width="110%" mt="3%" ml="-5%" p ="4%" borderRadius="5px" backgroundColor="#cccccc" flexDirection="row" justifyContent="space-between">
+        <Box width="110%" mt="3%" ml="-5%" mb="-40%" p ="3.5%" borderRadius="5px" backgroundColor="#ccc" flexDirection="row" justifyContent="space-between">
             <Box flexDirection="row" justifyContent="center">
                 {icon==="bandage"?
-                    <>
-                    <Box backgroundColor={color} width="12%" alignItems="center" borderRadius="3px" ml="-3%">
-                        <Fontisto name={icon} size={22} style={{marginLeft:"-1%", padding:"7%", color:"#dcdcdc"}}/>
+                    <Box flexDirection="row" pl="2%" mb="-10%">
+                        <Box backgroundColor={color} h="58%" width="14%" alignItems="center" borderRadius="3px" ml="-3%" justifyContent="center">
+                            <Fontisto name={icon} size={22} style={{ padding:"5%", color:"#dcdcdc"}}/>
+                        </Box>
+                        <Text style={{marginLeft:"3%", marginTop:"2.5%", fontSize:"17px"}}>{name}</Text>
                     </Box>
-                    <Text style={{marginLeft:"4%", marginTop:"1.5%", fontSize:"16px"}}>{name}</Text>
-                    </>
                     :
                     <>
-                    <Box backgroundColor={color} width="12%" alignItems="center" borderRadius="3px" ml="-3%" pb="1%">
-                        <FontAwesome5 name={icon} size={20} style={{marginLeft:"-1%", padding:"7%", color:"#dcdcdc"}}/>
+                    <Box flexDirection="row" pl="2%" mb="-10%">
+                        <Box backgroundColor={color} h="57%" width="14%" alignItems="center" borderRadius="3px" ml="-3%" justifyContent="center">
+                            <FontAwesome5 name={icon} size={22} style={{ padding:"5%", color:"#dcdcdc"}}/>
+                        </Box>
+                        <Text style={{marginLeft:"3%", marginTop:"2.5%", fontSize:"17px"}}>{name}</Text>
                     </Box>
-                    <Text style={{marginLeft:"5%"}}>{name}</Text>
                     </>
                 }
                 
             </Box>
             {/* <TouchableOpacity></TouchableOpacity> */}
-            <MaterialIcons name="arrow-forward-ios" size={16} style={{marginTop:"1.5%"}}/>
+            <MaterialIcons name="arrow-forward-ios" size={18} style={{marginTop:"3%", marginRight:"-1%"}}/>
         </Box>
     )
 }
