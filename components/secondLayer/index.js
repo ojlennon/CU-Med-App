@@ -5,9 +5,11 @@ import { TouchableOpacity, ScrollView } from "react-native";
 import { MaterialIcons } from "@expo/vector-icons";
 import { useState } from "react";
 import { AntDesign } from "@expo/vector-icons";
+import { useNavigation } from "@react-navigation/native";
 
 const Widget = ({ name, pages }) => {
   const [shown, toggleShown] = useState(true);
+  const {navigation} = useNavigation()
   return (
     <>
       {shown ? (
