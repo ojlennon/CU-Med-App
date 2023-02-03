@@ -9,7 +9,7 @@ const TopBar = () => {
     return (
 
             <View style={{height:"30%"}}>
-                <Box mb="0%" width="100%" height="100%" backgroundColor="#c0c0c0" paddingTop="14.9999%" justifyContent="space-between"> 
+                <Box mb="0%" width="100%" height="100%" backgroundColor="#c0c0c0" paddingTop="15%" justifyContent="space-between"> 
                     <TouchableOpacity onPress={() => setS(!s)}>
                         <Text>Hamburger</Text>
                     </TouchableOpacity>
