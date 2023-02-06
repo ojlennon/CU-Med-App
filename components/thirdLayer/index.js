@@ -28,19 +28,17 @@ const Widget = ({ item }) => {
         }}
       >
         <Box flexDirection="row">
-          <FontAwesome name="circle" size={24} color="black" style={{marginTop:"10%", marginLeft:"-8.5%", marginRight:"3%"}} />
-          <FontAwesome name="circle" size={14} color="#eee" style={{marginTop:"11.5%", marginLeft:"-7.8
-          
-          %", marginRight:"3%"}} />
-          <Box style={{backgroundColor: "#ddd", padding:"1%", alignItems:"center", width:"100%"}}>
-            <Text style={{ fontSize: "22px" }}>{item.text}</Text>
+          <FontAwesome name="circle" size={24} color="black" style={{marginTop:"4%", marginLeft:"-8.5%", marginRight:"3%"}} />
+          <FontAwesome name="circle" size={16} color="#eee" style={{marginTop:"5.10%", marginLeft:"-8.06%", marginRight:"3%"}} />
+          <Box style={{backgroundColor: "#e0e0e0", padding:"4%", width:"100%", borderRadius:"5px"}}>
+            <Text style={{ fontSize: "20px" }}>{item.text}</Text>
           </Box>
         </Box>
         {item.hasOwnProperty("sub") && 
           <Box flexDirection="column">
             {item.sub.map((subInfo) => (
               <>
-                <Box style={{ marginTop: "3%",borderRadius:"4%", marginHorizontal:"5%", backgroundColor:"#FFA500", padding:"1%"}}>
+                <Box style={{ marginTop: "3%",borderRadius:"4%", marginHorizontal:"5%",opacity:0.9, backgroundColor:"#FFA500", padding:"1%"}}>
                   <Text style={{fontSize:"18px"}}>{subInfo.text}</Text>
                 </Box>
                 </>
@@ -83,8 +81,8 @@ const ThirdLayer = ({ route, navigation }) => {
         <Box
         position="absolute"
         left="3.5%"
-        top="0%"
-        height="110%"
+        mt="-50%"
+        height="510%"
         width="0.8%"
         backgroundColor="#333"
         >

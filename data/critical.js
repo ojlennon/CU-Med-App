@@ -180,6 +180,7 @@ const Crit = [
           {
             name: "Persistent Hypotension",
             data: [
+              { header:"If no response to NS bolus or persistent hypotension:"},
               {
                 text: "1st line: Epinephrine at 0.1 mcg/kg/min",
                 sub: [
@@ -216,19 +217,56 @@ const Crit = [
       {
         name: "F.E.N.G",
         subPages: [
-          { name: "Access" },
-          { name: "GI" },
-          { name: "Fluids" },
-          { name: "Electrolytes" },
+          { name: "Access",
+            header: "Place double lumen UVC & UAC" ,
+            data: [
+            ]},
+          { name: "GI",
+            header:"Place anderson tube to continuous drainage",
+            data: [ 
+              {text:"If Anderson not available, utilize Replogle 10fr to low-intermittent suction"}
+            ]},
+          { name: "Fluids", 
+            data:[
+              {text:"80 mL/kg/day (Include all drips) with starter TPN."},
+              {text:"NaAC via arterial line",
+              sub:[
+                {text:"Consider adding papaverine to PAL if spasming (can only be used with NaCl)"}
+              ]}
+            ]},
+          { name: "Electrolytes",
+            data:[
+              {text:"Treat metabolic acidosis (pH < 7.2 and/or base deficit greater than -6) with NaHCO3 2mEq/kg dosing regardless of respiratory acidosis."},
+              {text:"Treat iCal < 1.2 with CaCl 20 mg/kg"}
+            ]},
         ],
       },
       {
         name: "Infectious Disease",
-        subPages: [{ name: "Infectious Disease" }],
+        subPages: [
+          { name: "Infectious Disease",
+            data:[
+              {text:"Assess risk for infection, if elective delivery (induction or C/S) hold antibiotics"}
+              ,{text:"48 hour rule-out sepsis if prolonged rupture of membranes, preterm delivery or fetal intervention (FETO)."},
+              {text:"Amp/Gent as rule-out medications unless maternal infection indicates a need for a different regimen.",
+              sub:[
+                {text:"Consider Ceftazidime for renal protection"}
+              ]
+            }
+            ]}
+        ],
       },
       {
         name: "Hematology",
-        subPages: [{ name: "Hematology" }],
+        subPages: [
+          { name: "Hematology",
+            data:[
+              {text:"Administer Vitamin K if not given in delivery room"},
+              {text:"Newborn workup on all patients"},
+              {text:"Obtain blood consent on all patients"}
+            ]
+         }
+        ],
       },
     ],
   },
@@ -241,33 +279,184 @@ const Crit = [
       {
         name: "Respiratory",
         subPages: [
-          { name: "CMV Settings" },
-          { name: "CMV Goals" },
-          { name: "Defining Failure of CMV" },
-          { name: "Weaning from HFOV to CMV" },
-          { name: "Criteria for Weaning CMV" },
-          { name: "Criteria for Weaning CMV" },
+          { name: "CMV Settings",
+            header:"Ventilation via pressure mode with Servo ventilator",
+            data:[
+              {text:"Mild: 20/5 (PIP not to exceed 25), RR 60 (up to 80), PS 10 (8-12), FiO2 50%"},
+              {text:"Moderate: 23/4 (PIP not to exceed 25), RR 80, PS 12 (8-15), FiO2 100%"},
+              {
+              text:"Severe: 23/4 PIP (not to exceed 25), RR 80, PS 15 (10-15) FiO2 100%",
+              sub:[
+                {text:"Adjust iTime to maintain I:E 1:2 (0.25-0.5)"},
+                {text:"iTime Calculation: 60/RR/3= iTime"}
+              ]}
+            ]
+           },
+          { name: "CMV Goals",
+            data:[
+              {text:"Preductal oxygen sats 85-95% preductal PaO2 > 55 mmHg"},
+              {text:"Minute ventilation greater than 0.6"},
+              {text:"PaCO2 45-55 mmHg"},
+              {text:"pH ≥ 7.2"},
+              {text:"tolerate preductal sat > 85%, postductal >70% if perfusion satisfactory, non-acidotic and lactic acid not increasing"},
+              {text:"Cerebral NIRS greater than 70"}
+            ]},
+          {
+            name: "Defining Failure of CMV",
+            data: [
+              {
+                text: "Failure to achieve adequate ventilation demonstrated by two consecutive blood gasses at least 15 min apart after achieving max CMV settings, s/p sedation, s/p bicarb",
+              },
+              { text: "Preductal saturations < 85%" },
+              {
+                text: "Persistent respiratory acidosis at 1 hour (pH <7.2, CO2 >65, BE <  than -6)",
+              },
+              { text: "Cerebral NIRS < 70" },
+              {
+                text: "Severe respiratory distress - unable to capture with CMV",
+              },
+            ],
+          },
+          { name: "Weaning from HFOV to CMV",
+            data:[
+              {text:"Once stable with adequate CO2 and stable FiO2 begin weaning HFOV stepwise to goal MAP 12-14, AMP < 36, Hz ≥ 8",}
+            ]},
+          { name: "Criteria for Weaning CMV",
+            data:[
+              {text:"PaCO2 < 45mmHg",}
+            ]},
         ],
       },
       {
         name: "Cardiovascular",
         subPages: [
-          { name: "Blood pressure" },
-          { name: "Hypovolemia/Hypotension" },
-          { name: "Persistent Hypotension" },
-          { name: "Pulmonary Hypertension" },
-          { name: "Refractory Pulmonary Hypertension" },
-          { name: "iNO Weaning" },
+          { name: "Blood pressure",
+            data:[
+              {text:"Goal mean arterial blood pressure (MAP) 40-45 mmHg for 1st 24 hours. "},
+              {text:"After 24 hours goal MAP 45-50 mmHg"},
+              {text:"If pulse pressure is <15 mmHg target systolic BP 60-70 mmHg"}
+            ]
+        },
+          { name: "Hypovolemia/Hypotension",
+            data:[
+              {text:"If fluid responsive, utilize low dose epinephrine."},
+              {text:"Proceed to inotropic management below"}
+            ]
+        },
+          { name: "Persistent Hypotension",
+            header:"If no response to NS bolus or persistent hypotension",
+            data:[
+              {text:"1st line: Epinephrine at 0.05 mcg/kg/min",
+              sub:[{text:"Titrate by 0.02 mcg/kg/min to a max of 0.5 mcg/kg/min"}]},
+            ]
+        },
+          { name:"Hydrocortisone",
+            data:[
+              {text:"Administer 2 mg/kg IV after trough obtained. Assess need for vasopressor support. If no vasopressors, hold scheduled hydrocortisone."},
+              {text:"If requiring vasopressors and cortisol level < 15, schedule 2 mg/kg every 8 hours with max 2 mg/kg Q6h"},
+              {text:"If requiring vasopressors and cortisol level > 15, schedule 1 mg/kg every 8 hours"},
+              {text:"Check pm peak and trough cortisol level and adjust dosing accordingly."},
+              {text:"All patients increase to 2 mg/kg prior to surgery for 24 hours"}
+            ]
+        },
+          { name: "Pulmonary Hypertension",
+            data:[
+              {text:"Obtain ECHO on admission to NICU, day prior to repair"},
+              {
+                text:"ECHO to assess",
+                sub:[{text:"Anatomy, LV + RV function, estimate RV pressure if TR jet is present, assess ductal shunting, septal flattening and atrial level shunt"}]
+              },
+              {
+                text:"Atrial shunting right to left or bidirectional and FiO2 > 60%",
+                sub:[{text:"Start iNO at 5 ppm and titrate up to 20 ppm to allow weaning of oxygen to a goal of < 60%"}]
+              },
+              {
+                text:"Atrial level shunting left to right",
+                sub:[
+                  {text:"Withhold iN"},
+                  {text:"Initiate only for episodes of preductal desaturation with echo evidence of bidirectional or right to left atrial level shunt"}
+                ]
+              },
+              {
+                text:"Decreased RV function",
+                sub:[{text:"Initiate iNO at 20 ppm"}]
+              },
+              {
+                text:"Indication to initiate PGE",
+                sub:[{text:"PDA shunt right to left in Moderate/Severe CDH profile"}]
+              },
+              {
+                text:"Indications to initiate PGE + Milrinone",
+                sub:[
+                  {text:'Decreased LV function with constricted ductus and right to left flow initiate'},
+                  {text:"Decreased RV function with constricted ductus"},
+                  {text:"PGE at 0.05 mcg/kg/min and milrinone at 0.5 mcg/kg/min"}
+                ]
+              },
+              {
+                text:"Indications to initiate Milrinone + Epinephrine",
+                sub:[
+                  {text:"Mod-Severe decreased LV function"},
+                  {text:"Milrinone at 0.5 mcg/kg/min and Epinephrine at 0.05 mcg/kg/min"}
+                ]
+              }
+            ]
+        },
+          { name: "Refractory Pulmonary Hypertension",
+            data:[
+              {text:"If left to right PFO shunt is present: start Milrinone if not started already"},
+              {text:"Persistent R or L shunting at the PFO consider the following additional options:"},
+              {text:"If there is lack of recruitment limiting delivery of iNO, optimize vent settings as able"},
+              {text:"If adequate lung recruitment and PDA restrictive start PGE at 0.05 mcg/kg/min."},
+              {text:"Consider IV sildenafil at 0.067 mg/kg/hour without bolus"},
+              {text:"Greater than 48 hours and normal LV function start iNO at 20 ppm"}
+            ]
+        },
         ],
       },
       {
         name: "F.E.N.G",
         subPages: [
-          { name: "IV Fluids" },
-          { name: "Gastrointestinal" },
-          { name: "Electrolytes (during acute phase)" },
-          { name: "Lab Schedule" },
-          { name: "TPN Goals" },
+          { name: "IV Fluids",
+          data:[
+            {text:"Begin total fluids at 80 mL/kg/day (Include all drips) with starter TPN. Keep total fluids 80 mL/kg/day until repair."},
+            {text:"Utilize NaAC via arterial line",
+            sub:[{text:"Consider adding papaverine to PAL if spasming (can only be used with NaCl)"}]}
+          ]  
+        },
+          { name: "Gastrointestinal",
+          data:[
+            {text:"Anderson tube to continuous suction (Or Replogle 10fr to low-intermittent suction)"},
+            {text:"Remove OGT from mouth Q4h and rinse in sterile water then replace to ensure patency."}
+          ]  
+        },
+          { name: "Electrolytes (during acute phase)",
+          data:[
+            {text:"Treat metabolic acidosis (pH < 7.2 and/or base deficit greater than -6) with sodium bicarbonate 2mEq/kg dosing regardless of respiratory acidosis."},
+            {text:"Maintain iCal >1.2"},
+            {text:"Magnesium level >2"},
+            {text:"Potassium level >3.4"},
+          ]  
+        },
+          { name: "Lab Schedule",
+          data:[
+            {text:"QD RFP until stable"},
+            {text:"PRN Mag, Lytes, iCal to be obtained after repletion"},
+            {text:"QMon CMP, Mag, Phos,"},
+            {text:"QThurs RFP"}
+          ]  
+        },
+          { name: "TPN Goals",
+          data:[
+            {text:"Protein- 3 g/kg AA"},
+            {text:"GIR 12 with goal glucose 60-150 mg/dL"},
+            {text:"IL- Initiate at 2 g/kg/day and increase to goal 3 g/kg/day on DOL 2",
+            sub:[{text:"Consider SMOF if not able to start feeds by 2 weeks"}]},
+            {text:"Add levocarnitine at 7 days if still NPO"},
+            {text:"Famotidine 0.5mg/kg in TPN",
+            sub:[{text:"Transition to PO when TPN d/c"}]},
+          ]  
+        },
         ],
       },
       {
