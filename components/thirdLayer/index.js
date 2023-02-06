@@ -5,6 +5,8 @@ import { Box } from "@react-native-material/core";
 import { borderLeftColor } from "@mui/system";
 import { MaterialIcons } from "@expo/vector-icons";
 import { ScrollView } from "react-native";
+import { FontAwesome } from '@expo/vector-icons'; 
+
 
 const subWidget = ({ text }) => {
   return (
@@ -22,13 +24,18 @@ const Widget = ({ item }) => {
           margin: "2%",
           borderRadius: "4%",
           padding: "2%",
+          width:"100%"
         }}
       >
-        <Box style={{backgroundColor: "#cccc", padding:"1%"}}>
-          <Text style={{ fontSize: "22px" }}>{item.text}</Text>
+        <Box flexDirection="row">
+          <FontAwesome name="circle" size={24} color="black" style={{marginTop:"10%", marginLeft:"-8.5%", marginRight:"3%"}} />
+          <FontAwesome name="circle" size={14} color="#eee" style={{marginTop:"11.5%", marginLeft:"-7.8%", marginRight:"3%"}} />
+          <Box style={{backgroundColor: "#ddd", padding:"1%", alignItems:"center", width:"100%"}}>
+            <Text style={{ fontSize: "22px" }}>{item.text}</Text>
           </Box>
+        </Box>
         {item.hasOwnProperty("sub") && 
-          <>
+          <Box flexDirection="column">
             {item.sub.map((subInfo) => (
               <>
                 <Box style={{ marginTop: "3%",borderRadius:"4%", marginHorizontal:"5%", backgroundColor:"#FFA500", padding:"1%"}}>
@@ -36,46 +43,12 @@ const Widget = ({ item }) => {
                 </Box>
                 </>
             ))}
-          </>
+          </Box>
         }
       </Box>
     </>
   );
 };
-// const Widget = ({ item }) => {
-//   return (
-//   <>
-//     {'sub' in item ? 
-//           <>
-//             <Box
-//         style={{
-//           backgroundColor: "#c12",
-//           margin: "5%",
-//           borderRadius: "4%",
-//           padding: "2%",
-//         }}
-//       >
-//         <Text style={{ fontSize: "20px" }}>{item.text}</Text>
-        
-//           </Box>
-//           </>
-//           : 
-//         <>
-//           <Box
-//         style={{
-//           backgroundColor: "#cc4",
-//           margin: "5%",
-//           borderRadius: "4%",
-//           padding: "2%",
-//         }}
-//       >
-//         <Text style={{ fontSize: "20px" }}>{item.text}</Text>
-//       </Box>
-//           </>
-//       }
-//       </>
-//   );
-// };
 
 const ThirdLayer = ({ route, navigation }) => {
   const { name } = route.params;
@@ -105,11 +78,21 @@ const ThirdLayer = ({ route, navigation }) => {
         </Box>
       </Box>
       <ScrollView>
-      <Box w="100%" h="90%" p="5%" style={{ alignItem: "center" }}>
-        {data.map((item) => (
-          <Widget item={item} />
-        ))}
-      </Box>
+        <Box
+        position="absolute"
+        left="3.5%"
+        top="0%"
+        height="110%"
+        width="0.8%"
+        backgroundColor="#333"
+        >
+          <Text style={{fontSize:"1px"}}>a</Text>
+        </Box>
+        <Box w="100%" h="100%" p="5%" style={{ alignItem: "center" }} backgroundColor="#d">
+          {data.map((item) => (
+            <Widget item={item} />
+          ))}
+        </Box>
       </ScrollView>
     </>
   );

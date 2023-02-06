@@ -18,12 +18,12 @@ const Widget = ({ name, pages, color="#0F0" }) => {
             style={{ borderRadius: "4px" }}
           >
             <Box
-              width="94%"
+              width="92%"
               mt="3%"
-              ml="3%"
+              ml="4%"
               p="4%"
               borderRadius="4px"
-              backgroundColor="#DDD"
+              backgroundColor="#ccc"
               flexDirection="row"
               justifyContent="space-between"
               alignContent="center"
@@ -54,7 +54,7 @@ const Widget = ({ name, pages, color="#0F0" }) => {
               ml="3%"
               p="4%"
               borderRadius="5px"
-              backgroundColor="#E5E4E2"
+              backgroundColor="#aaa"
               flexDirection="row"
               justifyContent="space-between"
               alignContent="center"
@@ -87,7 +87,7 @@ const Widget = ({ name, pages, color="#0F0" }) => {
               <Box
                 w="85%"
                 mt="2%"
-                backgroundColor="#E5E4E2"
+                backgroundColor="#bfbfbf"
                 style={{
                   justifyContent: "space-between",
                   flexDirection: "row",
@@ -149,7 +149,7 @@ const SecondTry = ({ route }) => {
         </Box>
       </Box>
 
-      <ScrollView style={{ height: "100%", p: "5%", backgroundColor: "#c8c8c8" }}>
+      <ScrollView style={{ height: "100%", p: "5%", backgroundColor: "#ddd" }}>
         <Box mb="15%">
           {subData.map((item) => (
             <Widget
