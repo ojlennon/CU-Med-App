@@ -29,7 +29,9 @@ const Widget = ({ item }) => {
       >
         <Box flexDirection="row">
           <FontAwesome name="circle" size={24} color="black" style={{marginTop:"10%", marginLeft:"-8.5%", marginRight:"3%"}} />
-          <FontAwesome name="circle" size={14} color="#eee" style={{marginTop:"11.5%", marginLeft:"-7.8%", marginRight:"3%"}} />
+          <FontAwesome name="circle" size={14} color="#eee" style={{marginTop:"11.5%", marginLeft:"-7.8
+          
+          %", marginRight:"3%"}} />
           <Box style={{backgroundColor: "#ddd", padding:"1%", alignItems:"center", width:"100%"}}>
             <Text style={{ fontSize: "22px" }}>{item.text}</Text>
           </Box>
