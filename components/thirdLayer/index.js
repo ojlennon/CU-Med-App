@@ -1,4 +1,4 @@
-import { View, Text } from "react-native";
+import { View, Text, Image } from "react-native";
 import React from "react";
 import { TouchableOpacity } from "react-native";
 import { Box } from "@react-native-material/core";
@@ -16,7 +16,7 @@ const subWidget = ({ text }) => {
   )
 }
 
-const Widget = ({ item }) => {
+const Widget = ({ item, color }) => {
   return (
     <>
       <Box
@@ -27,11 +27,14 @@ const Widget = ({ item }) => {
           width:"100%"
         }}
       >
-        <Box flexDirection="row">
-          <FontAwesome name="circle" size={24} color="black" style={{marginTop:"4%", marginLeft:"-8.5%", marginRight:"3%"}} />
-          <FontAwesome name="circle" size={16} color="#eee" style={{marginTop:"5.10%", marginLeft:"-8.06%", marginRight:"3%"}} />
+        <Box flexDirection="row" justifyContent="center" alignItem="center">
+          <Box flexDirection="row" height="100%" alignItems="center" ml="-7.8%" mr="3%" justifyContent="center">
+            <FontAwesome name="circle" size={24} color={color} style={{}} />
+            <FontAwesome name="circle" size={14} color="#eee" style={{position:"absolute"}} />
+          </Box>
           <Box style={{backgroundColor: "#e0e0e0", padding:"4%", width:"100%", borderRadius:"5px"}}>
-            <Text style={{ fontSize: "20px" }}>{item.text}</Text>
+            <Text style={{ fontSize: "20px" }}>{item.text} </Text>
+            {item.text==="CDH Pain Algorithm" && <Image source={require("/Users/kylewandishin/Sites/CUSOM/secondtry/CU-Med-App/assets/appendixIII.jpg")} style={{width:310,height:405, marginTop:"3%"}}/>}
           </Box>
         </Box>
         {item.hasOwnProperty("sub") && 
@@ -45,6 +48,7 @@ const Widget = ({ item }) => {
             ))}
           </Box>
         }
+       
       </Box>
     </>
   );
@@ -58,12 +62,12 @@ const ThirdLayer = ({ route, navigation }) => {
     <>
       <Box
         w="100%"
-        h="11%"
+        h="9.2%"
         style={{
           backgroundColor: color,
         }}
-        pt="15%"
-        pl="3%"
+        pt="12%"
+        pl="5%"
       >
         <Box
           style={{ backgroundColor: color, flexDirection:"row" }}
@@ -71,26 +75,27 @@ const ThirdLayer = ({ route, navigation }) => {
           justifyContent="space-between"
         >
           <TouchableOpacity onPress={() => navigation.goBack()}>
-            <MaterialIcons name="arrow-back-ios" size={24} color="#DDD" />
+            <MaterialIcons name="arrow-back-ios" size={24} color="#fff" />
           </TouchableOpacity>
-          <Text style={{ fontSize: "23px", color:"#ddd", marginTop:"-1%"}}>{name}</Text>
-          <Box w="10%"></Box>
+          <Text style={{ fontSize: "23px", color:"#fff", marginTop:"-1%"}}>{name}</Text>
+          <Box w="11%"></Box>
         </Box>
       </Box>
-      <ScrollView>
+      <ScrollView style={{backgroundColor:"#f2eeee"}}>
         <Box
         position="absolute"
-        left="3.5%"
-        mt="-50%"
-        height="510%"
-        width="0.8%"
+        left="6%"
+        mt="-100%"
+        height="10000%"
+        width="0.7%"
+        style={{opacity:0.1}}
         backgroundColor="#333"
         >
           <Text style={{fontSize:"1px"}}>a</Text>
         </Box>
-        <Box w="100%" h="100%" p="5%" style={{ alignItem: "center" }} backgroundColor="#d">
+        <Box w="100%" h="100%" p="5%" ml="2.5%" style={{ alignItem: "center" }} >
           {data.map((item) => (
-            <Widget item={item} />
+            <Widget item={item} color={color} />
           ))}
         </Box>
       </ScrollView>
