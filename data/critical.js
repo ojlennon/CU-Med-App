@@ -653,14 +653,44 @@ const Crit = [
             {text:"Transition from TP to gastric",
             sub:[
               {text:"After infant demonstrates 1 week of steady weight gain on full feedings of and has weaned to at least HFNC"},
-              {text:"num 2"}
+              {text:"Maintain TP tube and place NGT."},
+              {text:"Transition by 1⁄4 volume from TP to NG continuous every 1-2 days"},
+              {text:"Attempt to consolidate feeds over 7-10 days"},
+              {text:"If consolidation fails due to emesis, consider obtaining UGI using contrast to evaluate esophagus, stomach size, and degree of reflux.",
+              sub:[{text:"Following results of UGI consider nissen and tube."}]},
+              {text:"Once Nissen/GT scheduled remove TP tube and transition to continuous NG feeds (rule out TP tube as cause for emesis)"},
+              {text:"May PO feed when on HFNC 4L or less"},
+              {text:"Obtain feeding and swallowing evaluation"}
+            ]},
+            {text:"Nissen/G-tube",
+            sub:[
+              {text:"If continuous NG feedings are not tolerated with TP tube out"},
+              {text:"If there is a failure to consolidate to q3 bolus feedings over 45 min within 30 days"},
+              {text:"Consider GT for inability to orally feed 6 weeks post-op"}
             ]}
           ] },
         ],
       },
       {
         name: "Hematology",
-        subPages: [{ name: "Hematology" }],
+        subPages: [
+          { name: "Hematology",
+            data:[
+              {text:"CBC & Coags as appropriate",
+              sub:[
+                {text:"Lab goals for non-ECMO patients",
+                sub:[
+                  {text:"Hct >35"},
+                  {text:"Platelets > 50"},
+                  {text:"PT< 18"},
+                  {text:"Fibrinogen > 150"}
+                ]}
+              ]},
+              {text:"Monitor for jaundice and treat as appropriate"},
+              {text:"Monitor HCT weekly until stable"},
+              {text:"Obtain Retic by 1mo age"}
+            ] }
+        ],
       },
     ],
   },
