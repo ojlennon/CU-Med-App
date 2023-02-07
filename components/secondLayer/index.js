@@ -23,7 +23,7 @@ const Widget = ({ name, pages, color="#0F0" }) => {
               ml="4%"
               p="4%"
               borderRadius="4px"
-              backgroundColor="#ccc"
+              backgroundColor="#d7d7d7"
               flexDirection="row"
               justifyContent="space-between"
               alignContent="center"
@@ -54,7 +54,7 @@ const Widget = ({ name, pages, color="#0F0" }) => {
               ml="3%"
               p="4%"
               borderRadius="5px"
-              backgroundColor="#aaa"
+              backgroundColor="#c4c4c4"
               flexDirection="row"
               justifyContent="space-between"
               alignContent="center"
@@ -80,6 +80,7 @@ const Widget = ({ name, pages, color="#0F0" }) => {
                   name: item.name,
                   data: item.data,
                   color: color,
+                  header: (item.header ? item.header : "")
                 })
               }
               style={{ borderRadius: "4%", alignItems: "center" }}
@@ -87,7 +88,7 @@ const Widget = ({ name, pages, color="#0F0" }) => {
               <Box
                 w="85%"
                 mt="2%"
-                backgroundColor="#bfbfbf"
+                backgroundColor="#bbbbbb"
                 style={{
                   justifyContent: "space-between",
                   flexDirection: "row",
@@ -128,10 +129,10 @@ const SecondTry = ({ route }) => {
         pt="10%"
         style={{ backgroundColor: color }}
       >
-        <Box pl="4%" pb="1.5%" pt="2%">
+        <Box pl="4%" pb="0.8%" pt="2%">
           <TouchableOpacity
             onPress={() => navigation.goBack()}
-            style={{ flexDirection: "row" }}
+            style={{ flexDirection: "row", justifyContent:"space-between" }}
           >
             <MaterialIcons
               name="arrow-back-ios"
@@ -141,15 +142,18 @@ const SecondTry = ({ route }) => {
             />
 
             <Text
-              style={{ fontSize: "20px", alignItems: "center", color: "#ddd" }}
+              style={{ fontSize: "20px", alignItems: "center", color: "#ddd", marginTop:"-0.7%" }}
             >
               {name}
             </Text>
+            <Box w="8%">
+              <Text style={{opacity:0}}>a</Text>
+            </Box>
           </TouchableOpacity>
         </Box>
       </Box>
 
-      <ScrollView style={{ height: "100%", p: "5%", backgroundColor: "#ddd" }}>
+      <ScrollView style={{ height: "100%", p: "5%", backgroundColor: "#eee" }}>
         <Box mb="15%">
           {subData.map((item) => (
             <Widget

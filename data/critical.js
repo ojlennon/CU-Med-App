@@ -179,8 +179,9 @@ const Crit = [
         ]  },
           {
             name: "Persistent Hypotension",
+            header:"If no response to NS bolus or persistent hypotension:",
             data: [
-              { header:"If no response to NS bolus or persistent hypotension:"},
+              
               {
                 text: "1st line: Epinephrine at 0.1 mcg/kg/min",
                 sub: [
@@ -461,15 +462,28 @@ const Crit = [
       },
       {
         name: "Infectious Disease",
-        subPages: [{ name: "Infectious Disease" }],
+        subPages: [{ name: "Infectious Disease", data:[{text:"Periop antibiotics", sub:[{text:"Ancef 50 mg/kg (prior to incision)"}]}]}],
       },
       {
         name: "Hematology",
-        subPages: [{ name: "Hematology" }],
+        subPages: [
+          { name: "Hematology", data:[
+            {text:"CBC & Coag panel 6 hours after admit"},
+            {text:"Lab goals for non-ECMO patients",
+            data:[
+              {text:"Hct >35"},
+              {text:"Platelets > 50"},
+              {text:"PT< 18"},
+              {text:"Fibrinogen > 150"}
+            ]},
+            {text:"Monitor for jaundice and treat as appropriate"},
+            {text:"Monitor HCT weekly until stable"}
+          ] }
+        ],
       },
       {
         name: "Neuro/Pain",
-        subPages: [{ name: "Neuro/Pain" }],
+        subPages: [{ name: "Neuro/Pain", data:[{text:"CDH Pain Algorithm"}] }],
       },
     ],
   },
@@ -482,30 +496,202 @@ const Crit = [
       {
         name: "Respiratory",
         subPages: [
-          { name: "Weaning phase from CMV s/p CDH Repair" },
-          { name: "Extubation" },
-          { name: "CPAP Weaning" },
-          { name: "Other" },
+          { name: "Weaning phase from CMV s/p CDH rep",
+            data:[
+              {text:"Aim for pCO2 50-65 mmHg; allowing for permissive [hypercapnia as long as the infant is not sensitive to changes in pCO2 (ie pH remains >7.2)"},
+              {text:"Standard wean plan: ABG Q8h: 0600, 1400, & 2200",
+              sub:[
+                {text:"Wean RR by 4 for PaCO2 less than 55."}
+              ]
+            },
+              {text:"Slow wean plans: ABG Q12h 0600 & 1800",
+              sub:[{text:"Wean RR by 2 for PaCO2 less than 55."}]}
+            ,{text:"Extubation goal settings: Rate 15, PIP 20, PEEP 5, PS 8-10"},
+            {text:"Obtain ECHO prior to extubation to eval tolerance of decreased iNO delivery following extubation. Obtain ECHO on 20 ppm and 10 ppm"}
+            ]
+        },
+          { name: "Extubation",
+            data:[
+              {text:"Mild: CPAP 6 cm H20 via flexitrunk and double iNO"},
+              {text:"Moderate-Severe: CPAP 8-10 cm H20 via flexitrunk and double iNO",
+              sub:[{text:"Maintain minimum FiO2 30% for all CDH."}]},
+              {text:"“Successful Extubation”: comfortable next morning?",
+              sub:[{text:"Discontinue ABGs, NIRS, and UAC/PAL."}]}
+            ] 
+          },
+          { name: "CPAP Weaning",
+            data:[
+              {text:"CPAP weaning readiness",
+              sub:[
+                {text:'FiO2 consistently < 50%'},
+                {text:"TCM < 60 mmHg."},
+                {text:"Tolerate RR 50-80s with preductal goal O2 sat >95%."}
+              ]},
+              {text:"Mild: Wean to goal of 5, then transition to HFNC 5L and continue wean"},
+              {text:"Moderate: Wean by 1 Q2-4 days to goal 5 then transition to HFNC 5L & continue wean"},
+              {text:"Severe: Wean by 1 QWk or Twice Weekly to goal 5 then transition to HFNC 5L and continue wean frequency."}
+            ] },
+          { name: "Other",
+            data:[
+              {text:"All CDH should remain on minimum wall O2 25cc"},
+              {text:"X-rays after extubation QMo/Th with CBG."},
+              {text:"X-rays after wean to NC QMonday with CBG"},
+              {text:"PaCO2 > 65 mmHg resume prior level of respiratory support and follow up in 4-7d with CXR/CBG"},
+              {text:"Infant who is still mechanically ventilated at 4 weeks of life, consult pulmonary and perform bronchoscopy"},
+            ]
+        },
         ],
       },
       {
         name: "Cardiovascular",
         subPages: [
-          { name: "Blood Pressure" },
-          { name: "Pulmonary Hypertension" },
+          { name: "Blood pressure",
+            data:[
+              {text:"Goal mean arterial blood pressure (MAP) 40-45 mmHg for 1st 24 hours. "},
+              {text:"After 24 hours goal MAP 45-50 mmHg"},
+              {text:"If pulse pressure is <15 mmHg target systolic BP 60-70 mmHg"}
+            ]
+          },
+          { name: "Pulmonary Hypertension",
+            data:[
+              {text:"Sildenafil Indications", 
+              sub:[
+                {text:"Remains dependent on iNO at 3 weeks of life"},
+                {text:"Supra-systemic PA pressure despite iNO therapy"},
+                {text:"> 3 weeks of age & ready to extubate with greater than ½ systemic PA pressure or increased reactivity with iNO wean from 20 ppm to 10 ppm"},
+                {text:"Test dose of PO sildenafil 0.25 mg/kg/dose"
+                ,sub:[{text:"If tolerated, increase to 0.5 mg/kg/dose and then 1mg/kg/dose every 8 hours."}]},
+                {text:"Obtain echo and if unable to wean off iNO or greater than ¾ systemic on iNO, increase slowly in 0.5 mg/kg increments to 2 mg/kg/dose"},
+                {text:"In a patient on IV sildenafil, transition IV to PO sildenafil when taking greater than 60ml/kg of feeds."},
+                {text:"Give 1 mg/kg dose and post administration wean the IV sildenafil by 50%. 8 hours later administer 1 mg/kg of PO sildenafil and stop the IV sildenafil"}
+              ]},
+              {text:"iNO Weaning",
+              sub:[
+                {text:"Perform baseline echo when ready to wean on 20 ppm and 10 ppm"},
+                {text:"If no reactivity noted and ready to extubate, extubate to 20 ppm non-invasive iNO"},
+                {text:"If not ready to extubate then no iNO weaning"},
+                {text:"If echo is stable wean iNO off slowly in 1 ppm increments Q12h and obtain and echo once off iNO for 4-6 hours"},
+                {text:"Restart or increase iNO if greater than ½ systemic PA pressure by TR jet or if moderate or severe septal flattening is present."}
+              ]}
+            ] },
         ],
       },
       {
         name: "F.E.N.G",
         subPages: [
-          { name: "Total Fluids" },
-          { name: "GI" },
-          { name: "Enteral Feeding Guidelines " },
+          { name: "Total Fluids",
+          data:[
+            {text:"Day of repair: Increase total fluids by 30-50 mL/kg using Plasma-lyte to make up for insensible losses related to repair.",
+              sub:[{text:"Monitor UO and BP to adjust TF overnight."}]
+            },
+            {text:"Day after repair: Return TF goal to 80-100 mL/kg/day including all drips"},
+            {text:"48 hours post-repair: Monitor fluid balance/weight",
+            sub:[{text:"Fluid overload >10%- Initiate Lasix 1 mg/kg IV QD-TID"}]
+            },
+            {text:"Titrate fluids as needed to max 120 mL/kg/day."},
+            {text:"When feeds are added in, maintain TF goal  ≤ 130-140 mL/kg/day."}
+          ] },
+          { name: "GI",
+          data:[
+            {text:"Anderson tube to continuous suction (Or Replogle 10fr to low-intermittent suction)"},
+            {text:"Routine interventions to maintain patency"},
+          ] },
+          { name: "Enteral Feeding Guidelines",
+          data:[
+            {text:"Initiate feeding on return of bowel function (usually 48 hours post-surgery) or when hemodynamically stable (less than 5 mcg/kg/min dopamine).",
+              sub:[{text:"Goal is to use maternal breast milk; if not available, utilize Good Start or Similac total comfort (whey based)"}]
+            },
+            {text:"Tolerance of feeds considered 3 or less emesis daily."},
+            {text:"Mild-Moderate:",
+            sub:[
+              {text:"Route- Nasogastric",
+              sub:[
+                {text:"Consider TP for moderate (PPLV closer to 15%)"}
+              ]},
+              {text:"Initiate bolus gastric feeds at 20 ml/kg/day."},
+              {text:"Fortify daily once above trophics to goal of 24 kcal/oz"},
+              {text:"Advance by 30 mL/kg/day daily as tolerated."},
+              {text:"Goal 140 mL/kg/day of 24 kcal/oz for targeted 110-120 kcal/kg/day"},
+              {text:"Consider liquid protein for moderate (may initiate >trophics)"},
+              {text:"Intolerance",
+              sub:[
+                {text:"Step 1: Continuous feeds"},
+                {text:"Step 2: TP feeds"},
+                {text:"May need NGT to vent"}
+              ]}
+            ]},
+            {text:"Severe CDH:",
+            sub:[
+              {text:"Route- TP placed at time of surgery"},
+              {text:"Initiate continuous feeds at 20 mL/kg/day via TP tube."},
+              {text:"Fortify by 2 kcal/oz daily once above trophics to goal of 26 kcal/oz"},
+              {text:"Advance by 20 mL/kg/day"},
+              {text:"Goal 140 mL/kg/day of 26 kcal/oz for targeted 120 kcal/kg/day"},
+              {text:"(For Term infants) Add liquid protein above trophics"},
+              {text:"Intolerance",
+              sub:[
+                {text:"May need NGT to vent"},
+                {text:"Hold at previously tolerated volume"}
+              ]}
+            ]},
+            {text:"Fortification",
+            sub:[
+              {text:"Term infants- Fortify with Gerber Good Start or Similac Total Comfort (when available)",
+              sub:[{text:"May need to trial extensively hydrolyzed formula"}]},
+              {text:"<36 weeks utilize HMF"},
+              {text:"Consider increased caloric density for suboptimal growth"}
+            ]},
+            {text:"Failure to thrive",
+            sub:[
+              {text:"Advance to 26-27 kcal/oz maintaining 140 mL/kg/day prior to advancing total fluids",
+              sub:[
+                {text:"For infants already receiving above goal- evaluate respiratory support"},
+                {text:"Advance by 10 mL/kg/day increments to max 160 mL/kg/day   --(Initiate Lasix to avoid fluid overload)"},
+                {text:"Consider transitioning to gastric feeds for TP fed infants to optimize growth"}
+              ]},
+              {text:"If caloric density and/or feeding volumes are limited secondary to patient status and the patient is unable to meet nutritional needs for ≥48 hours, may need to decrease feed volumes to allow for at least 40-60 mL/kg of TPN until enteral feedings can be advanced to goal"}
+            ]},
+            {text:"Transition from TP to gastric",
+            sub:[
+              {text:"After infant demonstrates 1 week of steady weight gain on full feedings of and has weaned to at least HFNC"},
+              {text:"Maintain TP tube and place NGT."},
+              {text:"Transition by 1⁄4 volume from TP to NG continuous every 1-2 days"},
+              {text:"Attempt to consolidate feeds over 7-10 days"},
+              {text:"If consolidation fails due to emesis, consider obtaining UGI using contrast to evaluate esophagus, stomach size, and degree of reflux.",
+              sub:[{text:"Following results of UGI consider nissen and tube."}]},
+              {text:"Once Nissen/GT scheduled remove TP tube and transition to continuous NG feeds (rule out TP tube as cause for emesis)"},
+              {text:"May PO feed when on HFNC 4L or less"},
+              {text:"Obtain feeding and swallowing evaluation"}
+            ]},
+            {text:"Nissen/G-tube",
+            sub:[
+              {text:"If continuous NG feedings are not tolerated with TP tube out"},
+              {text:"If there is a failure to consolidate to q3 bolus feedings over 45 min within 30 days"},
+              {text:"Consider GT for inability to orally feed 6 weeks post-op"}
+            ]}
+          ] },
         ],
       },
       {
         name: "Hematology",
-        subPages: [{ name: "Hematology" }],
+        subPages: [
+          { name: "Hematology",
+            data:[
+              {text:"CBC & Coags as appropriate",
+              sub:[
+                {text:"Lab goals for non-ECMO patients",
+                sub:[
+                  {text:"Hct >35"},
+                  {text:"Platelets > 50"},
+                  {text:"PT< 18"},
+                  {text:"Fibrinogen > 150"}
+                ]}
+              ]},
+              {text:"Monitor for jaundice and treat as appropriate"},
+              {text:"Monitor HCT weekly until stable"},
+              {text:"Obtain Retic by 1mo age"}
+            ] }
+        ],
       },
     ],
   },

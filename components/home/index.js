@@ -9,12 +9,12 @@ import Crit from '../../data/critical'
 import NonCrit from '../../data/nonCritical'
 const Widget = ({name, icon="", color="#fff"}) => {
     return(
-        <Box width="110%" mt="3%" ml="-5%" mb="-40%" p ="3.5%" borderRadius="5px" backgroundColor="#ccc" flexDirection="row" justifyContent="space-between">
+        <Box width="110%" mt="3%" ml="-5%" mb="-40%" p ="3.5%" borderRadius="5px" backgroundColor="#ddd" flexDirection="row" justifyContent="space-between">
             <Box flexDirection="row" justifyContent="center">
                 {icon==="bandage"?
                     <Box flexDirection="row" pl="2%" mb="-10%">
                         <Box backgroundColor={color} h="58%" width="14%" alignItems="center" borderRadius="3px" ml="-3%" justifyContent="center">
-                            <Fontisto name={icon} size={22} style={{ padding:"5%", color:"#dcdcdc"}}/>
+                            <Fontisto name={icon} size={22} style={{ padding:"5%", color:"#eaeaea"}}/>
                         </Box>
                         <Text style={{marginLeft:"3%", marginTop:"2.5%", fontSize:"17px"}}>{name}</Text>
                     </Box>
@@ -22,7 +22,7 @@ const Widget = ({name, icon="", color="#fff"}) => {
                     <>
                     <Box flexDirection="row" pl="2%" mb="-10%">
                         <Box backgroundColor={color} h="57%" width="14%" alignItems="center" borderRadius="3px" ml="-3%" justifyContent="center">
-                            <FontAwesome5 name={icon} size={22} style={{ padding:"5%", color:"#dcdcdc"}}/>
+                            <FontAwesome5 name={icon} size={22} style={{ padding:"5%", color:"#eaeaea"}}/>
                         </Box>
                         <Text style={{marginLeft:"3%", marginTop:"2.5%", fontSize:"17px"}}>{name}</Text>
                     </Box>
@@ -43,20 +43,8 @@ const Home = ({ navigation }) => {
     });  
   return (
     <>
-          <TopBar />
-          {/* <TextInput label='TEXT' variant='outlined' defaultValue={nam} onChangeText={newName => setName(newName)}/>
-          
-          <Button
-                title="Go to Details"
-              onPress={() => navigation.navigate('Second',
-                  {
-                      name: nam
-                  })}
-          /> */}
-          
-
-
-    <Box height="70%" backgroundColor="#ddd" justifyContent="top" alignItems="center">
+    <TopBar />
+    <Box height="70%" backgroundColor="#eee" justifyContent="top" alignItems="center">
         <Box height="100%" width="100%" p="10%" marginTop="-3%">
             <Text style={{ marginLeft: "-5%", marginBottom: "1%", fontSize: "18px", fontWeight: "400" }}>Critical</Text>
             {
