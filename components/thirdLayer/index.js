@@ -44,6 +44,17 @@ const Widget = ({ item, color }) => {
                 <Box style={{ marginTop: "3%",borderRadius:"4%", marginHorizontal:"5%",opacity:0.9, backgroundColor:"#FFA500", padding:"1%"}}>
                   <Text style={{fontSize:"18px"}}>{subInfo.text}</Text>
                 </Box>
+                {subInfo.hasOwnProperty("sub") &&
+                  <Box flexDirection="column">
+                      {subInfo.sub.map((subInfo) =>(
+                        <>
+                          <Box style={{ marginTop: "3%",borderRadius:"4%", marginHorizontal:"10%",opacity:0.9, backgroundColor:"#F00", padding:"1%"}}>
+                            <Text style={{fontSize:"18px"}}>{subInfo.text}</Text>
+                          </Box>
+                        </>
+                      ))}
+                  </Box>
+                }
                 </>
             ))}
           </Box>
