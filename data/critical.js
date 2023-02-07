@@ -179,8 +179,9 @@ const Crit = [
         ]  },
           {
             name: "Persistent Hypotension",
+            header:"If no response to NS bolus or persistent hypotension:",
             data: [
-              { header:"If no response to NS bolus or persistent hypotension:"},
+              
               {
                 text: "1st line: Epinephrine at 0.1 mcg/kg/min",
                 sub: [

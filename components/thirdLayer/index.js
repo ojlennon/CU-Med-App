@@ -69,6 +69,7 @@ const ThirdLayer = ({ route, navigation }) => {
   const { name } = route.params;
   const { data } = route.params;
   const { color } = route.params
+  const { header } = route.params
   return (
     <>
       <Box
@@ -105,6 +106,10 @@ const ThirdLayer = ({ route, navigation }) => {
           <Text style={{fontSize:"1px"}}>a</Text>
         </Box>
         <Box w="100%" h="100%" p="5%" ml="2.5%" style={{ alignItem: "center" }} >
+          { header!=="" &&
+            <Box backgroundColor="#ccc" style={{minHeight:50}} w="120%" ml="-8%" pv="3%" ph="5%" mt="-5.5%" mb="3%" justifyContent="center" s>
+                <Text style={{fontSize:"20", width:"92%"}}>{header}</Text>
+            </Box>}
           {data.map((item) => (
             <Widget item={item} color={color} />
           ))}

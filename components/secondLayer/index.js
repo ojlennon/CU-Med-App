@@ -80,6 +80,7 @@ const Widget = ({ name, pages, color="#0F0" }) => {
                   name: item.name,
                   data: item.data,
                   color: color,
+                  header: (item.header ? item.header : "")
                 })
               }
               style={{ borderRadius: "4%", alignItems: "center" }}
