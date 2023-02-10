@@ -6,6 +6,8 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Home from './components/home'
 import SecondLayer from './components/secondLayer';
 import ThirdLayer from './components/thirdLayer';
+import Appendix from './components/appendix';
+import Extra from './components/extra';
 const Stack = createNativeStackNavigator();
 
 
@@ -16,6 +18,8 @@ export default function App() {
         <Stack.Screen name="Home" component={Home}/>
         <Stack.Screen name="Second" component={SecondLayer} />
         <Stack.Screen name="Third" component={ThirdLayer}/>
+        <Stack.Screen name="Appendix" component={Appendix} />
+        <Stack.Screen name="Extra" component={Extra} />
       </Stack.Navigator>
     </NavigationContainer>
   )

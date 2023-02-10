@@ -7,15 +7,6 @@ import { MaterialIcons } from "@expo/vector-icons";
 import { ScrollView } from "react-native";
 import { FontAwesome } from '@expo/vector-icons'; 
 
-
-const subWidget = ({ text }) => {
-  return (
-    <>
-      <Text>{text}</Text>
-    </>
-  )
-}
-
 const Widget = ({ item, color }) => {
   return (
     <>
@@ -41,14 +32,14 @@ const Widget = ({ item, color }) => {
           <Box flexDirection="column">
             {item.sub.map((subInfo) => (
               <>
-                <Box style={{ marginTop: "3%",borderRadius:"4%", marginHorizontal:"5%",opacity:0.9, backgroundColor:"#FFA500", padding:"1%"}}>
+                <Box style={{ marginTop: "3%",borderRadius:"4%", marginLeft:"5%",opacity:0.9, backgroundColor:"#d8d8d8", padding:"1%"}}>
                   <Text style={{fontSize:"18px"}}>{subInfo.text}</Text>
                 </Box>
                 {subInfo.hasOwnProperty("sub") &&
                   <Box flexDirection="column">
                       {subInfo.sub.map((subInfo) =>(
                         <>
-                          <Box style={{ marginTop: "3%",borderRadius:"4%", marginHorizontal:"10%",opacity:0.9, backgroundColor:"#F00", padding:"1%"}}>
+                          <Box style={{ marginTop: "3%",borderRadius:"4%", marginLeft:"10%",opacity:0.9, backgroundColor:"#d0d0d0", padding:"1%"}}>
                             <Text style={{fontSize:"18px"}}>{subInfo.text}</Text>
                           </Box>
                         </>

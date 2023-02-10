@@ -137,12 +137,12 @@ const SecondTry = ({ route }) => {
             <MaterialIcons
               name="arrow-back-ios"
               size={22}
-              color="#ddd"
+              color="#eee"
               style={{ marginTop: "0%" }}
             />
 
             <Text
-              style={{ fontSize: "20px", alignItems: "center", color: "#ddd", marginTop:"-0.7%" }}
+              style={{ fontSize: "20px", alignItems: "center", color: "#eee", marginTop:"-0.7%" }}
             >
               {name}
             </Text>
