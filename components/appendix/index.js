@@ -1,10 +1,7 @@
-import { View, Text, Image } from "react-native";
 import React from "react";
 import { Box } from "@react-native-material/core";
-import { TouchableOpacity, ScrollView } from "react-native";
-import { MaterialIcons } from "@expo/vector-icons";
-import { useState } from "react";
-import { AntDesign, FontAwesome } from "@expo/vector-icons";
+import { TouchableOpacity, ScrollView, Text, Image } from "react-native";
+import { MaterialIcons, FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
 const Widget = ({ item, color }) => {

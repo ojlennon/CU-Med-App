@@ -1,12 +1,12 @@
-import { View, Text, TouchableOpacity, ScrollView } from 'react-native'
+import { Text, TouchableOpacity } from 'react-native'
 import React from 'react'
 import { useState } from 'react';
-import { Button, Box, TextInput } from "@react-native-material/core";
+import { Box } from "@react-native-material/core";
 import TopBar from '../topBar';
-import { useFonts } from 'expo-font';
 import { FontAwesome5,MaterialIcons,Fontisto, MaterialCommunityIcons,AntDesign } from '@expo/vector-icons'; 
 import Crit from '../../data/critical'
 import NonCrit from '../../data/nonCritical'
+
 const Widget = ({name, icon="", color="#fff"}) => {
     return(
         <Box width="110%" mt="3%" ml="-5%" h={60} p ="3.5%" borderRadius="5px" backgroundColor="#ddd" flexDirection="row" justifyContent="space-between">
@@ -43,7 +43,6 @@ const NonCritWidget = ({name, color="#fff", item, navigation}) => {
         <Box width="110%" mt="3%" ml="-5%" mb="0%" borderRadius="5px" backgroundColor="#eee" flexDirection="row" height={58} justifyContent="space-between">
             <TouchableOpacity onPress={() => navigation.navigate("Extra", {
                             name:item.name,
-                            header:item.header,
                             color:"#AB3428",
                             data:item.data
                         })}>
@@ -58,10 +57,8 @@ const NonCritWidget = ({name, color="#fff", item, navigation}) => {
                 </Box>
             </TouchableOpacity>
             <TouchableOpacity style={{marginLeft:"-22%"}} onPress={() => navigation.navigate("Extra", {
-                            name:item.name,
-                            header:item.header,
+                            name:"Policy",
                             color:"#CDAB3C",
-                            data:item.data
                         })}>
             <Box flexDirection="row" justifyContent="space-between" alignItems="center" borderRadius="5px"backgroundColor="#ddd" width="52.5%">
                 <Box flexDirection="row"height={58} p="3%" ml="5%" alignItems="center">
@@ -101,9 +98,6 @@ const NonCritWidget = ({name, color="#fff", item, navigation}) => {
 
 const Home = ({ navigation }) => {
     const[nam, setName] = useState("") 
-    const [loaded] = useFonts({   // make sure path is correct
-        nunito: require('../../assets/fonts/Nunito-VariableFont_wght.ttf'),
-    });  
   return (
     <Box>
         <Box>

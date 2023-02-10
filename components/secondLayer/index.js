@@ -1,4 +1,4 @@
-import { View, Text, TouchableOpacity, ScrollView } from "react-native";
+import { Text, TouchableOpacity, ScrollView } from "react-native";
 import React from "react";
 import { Box } from "@react-native-material/core";
 import { MaterialIcons } from "@expo/vector-icons";

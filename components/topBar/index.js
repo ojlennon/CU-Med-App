@@ -1,8 +1,6 @@
 import { Text, View, Image } from 'react-native'
 import React, { useState } from 'react'
-import { Button, Box, IconButton } from "@react-native-material/core";
-import { TouchableOpacity } from 'react-native';
-import MenuIcon from '@mui/icons-material/Menu';
+import {Box} from "@react-native-material/core";
 
 const TopBar = () => {
     const [s, setS] = useState(false)

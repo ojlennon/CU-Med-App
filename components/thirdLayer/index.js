@@ -1,8 +1,6 @@
-import { View, Text, Image } from "react-native";
+import { Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
-import { TouchableOpacity } from "react-native";
 import { Box } from "@react-native-material/core";
-import { borderLeftColor } from "@mui/system";
 import { MaterialIcons } from "@expo/vector-icons";
 import { ScrollView } from "react-native";
 import { FontAwesome } from '@expo/vector-icons'; 

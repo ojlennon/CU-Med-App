@@ -1,6 +1,59 @@
 const NonCrit = [
     {
         name:"Background and Definitions",
+        data:[
+            {text:"Congenital Diaphragmatic Hernia (CDH):",
+            sub:[
+                {text:"a congenital defect in the diaphragm that allows herniation of abdominal viscera into the thorax"}
+            ]},
+            {text:"Severity Classification:",
+            sub:[
+                {text:"Mild - PPLV > 20% O:E > 45%"},
+                {text:"Moderate -  PPLV 15-20% O:E 35-45%"},
+                {text:"Severe - PPLV <15%, O:E < 35%"},
+            ]},
+            {text:"Incidence:",
+            sub:[{text:"1 in 3000  to 5000 live births"}]},
+            {text:"Purpose / Objective:",
+            sub:[{text:"Provide standardized guidelines for the management of infants with CDH"}]},
+            {text:"Patient Population:",
+            sub:[
+                {text:"All pregnancies complicated by fetal diagnosis of CDH "},
+                {text:"All infants affected by CDH "},
+            ]},
+            {text:"Prenatal Evaluation:",
+            sub:[
+                {text:"Those with prenatal diagnosis referred for Colorado Fetal Care Center consultation with Maternal Fetal Medicine, Neonatology, and Pediatric Surgery "},
+                {text:"Documentation of the prenatal consult can be found in mother’s EPIC chart "},
+                {text:"Two antenatal Ultrasounds",
+                sub:[
+                    {text:"Initial at 24 weeks "},
+                    {text:"Final planning around 34 weeks "},
+                    {text:"Ultrasound (LHR, observed to expected LHR (O/E LHR), liver position, other anomalies)"}
+                ]},
+                {text:"MRI",
+            sub:[
+                {text:"20-24 weeks- liver position, other anomalies, percent predicted lung volume (PPLV) "},
+                {text:"34 weeks- total lung volume, O:E LHR"},
+            ]},
+            {text:"Fetal Echocardiogram",
+            sub:[{text:"Anatomy scan, cardiac function, hydrops"}]},
+            {text:"Amniocentesis"},
+            {text:"Delivery",
+            sub:[
+                {text:"Planned at 39 weeks "},
+                {text:"All deliveries to take place in the operating room "},
+                {text:"Mode of delivery dependent on PPLV at 34 weeks "},
+                {text:"PPLV >15 deliver via induced vaginal delivery around 39 weeks with low threshold for cesarean section for signs of fetal distress "},
+                {text:"PPLV ≤ 15 deliver by cesarean section at 39 weeks"},
+            ]},
+            {text:"ECMO in the delivery room for infants with PPLV ≤ 15"}
+            ]},
+            {text:"Outside Admission Evaluation:",
+            sub:[
+                {text:"Infants who are born at an outside hospital should follow the Delivery Room Management and transfer to CHCO when clinically stable"}
+            ]}
+        ]
     },
     {
         name: "Appendix I",
