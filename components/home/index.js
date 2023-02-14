@@ -1,31 +1,41 @@
-import { Text, TouchableOpacity } from 'react-native'
+import { Text, TouchableOpacity, ScrollView } from 'react-native'
 import React from 'react'
 import { useState } from 'react';
 import { Box } from "@react-native-material/core";
 import TopBar from '../topBar';
-import { FontAwesome5,MaterialIcons,Fontisto, MaterialCommunityIcons,AntDesign } from '@expo/vector-icons'; 
+import { FontAwesome5,MaterialIcons,Fontisto, MaterialCommunityIcons,AntDesign,Entypo, Ionicons } from '@expo/vector-icons'; 
 import Crit from '../../data/critical'
 import NonCrit from '../../data/nonCritical'
 
 const Widget = ({name, icon="", color="#fff"}) => {
     return(
-        <Box width="110%" mt="3%" ml="-5%" h={60} p ="3.5%" borderRadius="5px" backgroundColor="#ddd" flexDirection="row" justifyContent="space-between">
-            <Box flexDirection="row" justifyContent="center">
+        <Box width="100%" mt="3%" ml="-5%" h={60} p ="3.5%" borderRadius="5px" backgroundColor="#ddd" flexDirection="row" justifyContent="space-between">
+            <Box flexDirection="row" justifyContent="center" alignItems="center">
                 {icon==="bandage"?
-                    <Box flexDirection="row" pl="2%" mb="-10%">
-                        <Box backgroundColor={color} h="58%" width="14%" alignItems="center" borderRadius="3px" ml="-3%" justifyContent="center">
-                            <Fontisto name={icon} size={22} style={{ padding:"5%", color:"#eaeaea"}}/>
+                    <Box flexDirection="row" pl="2%" alignItems="center" >
+                        <Box backgroundColor={color} h={40} w={40} alignItems="center" borderRadius="3px" ml="-3%" justifyContent="center">
+                            <Fontisto name={icon} size={22} style={{ color:"#eaeaea"}}/>
                         </Box>
-                        <Text style={{marginLeft:"3%", marginTop:"2.5%", fontSize:"17px"}}>{name}</Text>
+                        <Text style={{marginLeft:"3%", fontSize:"17px"}}>{name}</Text>
                     </Box>
                     :
                     <>
-                    <Box flexDirection="row" pl="2%" mb="-10%">
-                        <Box backgroundColor={color} h="57%" width="14%" alignItems="center" borderRadius="3px" ml="-3%" justifyContent="center">
-                            <FontAwesome5 name={icon} size={22} style={{ padding:"5%", color:"#eaeaea"}}/>
+                    {icon==="air" ?
+                    <Box flexDirection="row" alignItems="center" >
+                        <Box backgroundColor={color} h={40} width={40} alignItems="center" borderRadius="3px" ml="-4.5%" justifyContent="center">
+                            <Entypo name={icon} size={22} style={{ color:"#eaeaea"}}/>
                         </Box>
-                        <Text style={{marginLeft:"3%", marginTop:"2.5%", fontSize:"17px"}}>{name}</Text>
+                        <Text style={{marginLeft:"7.5%", fontSize:"17px"}}>{name}</Text>
                     </Box>
+                    :
+                    <Box flexDirection="row" pl="2%" alignItems="center" >
+                        <Box backgroundColor={color} h={40} width={40} alignItems="center" borderRadius="3px" ml="-3%" justifyContent="center">
+                            <FontAwesome5 name={icon} size={22} style={{ color:"#eaeaea"}}/>
+                        </Box>
+                        <Text style={{marginLeft:"3%", fontSize:"17px"}}>{name}</Text>
+                    </Box>
+                    }
+                    
                     </>
                 }
                 
@@ -40,7 +50,7 @@ const NonCritWidget = ({name, color="#fff", item, navigation}) => {
     return(
         <>
         {name==="Background and Definitions" ?
-        <Box width="110%" mt="3%" ml="-5%" mb="0%" borderRadius="5px" backgroundColor="#eee" flexDirection="row" height={58} justifyContent="space-between">
+        <Box width="100%" mt="3%" ml="-5%" mb="0%" borderRadius="5px" backgroundColor="#eee" flexDirection="row" height={58} justifyContent="space-between">
             <TouchableOpacity onPress={() => navigation.navigate("Extra", {
                             name:item.name,
                             color:"#AB3428",
@@ -72,17 +82,19 @@ const NonCritWidget = ({name, color="#fff", item, navigation}) => {
             </TouchableOpacity>
         </Box>
         :
-        <TouchableOpacity onPress={() => navigation.navigate("Appendix", {
+        <>
+        {name==="Personnel"?
+        <TouchableOpacity onPress={() => navigation.navigate("Personnel", {
             name:item.name,
             header:item.header,
             color:item.color,
             data:item.data
         })}>
-        <Box width="110%" mt="3%" ml="-5%" mb="0%" p ="3.5%" borderRadius="5px" backgroundColor="#ddd" flexDirection="row" justifyContent="space-between">
+        <Box width="100%" mt="3%" ml="-5%" mb="0%" p ="3.5%" borderRadius="5px" backgroundColor="#ddd" flexDirection="row" justifyContent="space-between">
             <Box flexDirection="row" justifyContent="center">
                 <Box flexDirection="row" pl="2%">
                     <Box backgroundColor={color} alignItems="center" borderRadius="3px" ml="-3.5%" justifyContent="center">
-                        <MaterialCommunityIcons name="file-tree" size={22} style={{ paddingHorizontal:"2.5%",paddingVertical:"2.5%", color:"#eaeaea"}}/>
+                        <Ionicons name="people-outline" size={22} style={{ paddingHorizontal:"2.5%",paddingVertical:"2.5%", color:"#eaeaea"}}/>
                     </Box>
                     <Text style={{marginLeft:"5%", marginTop:"4.5%", fontSize:"17px"}}>{name}</Text>
                 </Box>            
@@ -91,6 +103,27 @@ const NonCritWidget = ({name, color="#fff", item, navigation}) => {
             <MaterialIcons name="arrow-forward-ios" size={18} style={{marginTop:"3%", marginRight:"-1%"}}/>
         </Box>
         </TouchableOpacity>
+        :
+        <TouchableOpacity onPress={() => navigation.navigate("Appendix", {
+            name:item.name,
+            header:item.header,
+            color:item.color,
+            data:item.data
+        })}>
+        <Box width="100%" mt="3%" ml="-5%" mb="0%" p ="3.5%" borderRadius="5px" backgroundColor="#ddd" flexDirection="row" justifyContent="space-between">
+            <Box flexDirection="row" justifyContent="center">
+                <Box flexDirection="row" pl="2%">
+                    <Box backgroundColor={color} alignItems="center" borderRadius="3px" ml="-3.5%" justifyContent="center">
+                        <MaterialCommunityIcons name="file-tree" size={22} style={{ paddingHorizontal:"2.5%",paddingVertical:"2.5%", color:"#eaeaea"}}/>
+                    </Box>
+                    <Text style={{marginLeft:"5%", marginTop:"4.5%", fontSize:"17px"}}>{name}</Text>
+                </Box>            
+            </Box>
+            <MaterialIcons name="arrow-forward-ios" size={18} style={{marginTop:"3%", marginRight:"-1%"}}/>
+        </Box>
+        </TouchableOpacity>
+        }   
+        </>
         }
         </>
     )
@@ -102,8 +135,9 @@ const Home = ({ navigation }) => {
     <Box>
         <Box>
         <TopBar />
-        <Box height="70%" backgroundColor="#eee" justifyContent="top" alignItems="center">
-            <Box height="100%" width="100%" p="10%" marginTop="-4%">
+        <Box height="70%" backgroundColor="#eee" width="100%" justifyContent="top" alignItems="center" >
+            <ScrollView showsVerticalScrollIndicator={false} width={"100%"}>
+            <Box height="100%" width="110%" pv="10%" ph="10%" ml="-1%" marginTop="-4%">
                 {
                     Crit.map((item) => (
                         <TouchableOpacity onPress={() => navigation.navigate("Second", {
@@ -123,6 +157,7 @@ const Home = ({ navigation }) => {
                     ))
                 }
                 </Box>
+            </ScrollView>
             </Box>
         </Box>
     </Box>

@@ -8,6 +8,8 @@ import SecondLayer from './components/secondLayer';
 import ThirdLayer from './components/thirdLayer';
 import Appendix from './components/appendix';
 import Extra from './components/extra';
+import Personnel from './components/personnel';
+
 const Stack = createNativeStackNavigator();
 
 
@@ -20,6 +22,7 @@ export default function App() {
         <Stack.Screen name="Third" component={ThirdLayer}/>
         <Stack.Screen name="Appendix" component={Appendix} />
         <Stack.Screen name="Extra" component={Extra} />
+        <Stack.Screen name="Personnel" component={Personnel} />
       </Stack.Navigator>
     </NavigationContainer>
   )

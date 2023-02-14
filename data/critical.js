@@ -46,7 +46,7 @@ const Crit = [
               { text: "Preductal oxygen sats 85-95%" },
               { text: "Increasing minute ventilation towards 0.6 l/min" },
               {
-                text: "Base deficit > - 6. Administer Sodium bicarbonate 2 meq/kg over 30 minutes",
+                text: "Base deficit greater than - 6. Administer Sodium bicarbonate 2 meq/kg over 30 minutes",
               },
               {
                 text: "If adequately ventilated PaCO2 < 45mmHg, wean PIP stepwise to 20 and maintain rate",
@@ -64,7 +64,7 @@ const Crit = [
               },
               { text: "Preductal saturations < 85%" },
               {
-                text: "Persistent respiratory acidosis at 1 hour (pH <7.2, CO2 >65, BE <  than -6)",
+                text: "Persistent respiratory acidosis at 1 hour (pH <7.2, CO2 >65, Base deficit less <  than -6)",
               },
               { text: "Cerebral NIRS < 70" },
               {
@@ -139,7 +139,7 @@ const Crit = [
                 text: "Agitation impeding ventilation administer fentanyl 2 mcg/kg",
               },
               {
-                text: "Consider surfactant for premature infants (GA < 34 weeks), or s/p FETO",
+                text: "Consider surfactant for premature infants (GA < 34 weeks), or s/p FETO delivered within 24 hours of balloon removal",
               },
               { text: "Please obtain weight prior to leaving DR" },
             ],
@@ -185,14 +185,14 @@ const Crit = [
               {
                 text: "1st line: Epinephrine at 0.1 mcg/kg/min",
                 sub: [
-                {text: "1) Titrate by 0.05 mcg/kg/min to a max of 0.5 mcg/kg/min"}
+                {text: "1) Titrate by 0.02 mcg/kg/min every 5 minutes to a max of 0.5 mcg/kg/min"}
                 ]
               },
               {
-                text: "2nd line: Dopamine at 10 mcg/kg/min",
+                text: "2nd line: Dopamine at 5 mcg/kg/min",
                 sub: [
                   { text: "1) Titrate by 2mcg/kg/min to max of 20 mcg/kg/min." },
-                  {text:"2) Add in the 3rd line when Dopamine at 15 mcg/kg/min."}
+                  {text:"2) Order the 3rd line when Dopamine at 15 mcg/kg/min."}
                 ]
               },
               {
@@ -221,6 +221,7 @@ const Crit = [
           { name: "Access",
             header: "Place double lumen UVC & UAC" ,
             data: [
+              {text:"Right Saphenous PICC if UVC non-centra"}
             ]},
           { name: "GI",
             header:"Place anderson tube to continuous drainage",
@@ -695,5 +696,11 @@ const Crit = [
       },
     ],
   },
+  {
+    name:"ECMO",
+    icon: "air",
+    color:"#000",
+    subData:[]
+  }
 ];
 export default Crit;
