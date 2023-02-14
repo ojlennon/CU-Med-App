@@ -60,7 +60,7 @@ const NonCritWidget = ({name, color="#fff", item, navigation}) => {
                             name:"Policy",
                             color:"#CDAB3C",
                         })}>
-            <Box flexDirection="row" justifyContent="space-between" alignItems="center" borderRadius="5px"backgroundColor="#ddd" width="52.5%">
+            <Box flexDirection="row" justifyContent="space-between" alignItems="center" borderRadius="5px"backgroundColor="#ddd" width="52.7%">
                 <Box flexDirection="row"height={58} p="3%" ml="5%" alignItems="center">
                     <Box backgroundColor="#CDAB3C" alignItems="center" borderRadius="3px" justifyContent="center" width={38} height={38}>
                         <MaterialIcons name="policy" size={22} style={{ paddingHorizontal:"2.5%",paddingVertical:"3.5%", color:"#eaeaea"}}/>
