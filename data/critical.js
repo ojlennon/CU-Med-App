@@ -699,7 +699,7 @@ const Crit = [
   {
     name:"ECMO",
     icon: "air",
-    color:"#000",
+    color:"#91123C",
     subData:[]
   }
 ];

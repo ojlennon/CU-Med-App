@@ -107,8 +107,8 @@ const Extra = ({route}) => {
             <Box alignItems="center" justifyContent="center" backgroundColor="#ddd" mv="3%" p="3%">
                 <Text style={{fontSize:"20px"}}>14FOUR Technology</Text>
                 <Box mt="3%" mb="3%">
-                <Text style={{textAlign:"center"}}>
-                    This app was created by Kyle Wandishin and Owen Lennon. 
+                <Text style={{textAlign:"center", paddingHorizontal:"3%"}}>
+                    This app was created by Kyle Wandishin and Owen Lennon.
                 </Text>
                 </Box>
 

@@ -181,8 +181,29 @@ const NonCrit = [
     },
     {
         name:"Personnel",
-        color:"#000"
-    }
+        color:"#8e6152"
+    },
+    {
+        name:"Articles",
+        color:"#683b2c",
+        data:[
+            {
+                name:"Update on Congenital Diaphragmatic Hernia",
+                author:"Debnath Chatterjee, Richard J Ing, Jason Gien",
+                link:"https://pubmed.ncbi.nlm.nih.gov/31335403/"
+            },
+            {
+                name:"Pulmonary artery endothelial cell dysfunction and decreased populations of highly proliferative endothelial cells in experimental congenital diaphragmatic hernia",
+                author:"Shannon N Acker, Gregory J Seedorf, Steven H Abman, Eva Nozik-Grayck, David A Partrick, Jason Gien",
+                link:"https://pubmed.ncbi.nlm.nih.gov/24124189/"
+            },
+            {
+                name:"Successful Surgical Management of Airway Perforation in Preterm Infants",
+                author:"Jason Gien, Richard J Ing, Mark D Twite, David Campbell, Max Mitchell, John P Kinsella",
+                link:"https://pubmed.ncbi.nlm.nih.gov/24791225/"
+            },
+        ]
+    },
     
 ]
 export default NonCrit
