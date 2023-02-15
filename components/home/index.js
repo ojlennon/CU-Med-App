@@ -1,5 +1,4 @@
 import { Text, TouchableOpacity, ScrollView } from 'react-native'
-import {LinearGradient} from 'expo';
 import React from 'react'
 import { useState } from 'react';
 import { Box } from "@react-native-material/core";

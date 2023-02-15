@@ -4,6 +4,17 @@ import { MaterialIcons, FontAwesome } from "@expo/vector-icons";
 import { TouchableOpacity, Text, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
 
+const Widget = ({item}) => {
+    return (
+        <Box justifyContent="center" alignItems="center" ph="5%" pv="5%">
+            <Box style={{width:"100%"}} backgroundColor="#eee" pv="3%" ph="5%">
+                <Text style={{fontSize:"20px"}}>{item.name}</Text>
+                <Text>{item.role}</Text>
+            </Box>
+        </Box>  
+    );
+}
+
 const Personnel = ({route}) => {
     
     const { name } = route.params;
@@ -43,8 +54,8 @@ const Personnel = ({route}) => {
         </TouchableOpacity>
         </Box>
     </Box>
-    <Box>
-        <Text>body</Text>
+    <Box flexDirection="inline-grid" justifyContent="space-between" w="100%" style={{backgroundColor:"#cccc"}}>
+        {data.map((item) => <Widget item={item}/>)}
     </Box>
     </>
     )
