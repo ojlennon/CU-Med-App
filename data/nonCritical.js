@@ -181,8 +181,12 @@ const NonCrit = [
     },
     {
         name:"Personnel",
-        color:"#000"
-    }
+        color:"#8e6152"
+    },
+    {
+        name:"Articles",
+        color:"#683b2c"
+    },
     
 ]
 export default NonCrit

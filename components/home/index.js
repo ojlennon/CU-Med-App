@@ -1,4 +1,5 @@
 import { Text, TouchableOpacity, ScrollView } from 'react-native'
+import {LinearGradient} from 'expo';
 import React from 'react'
 import { useState } from 'react';
 import { Box } from "@react-native-material/core";
@@ -104,6 +105,28 @@ const NonCritWidget = ({name, color="#fff", item, navigation}) => {
         </Box>
         </TouchableOpacity>
         :
+        <>
+        {name==="Articles"?
+        <TouchableOpacity onPress={() => navigation.navigate("Articles", {
+            name:item.name,
+            header:item.header,
+            color:item.color,
+            data:item.data
+        })}>
+        <Box width="100%" mt="3%" ml="-5%" mb="0%" p ="3.5%" borderRadius="5px" backgroundColor="#ddd" flexDirection="row" justifyContent="space-between">
+            <Box flexDirection="row" justifyContent="center">
+                <Box flexDirection="row" pl="2%">
+                    <Box backgroundColor={color} alignItems="center" borderRadius="3px" ml="-3.5%" justifyContent="center">
+                        <Ionicons name="book-outline" size={22} style={{ paddingHorizontal:"2.5%",paddingVertical:"2.5%", color:"#eaeaea"}}/>
+                    </Box>
+                    <Text style={{marginLeft:"5%", marginTop:"4.5%", fontSize:"17px"}}>{name}</Text>
+                </Box>            
+            </Box>
+            {/* <TouchableOpacity></TouchableOpacity> */}
+            <MaterialIcons name="arrow-forward-ios" size={18} style={{marginTop:"3%", marginRight:"-1%"}}/>
+        </Box>
+        </TouchableOpacity>
+        :
         <TouchableOpacity onPress={() => navigation.navigate("Appendix", {
             name:item.name,
             header:item.header,
@@ -122,6 +145,8 @@ const NonCritWidget = ({name, color="#fff", item, navigation}) => {
             <MaterialIcons name="arrow-forward-ios" size={18} style={{marginTop:"3%", marginRight:"-1%"}}/>
         </Box>
         </TouchableOpacity>
+        } 
+        </>
         }   
         </>
         }
@@ -137,7 +162,7 @@ const Home = ({ navigation }) => {
         <TopBar />
         <Box height="70%" backgroundColor="#eee" width="100%" justifyContent="top" alignItems="center" >
             <ScrollView showsVerticalScrollIndicator={false} width={"100%"}>
-            <Box height="100%" width="110%" pv="10%" ph="10%" ml="-1%" marginTop="-4%">
+            <Box height="100%" width="110%" pv="7%" ph="10%" ml="-1%" marginTop="-4%">
                 {
                     Crit.map((item) => (
                         <TouchableOpacity onPress={() => navigation.navigate("Second", {
@@ -158,6 +183,7 @@ const Home = ({ navigation }) => {
                 }
                 </Box>
             </ScrollView>
+            
             </Box>
         </Box>
     </Box>
