@@ -109,7 +109,6 @@ const NonCritWidget = ({name, color="#fff", item, navigation}) => {
         {name==="Articles"?
         <TouchableOpacity onPress={() => navigation.navigate("Articles", {
             name:item.name,
-            header:item.header,
             color:item.color,
             data:item.data
         })}>
