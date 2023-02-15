@@ -179,6 +179,10 @@ const NonCrit = [
         color:"#a05f58",
         text: "even more stuff here",
     },
+    {
+        name:"Personnel",
+        color:"#000"
+    }
     
 ]
 export default NonCrit
