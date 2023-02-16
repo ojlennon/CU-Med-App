@@ -6,7 +6,7 @@ import { useState } from "react";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
-const Widget = ({ name,item, color="#0F0" }) => {
+const Widget = ({ name,item, color="#0F0", data }) => {
   const [shown, toggleShown] = useState(true);
   const navigation = useNavigation();
   return (
@@ -14,10 +14,10 @@ const Widget = ({ name,item, color="#0F0" }) => {
         <Box>
           <TouchableOpacity
             onPress={() => navigation.navigate("Third", {
-                name: item.name,
-                data: item.data,
+                name: name,
+                data: data,
                 color: color,
-                header: (item.header ? item.header : "")
+                header: ""
               })}
               style={{ borderRadius: "4px" }}
           >
@@ -96,10 +96,9 @@ const ECMO = ({ route }) => {
           {subData.map((item) => (
             <Widget
               name={item.name}
-              pages={item.subPages}
               style={{ marginLeft: "3%" }}
               color={color}
-              item={item.subPages}
+              data={item.data}
             />
           ))}
         </Box>
