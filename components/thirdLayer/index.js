@@ -1,20 +1,9 @@
-import { View, Text, Image } from "react-native";
+import { Text, Image, TouchableOpacity } from "react-native";
 import React from "react";
-import { TouchableOpacity } from "react-native";
 import { Box } from "@react-native-material/core";
-import { borderLeftColor } from "@mui/system";
 import { MaterialIcons } from "@expo/vector-icons";
 import { ScrollView } from "react-native";
 import { FontAwesome } from '@expo/vector-icons'; 
-
-
-const subWidget = ({ text }) => {
-  return (
-    <>
-      <Text>{text}</Text>
-    </>
-  )
-}
 
 const Widget = ({ item, color }) => {
   return (
@@ -34,21 +23,21 @@ const Widget = ({ item, color }) => {
           </Box>
           <Box style={{backgroundColor: "#e0e0e0", padding:"4%", width:"100%", borderRadius:"5px"}}>
             <Text style={{ fontSize: "20px" }}>{item.text} </Text>
-            {item.text==="CDH Pain Algorithm" && <Image source={require("/Users/kylewandishin/Sites/CUSOM/secondtry/CU-Med-App/assets/appendixIII.jpg")} style={{width:310,height:405, marginTop:"3%"}}/>}
+            {item.text==="CDH Pain Algorithm" && <Image source={require("../../assets/appendixIII.jpg")} style={{width:310,height:405, marginTop:"3%"}}/>}
           </Box>
         </Box>
         {item.hasOwnProperty("sub") && 
           <Box flexDirection="column">
             {item.sub.map((subInfo) => (
               <>
-                <Box style={{ marginTop: "3%",borderRadius:"4%", marginHorizontal:"5%",opacity:0.9, backgroundColor:"#FFA500", padding:"1%"}}>
+                <Box style={{ marginTop: "3%",borderRadius:"4%", marginLeft:"5%",opacity:0.9, backgroundColor:"#d8d8d8", padding:"1%"}}>
                   <Text style={{fontSize:"18px"}}>{subInfo.text}</Text>
                 </Box>
                 {subInfo.hasOwnProperty("sub") &&
                   <Box flexDirection="column">
                       {subInfo.sub.map((subInfo) =>(
                         <>
-                          <Box style={{ marginTop: "3%",borderRadius:"4%", marginHorizontal:"10%",opacity:0.9, backgroundColor:"#F00", padding:"1%"}}>
+                          <Box style={{ marginTop: "3%",borderRadius:"4%", marginLeft:"10%",opacity:0.9, backgroundColor:"#d0d0d0", padding:"1%"}}>
                             <Text style={{fontSize:"18px"}}>{subInfo.text}</Text>
                           </Box>
                         </>
