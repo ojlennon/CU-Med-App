@@ -1,14 +1,3 @@
-// {
-//     name: "",
-//     subPages:[
-//         { name: "" },
-//         { name: "" } ,
-//         { name: "" },
-//         { name: "" },
-//         { name: "" },
-//         { name: "" }
-//     ]
-// },
 const Crit = [
   {
     name: "Delivery Room Managment",
@@ -700,7 +689,15 @@ const Crit = [
     name:"ECMO",
     icon: "air",
     color:"#91123C",
-    subData:[]
+    subData:[
+      {
+          name: "hi",
+          subPages:[
+            {text:"Hello",
+            data:[{text:"hi"}]}
+          ]
+        },
+    ]
   }
 ];
 export default Crit;

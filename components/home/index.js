@@ -1,4 +1,4 @@
-import { Text, TouchableOpacity, ScrollView } from 'react-native'
+import { Text, TouchableOpacity, ScrollView} from 'react-native'
 import React from 'react'
 import { useState } from 'react';
 import { Box } from "@react-native-material/core";
@@ -163,7 +163,7 @@ const Home = ({ navigation }) => {
             <Box height="100%" width="110%" pv="7%" ph="10%" ml="-1%" marginTop="-4%">
                 {
                     Crit.map((item) => (
-                        <TouchableOpacity onPress={() => navigation.navigate("Second", {
+                        <TouchableOpacity onPress={() => navigation.navigate(item.name==="ECMO"?"ECMO":"Second", {
                             name:item.name,
                             text:item.text,
                             subData: item.subData,

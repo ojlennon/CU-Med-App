@@ -196,7 +196,7 @@ const NonCrit = [
                 role: "cookin"
             },
             {
-                name: " Kyle Wandishin",
+                name: "Kyle Wandishin",
                 role: "chillin"
             }
         ]
