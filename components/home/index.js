@@ -70,7 +70,7 @@ const NonCritWidget = ({name, color="#fff", item, navigation}) => {
                             name:"Policy",
                             color:"#CDAB3C",
                         })}>
-            <Box flexDirection="row" justifyContent="space-between" alignItems="center" borderRadius="5px"backgroundColor="#ddd" width="52.7%">
+            <Box flexDirection="row" justifyContent="space-between" alignItems="center" borderRadius="5px"backgroundColor="#ddd" width="51.9%">
                 <Box flexDirection="row"height={58} p="3%" ml="5%" alignItems="center">
                     <Box backgroundColor="#CDAB3C" alignItems="center" borderRadius="3px" justifyContent="center" width={38} height={38}>
                         <MaterialIcons name="policy" size={22} style={{ paddingHorizontal:"2.5%",paddingVertical:"3.5%", color:"#eaeaea"}}/>
@@ -163,7 +163,7 @@ const Home = ({ navigation }) => {
             <Box height="100%" width="110%" pv="7%" ph="10%" ml="-1%" marginTop="-4%">
                 {
                     Crit.map((item) => (
-                        <TouchableOpacity onPress={() => navigation.navigate(item.name==="ECMO"?"ECMO":"Second", {
+                        <TouchableOpacity onPress={() => navigation.navigate("Second", {
                             name:item.name,
                             text:item.text,
                             subData: item.subData,
@@ -173,7 +173,6 @@ const Home = ({ navigation }) => {
                         </TouchableOpacity>
                     ))
                 }
-                <Box h={25}/>
                 {
                     NonCrit.map((item) => (
                             <NonCritWidget name={item.name} navigation={navigation} item={item} color={item.color}/>

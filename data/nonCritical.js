@@ -185,7 +185,7 @@ const NonCrit = [
         data: [
             {
                 name: "Owen lennon",
-                role:"sexy man"
+                role:"owen"
             },
             {
                 name: "Mr. Lein",
@@ -198,7 +198,23 @@ const NonCrit = [
             {
                 name: "Kyle Wandishin",
                 role: "chillin"
-            }
+            },
+            {
+                name: "Owen lennon",
+                role:"owen"
+            },
+            {
+                name: "Mr. Lein",
+                role: "Teacher"
+            },
+            {
+                name: "grill dad",
+                role: "cookin"
+            },
+            {
+                name: "Kyle Wandishin",
+                role: "chillin"
+            }   
         ]
     },
     {

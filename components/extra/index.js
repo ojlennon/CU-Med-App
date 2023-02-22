@@ -93,8 +93,8 @@ const Extra = ({route}) => {
             </Box>
         </Box>
         {name==="Policy" ? 
-        <Box backgroundColor="#eee" pt="4%">
-            <Box alignItems="center" justifyContent="center" backgroundColor="#ddd" p="3%">
+        <Box backgroundColor="#eee" pt="4%" h="100%">
+            <Box alignItems="center" justifyContent="center" backgroundColor="#e7e7e7" p="3%">
                 <Text style={{fontSize:"22px"}}>Policy</Text>
                 <Box mt="3%" mb="3%">
                 <Text>
@@ -104,11 +104,11 @@ const Extra = ({route}) => {
                 </Text>
                 </Box>
             </Box>
-            <Box alignItems="center" justifyContent="center" backgroundColor="#ddd" mv="3%" p="3%">
+            <Box alignItems="center" justifyContent="center" backgroundColor="#e7e7e7" mv="3%" p="3%">
                 <Text style={{fontSize:"20px"}}>14FOUR Technology</Text>
                 <Box mt="3%" mb="3%">
                 <Text style={{textAlign:"center", paddingHorizontal:"3%"}}>
-                    This app was created by Kyle Wandishin and Owen Lennon.
+                    This app was created by Kyle Wandishin and Owen Lennon at 14FOUR Technology.
                 </Text>
                 </Box>
 

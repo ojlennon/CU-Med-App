@@ -690,172 +690,411 @@ const Crit = [
     icon: "air",
     color:"#91123C",
     subData:[
-      {
-          name: "ECMO Criteria",
-          data:[
-            {text:"HFOV MAP greater than 18, Amplitude 40, Hz 8 with worsening gasses"},            
-            {text:"PaCO2 greater than 65mmHg and pH < 7.2, with base deficit less than -6."},            
-            {text:"PaO2 <40 mmHg x2 on 2 preductal arterial blood gasses two hours apart"},
-            {text:"Initiate for hemodynamic support if:"
-            ,sub:[{text:"Unable to maintain goal BP as above on 0.5 mcg/kg/min of epinephrine and dopamine 15 mcg/kg/min, and 0.005 units/kg/hour of vasopressin"}]},
-            {text:"Signs of impaired tissue perfusion "},
-            {text:"Persistent refractory metabolic acidosis despite sodium bicarbonate replacement 6 meq/kg over 12 hour period "},
-            {text:"Rising lactate on 3 successive checks 1-2 hour apart "},
-            {text:"Cerebral NIRS < 60 with max ventilatory support"},
-            {text:"Persistent R to L atrial shunt 12 hours following initiation of PGE ± Sildenafil "},
-            {text:"Retrograde flow in aortic arch from PDA and preductal PaO2 less than 40 in 100% oxygen"},
-          ]   
-        },
-        {
-          name:"PRE-CANNULATION",
-          data:[
-            {text:"Optimally obtain a head ultrasound prior to ECMO (defer for ECMO standby). "},
-            {text:"Position patient",
+      {name:"PRE-CANNULATION",
+      subPages:[
+        {name:"PATIENT & ROOM PREPARATION ",
+        data:[
+          {text:"Patient Position",
+          sub:[
+            {text:"Open warmer with side rails down"},
+            {text:"Head turned to left"},
+            {text:"Roll under shoulders with neck extended"},
+          ]},
+          {text:"Ventilator position",
+          sub:[{text:"Left side at foot of bed"}]},
+          {text:"Clear space at head of bed"}
+        ]},
+        {name:"ORDERS",
+        data:[
+          {text:"Medications",
+          sub:[
+            {text:"Prior to incision administer",
             sub:[
-              {text:"Open warmer with side rails down"},
-              {text:"Head turned to left"},
-              {text:"Roll under shoulders with neck extended"},
+              {text:"Fentanyl 5 mcg/kg x 2, five minutes apart "},
+              {text:"Rocuronium 1 mg/kg x 2, five minutes apart -- Consider addition Fentanyl 5 mcg/kg x1 or Ativan for vital sign changes following surgical incision"},
             ]},
-            {text:"Ventilator position",
-            sub:[{text:"left side at foot of bed"}]},
-            {text:"Clear space at head of bed"},
-            {text:"Medications",
-            sub:[{text:"Prior to incision administer",
-            sub:[{text:"Fentanyl 5 mg/kg x 2 5 minutes apart and Rocuronium 1 mg/kg x 2 5 minutes apar -- Consider Ativan for vital sign changes following surgical incision -- Consider addition Fentanyl 5 mcg/kg x1 for vital sign changes",}]},
-          {text:"Dwindle Epinephrine x 2 syringes"},
-          {text:"Cefazolin (Ancef) 50 mg/kg (prior to incision)"},
-          {text:"Heparin 50 units/kg"},
-          {text:"Albumin 5% 1 g/kg PRN for volume"},
+            {text:"Dwindle Epinephrine x 2 syringes"},
+            {text:"Cefazolin (Ancef) 50 mg/kg (prior to incision)"},
+            {text:"Heparin 50 units/kg"},
+            {text:"Albumin 5% 1 g/kg PRN for volume"},
           ]},
           {text:"ECMO Circuit Medications (5 kg or less)",
           sub:[
             {text:"Heparin (1000 units/mL) 250 units"},
-            {text:"CaCl (100 mg/mL) 200 mg"},
-            {text:"Sodium Bicarbonate 12 mEq"},
+            {text:"CaCl (100 mg/mL) 300 mg"},
+            {text:"Sodium Bicarbonate 20 mEq"},
           ]},
           {text:"ECMO Blood Bank Orders",
-          sub:[
-            {text:"PRBCs 2 units O neg for Prime < 3 days",
-            sub:[{text:"Additional 1 unit for cooler"}]}
-          ]}
-
-          ]
-        },
-        {name:"IMMEDIATE POST-CANNULATION",
-        data:[
-          {text:"Obtain patient blood gas",sub:[{text:"If unable to access patient, may obtain blood sample from venous side of circuit"}]},
-          {text:"Ventilator Settings", sub:[
-            {text:"If on HFOV, *** switch to CMV (via SERVO) "},
-            {text:"PC/AC- 20/5, RR 40 bpm FiO2 40% (Caution for hyperventilation)"},
-          ]},
-          {text:"Obtain ECHO for cannula placement (remove neck roll)",
-          sub:[
-            {text:"Optimal cannula placement"},
-            {text:"Venous cannula in RA at RA IVC junction"},
-            {text:"Arterial cannula junction of brachiocephalic trunk and aortic arch"},
-          ]},
-          {text:"Chest x-ray for cannula placement (remove neck roll)"},
-          {text:"Initial ECMO Settings",
-          sub:[
-            {text:"Flow 80 -100 ml/kg/min"},
-            {text:"Sweep 1, CO2 50 ml FiO2___?"},
-            {text:"Monitor SVO2, preductal PaO2, NIRS, lactate"},
-            {text:"Goal Parameters",
-            sub:[
-              {text:"SVO2 – 75-85%"},
-              {text:"preductal PaO2 – 60-80 mmHg"},
-              {text:"NIRS - 60-85%"},
-              {text:"Lactate - down trending"},
-              {text:"Maintain pump PaO2 100-120 mmHg"},
-            ]},
-            {text:"Increase flow in 10 ml/kg increments until goals are met."}
-          ]},
-          {text:"Hypotension post ECMO initiation",
-          sub:[
-            {text:"Multifactorial"},
-            {text:"Hypovolemia – fluid shifts"},
-            {text:"Cytokine storm – oxygenator"},
-            {text:"Abrupt decrease in pressor support"},
-            {text:"Blood incompatibility – transfusion reaction"},
-            {text:"All other causes of shock – adrenal insufficiency."},
-          ]}
-
+          sub:[{text:"PRBCs 2 units type matched O neg for ECMO standby  < 3 days",
+          sub:[{text:"Additional 1 unit for cooler"}]}]}
         ]},
-        {
-          name:"POST-CANNULATION INTERMEDIATE MANAGEMENT",
-          data:[
-          ]
-        },
+      ]},
+      {name:"IMMEDIATE POST-CANNULATION",
+      subPages:[
+        {name:"INITIAL ECMO SETTINGS",
+        data:[
+          {text:"Flow 100  ml/kg/min"},
+          {text:"Sweep 0.3-0.5, CO2 25 ml "},
+          {text:"Monitor SVO2, preductal PaO2, NIRS, lactate"},
+          {text:"Goal Parameters",
+          sub:[
+            {text:"SVO2 – 75-85%"},
+            {text:"Preductal PaO2 – 60-80 mmHg"},
+            {text:"NIRS - 70-85%"},
+            {text:"Lactate - down trending"},
+            {text:"FiO2 to maintain pump PaO2 100-120 mmHg"},
+          ]},
+          {text:"Increase flow in 10 ml/kg increments until goals are met."},
+          {text:"Don't increase flow for pre/post splitting unless the above parameters are not met."},
+          {text:"Obtain ECHO - cannula placement - venous cannula in RA at RA/IVC junction",
+          sub:[{text:"Arterial cannula - in carotid at junction of innominate artery and aortic arch"}]},
+        ]},
         {name:"RESPIRATORY",
         data:[
-          {text:"Anticipate white out after going on ECMO.",sub:[{text:"Expect improvement 24-36 hr post op along with spontaneous diuresis"}]},
-          {text:"Pressure mode, PC/AC PIP 20, PEEP 5, rate of 40, itime 0.5,, FiO2 40%.",
-          sub:[{text:"Disable Vt alarm after patient is placed on ECMO.",
-          sub:[{text:"Expect Vt to start showing on the vent 24-48 hr post op then turn the alarm back on."}]}]},
-          {text:"Respiratory Management Post-Repair on ECMO",
+          {text:"Obtain patient blood gas",
+          sub:[{text:"If unable to access patient sample may be obtained from the arterial line pressure transducer or the venous side of the ECMO circuit"}]},
+          {text:"Ventilator Settings",
           sub:[
-            {text:"AC/PC PIP 20, PEEP 5, rate of 40, itime 0.5,, FiO2 40%."},
-            {text:"48 hours post surgery maintain tight fluid control to optimize lungs"},
-            {text:"Anticipate CMV settings at time of decannulation as outlined by severity profile"},
-            {text:"Begin weaning phase from CMV after 48hr of stability s/p decannulation. See above"},
-            {text:"Persistent atelectasis on CXR after consecutive days of above settings, and with inability to wean flow  initiate bag suction. ,"},
-            {text:"Consider bronchoscopy to rule out mucus plug or blood clots. "},
-          ]},
-        ]
+            {text:"Discontinue iNO"},
+            {text:"If on HFOV transition to CMV (via SERVO) "},
+            {text:"Ventilation via PC/AC with Servo ventilator",
+            sub:[{text:"20/5, RR 40, iTime 0.5, FiO2 40% (Caution for hyperventilation)"}]},
+          ]}
+          ]
         },
         {name:"CARDIOVASCULAR",
         data:[
-        {text:"Blood Pressure Mean 45-50 mmHg"},
-        {text:"Se,e non - ECMO guideline for medications"},
-        {text:"Pulmonary Hypertension  See non - ECMO guideline for medications"},
+          {text:"Hypotension post ECMO initiation",
+        sub:[
+          {text:"Multifactorial"},
+          {text:"Hypovolemia – fluid shifts"},
+          {text:"Cytokine storm – oxygenator"},
+          {text:"Abrupt decrease in pressor support"},
+          {text:"Blood incompatibility – transfusion reaction"},
+          {text:"All other causes of shock – adrenal insufficiency."},
         ]},
-        {name:"FLUIDS, ELECTROLYTES, & NUTRITION",
+          {text:"Pulmonary Hypertension",
+          sub:[{text:"Start PGE at 0.0125 mcg/kg/min to maintain ductal patency"}]}
+        ]}
+      ]},
+      {name:"POST-CANNULATION INTERMEDIATE MANAGEMENT",
+      subPages:[
+        {name:"RESPIRATORY",
         data:[
-          {text:"IV Fluid Guidelines",
+          {text:"Anticipate white out after going on ECMO with  improvement 24-36 hr post-op along with spontaneous diuresis"},
+          {text:"Ventilatory Settings",
           sub:[
-            {text:"Goal kcal 100-110/kg/day"},
-            {text:"Begin total fluids at 80 mL/kg/day (including all drips) with starter TPN. Keep total fluids 80 mL/kg/day until repair."},
-            {text:"Post repair: Increase total fluids by 20-40 mL/kg using plamalyte to make up for insensible losses related to repair. Monitor UO and BP to adjust TF overnight."},
-            {text:"Day after repair, return TF goal to 80-100 mL/kg/day including all drips"},
-            {text:"Titrate fluids as needed to max 120 mL/kg/day. "},
-            {text:"When feeds are added in, maintain TF goal  ≤ 130-140 mL/kg/day."},
+            {text:"Ventilation via PC/AC with Servo ventilator",
+            sub:[{text:"20/5, RR 40, iTime 0.5, FiO2 40%"}]},
+            {text:"Disable Vt alarm after patient is placed on ECMO.",
+            sub:[{text:"Expect Vt to start showing on the vent 24-48 hr post op then turn the alarm back on."}]}
           ]},
-          {text:"Utilize NaAC via arterial line",
-          sub:[{text:"Consider adding papaverine to PAL if spasming (can only be used with NaCl)"}]},
-          {text:"Anderson 10fr inserted to 23-25cm with continuous suction.",
+          {text:"Respiratory Management Post-Repair",
           sub:[
-            {text:" Pre-repair: Remove OGT from mouth Q4h and rinse in sterile water then replace to ensure patency. If Anderson unavailable may use Replogle 10F insert to 23-25cm and place to intermittent suction with the same patency plan. "},
-            {text:"Post-repair: Routine interventions to maintain patency"},
+            {text:"Maintain pre-op ventilator settings."},
+            {text:"Tight fluid management 48 hours post-op maintain tight fluid to optimize lungs"},
+            {text:"Anticipate CMV settings at time of decannulation as outlined by severity profile (see non-ECMO guideline)"},
+            {text:"Persistent atelectasis on CXR after consecutive days on above settings, and with inability to wean flow- initiate bag suction",
+            sub:[{text:"Consider bronchoscopy to rule out mucus plug or blood clots."}]},
+          ]}
+        ]},
+        {name:"CARDIOVASCULAR",
+        data:[
+          {text:"Blood Pressure",
+          sub:[
+            {text:"Goal mean arterial blood pressure 45-50 mmHg"},
+            {text:"See non - ECMO guideline for medications"}
           ]},
-          {text:"Strict I & O with hourly documentation (foley, chest tubes, gastric tubes, & all intake)"},
-          {text:"Electrolyte goals",
+          {text:"Pulmonary Hypertension",
           sub:[
-            {text:"Treat iCal less than 1.2 with Calcium Chloride 20 mg/kg"},
-            {text:"Treat Mag levels less than 2 with magnesium sulfate 25 mg/kg"},
-            {text:"Treat Potassium level less than 3 mmol/L"},
-          ]},
-          {text:"All patients will be on full TPN (in collaboration with pharmacy and nutrition) TPN goals:",
-          sub:[
-            {text:"3-3.5 g/kg AA "},
-            {text:"GIR 12 with goal glucose 60 <> 150"},
-            {text:"IL 3 g/kg/day (consider SMOF if not able to start feeds by 2 weeks) "},
-            {text:"Add levocarnitine at 7 days if still NPO "},
-            {text:"Famotidine 0.5mg/kg in TPN",
-            sub:[{text:"transition to PO when TPN d/c"}]},
-          ]},
-          {text:"Enteral Feeding",
-          sub:[
-            {text:"Route of feeding:",
-            sub:[{text:"Place a TP tube at the time of surgery for all CDH with severe prognostic profile. Discuss TP placement for moderate profiles."}]},
-            {text:"Starting feeds:",
+            {text:"Systemic or suprasystemic pulmonary hypertension (right to left or bidirectional shunt) with adequate lung recruitment",
             sub:[
-              {text:"Initiate feeding on return of bowel function (usually 48 hours post-surgery) or when hemodynamically stable (less than 5 mcg/kg/min dopamine). "},
-              {text:"Advance 20 mL/kg/day"},
-              {text:"Max enteral feeding volume up to 80 mL/kg/day while on ECMO"},
-              {text:"Goal is to use maternal breast milk; if not available appropriate term formula Similac total comfort (or equivalent) "},
+              {text:"Start iNO"},
+              {text:"Start sildenafil gtt at 0.067 mg/kg/hour, no bolus"},
+              {text:"PH team consult and consider Remodulin"},
             ]}
           ]}
         ]},
+        {name:"FLUIDS, ELECTROLYTES, & NUTRITION",
+        data:[
+          {text:"Total Fluids (TF)",
+          sub:[
+            {text:"Strict I & O with hourly documentation (foley, chest tubes, gastric tubes, & all intake)"},
+            {text:"Goal kcal 100-110/kg/day"},
+            {text:"Initiate TF 80 mL/kg/day (Include all drips) with starter TPN. ", sub:[{text:"Keep total fluids 80 mL/kg/day until repair."}]},
+            {text:"Day of repair: Increase TF by 30-50 mL/kg using Plasma-lyte to make up for insensible losses related to repair.",
+            sub:[{text:"Monitor UO and BP to adjust TF overnight."}]},
+            {text:"Day after repair: Return TF goal to 80-100 mL/kg/day including all drips"},
+            {text:"Titrate fluids as needed to max 120 mL/kg/day. "},
+            {text:"When feeds are added in, maintain TF goal  ≤ 130-140 mL/kg/day."},
+            {text:"Utilize NaAC via arterial line",
+            sub:[{text:"Consider adding papaverine to PAL if spasming (can only be used with NaCl)"}]},
+          ]},
+          {text:"Gastrointestinal",
+          sub:[
+            {text:"Anderson 10fr inserted to 23-25 cm with continuous suction.",
+            sub:[
+              {text:"If Anderson unavailable may use Replogle 10F insert to 23-25 cm to intermittent suction with the same patency plan"},
+              {text:"Pre-repair: -- Remove OGT from mouth Q4h, rinse in sterile water then replace to ensure patency."},
+              {text:"Post-repair: -- Routine interventions to maintain patency"}
+            ]}
+          ]},
+          {text:"Electrolyte goals",
+          sub:[
+            {text:"Maintain iCal >1.2, treat with Calcium Chloride 20 mg/kg"},
+            {text:"Magnesium level >2, treat with Magnesium Sulfate 25 mg/kg"},
+            {text:"Treat Potassium level less than 3 mmol/L"},
+          ]},
+          {text:"Nutrition",
+          sub:[
+            {text:"All patients will be on full TPN (in collaboration with pharmacy and nutrition) TPN goals:",
+            sub:[
+              {text:"Protein- 3-3.5 g/kg AA "},
+              {text:"GIR 12 with goal glucose 60-150 mg/dL"},
+              {text:"IL 3 g/kg/day -- Consider SMOF if not able to start feeds within 2 weeks"},
+              {text:"Add levocarnitine at 7 days if still NPO "},
+              {text:"Famotidine 0.5 mg/kg in TPN -- Transition to enteral when off TPN"},
+            ]},
+            {text:"Enteral Feeding",
+            sub:[
+              {text:"Route of feeding: -- Place TP tube at time of surgery for all CDH with severe prognostic profile. Discuss TP placement for moderate profiles."},
+              {text:"Feeding initiation:"},
+              {text:"Initiate feeding on return of bowel function (usually 48 hours post-surgery) or when hemodynamically stable (less than 5 mcg/kg/min dopamine). "},
+              {text:"Advance 20 mL/kg/day"},
+              {text:"Max enteral feeding volume up to 80 mL/kg/day while on ECMO"},
+              {text:"Goal is to use maternal breast milk; if not available, utilize Good Start or Similac total comfort (whey based) "},
+            ]},
+
+          ]}
+        ]}
+      ]},
+      {name:"INFECTIOUS DISEASE",
+      subPages:[]},
+      {name:"HEMATOLOGY",
+      subPages:[]},
+      {name:"NEURO/PAIN",
+      subPages:[
+        {name:"pain algorithm",
+        data:[{text:"pain algorithm"}]}
+      ]},
+      {name:"OTHER",
+      subPages:[
+        {name:"Troubleshooting",
+        data:[{text:"Call for ECMO escalation huddle"}]}
+      ]} ,
+      {name:"CDH REPAIR ON ECMO",
+      subPages:[
+        {name:"repair",
+        data:[
+          {text:"Repair within 24-48 hours on ECMO",
+          sub:[
+            {text:"Coagulopathy resolved"},
+            {text:"Cardiac function ??"},
+          ]},
+          
+        ]},
+        {name:"PATIENT & ROOM PREPARATION",
+        data:[]},
+        {name:"ORDERS",
+        data:[
+          {text:"Medications",
+          sub:[
+            {text:"Per anesthesia"}
+          ]}
+        ]}
+      ]},
+      {name:"ECMO WEAN/TAPER",
+      subPages:[
+        {name:"WEAN",
+        data:[
+          {text:"PaO2 greater than 100 mmHg on current level support wean support by 10 ml/kg"},
+          {text:"Persistent left to right across PDA with ECMO weans- stop PGE"},
+        ]},
+        {name:"PREREQUISITES FOR SEPARATION TRIAL",
+        data:[
+          {text:"Acceptable chest x-ray without significant air space disease or effusions"},
+          {text:"Adequate lung recruitment on CMV 20-23/5, RR 40, iTime 0.5, FiO2 40-50%."},
+          {text:"Assess compliance by looking at the relative change in tidal volume for a change in pressure on the ventilator.",
+          sub:[
+            {text:"If unable to achieve above parameters",
+            sub:[
+              {text:"Give more time on ECMO to establish optimal lung compliance"},
+              {text:"Ensure adequate diuresis, pulmonary toilet with position changes and decreased sedation"},
+              {text:"Assess reasons for poor lung compliance:"},
+              {text:"Over circulation and pulmonary edema across a persistent ductus arteriosus. "},
+              {text:"Infection – send a tracheal aspirate"},
+              {text:"Airways disease – consider bronchoscopy to assess for central airways malacia"},
+              {text:"Lung inflammation – consider a dexamethasone burst, 0.2 mg/kg x 1 dose, followed by 0.1 mg/kg q 12 x 6 doses"},
+              {text:"More time"},
+            ]}
+          ]},
+        ]},
+        {name:"SEPARATION TRIAL",
+        data:[
+          {text:"Consider trial when PaO2 >100 mmHg on 80 mL/kg flow"},
+          {text:"Trial process",
+          sub:[
+            {text:"Reduce flow to 50 mL/kg for five minutes"},
+            {text:"Obtain baseline ECHO and ABG",
+            sub:[
+              {text:"Successful wean:"},
+              {text:"PaO2 > 60 mmHg in 60% FiO2"},
+              {text:"Right and left ventricular function are normal"},
+              {text:"Left to right atrial level shunt "},
+              {text:"Right to left PDA shunt not a prerequisite to decannulate especially in the setting of CDH -- If above are achieved proceed to low flow trial"},
+              {text:""},
+              {text:"Unsuccessful wean:"},
+              {text:"Return to previous flow"}
+            ]},
+          ]},
+        ]},
+        {name:"LOW FLOW TRIAL",
+        data:[
+          {text:"Medications",
+          sub:[
+            {text:"Heparin 25 units/kg PRN x 2 Stagnant blood flow results in rapid cleavage of bivalirudin (blood protease degradation) and can result in thrombus formation in the circuit when on low flow."},
+            {text:"Administer circuit heparin 25 unit/kg bolus to achieve an increase of 20 seconds in ACT from baseline prior to low flow ECMO trial Check ACT q10 minutes, repeat heparin 25 unit/kg bolus when ACT back to baseline"}
+          ]},
+          {text:"Ventilation",
+          sub:[
+            {text:"PC/AC PIP 23, PEEP 5, RR 60, iTime 0.35, FiO2 60%."}
+          ]},
+          {text:"Trial process",
+          sub:[
+            {text:"20 ml total flow"},
+            {text:"Maintain Sweep, CO2"},
+            {text:"Obtain ECHO and ABG"},
+            {text:"Increase FiO2 to 100% on ventilator"},
+            {text:"Obtain ABG"},
+            {text:"Degas circuit and wait 5 minutes"},
+            {text:"Repeat ABG"},
+          ]},
+          {text:"Successful",
+          sub:[
+            {text:"PaO2 > 60 mmHg in 60% FiO2"},
+            {text:"PaO2 increases above 120 mmHg in 100% FiO2"},
+            {text:"PaCO2 45-55 mmHg on PC/AC 23/5 PIP, RR 60 "},
+            {text:"Stable Hemodynamics - no pressors support support on low flow"},
+            {text:"Right and left ventricular function are normal"},
+            {text:"Left to right atrial level shunt "},
+            {text:"Right to left/bidirectional PDA shunt not a prerequisite to decannulate especially in the setting of CDH"},
+          ]}
+        ]},
+      ]},
+      {name:'DECANNULATION',
+      subPages:[
+        {name:"DECANNULATION CHECKLIST",
+        data:[
+          {text:"Medications",
+          sub:[
+            {text:"Fentanyl 5 mg/kg x 2 5 minutes apart and Rocuronium 1 mg/kg x 2 5 minutes apart"},
+            {text:"Consider Ativan for vital sign changes following surgical incision"},
+            {text:"Consider addition Fentanyl 5 mcg/kg x1 for vital sign changes"},
+            {text:"Dwindle Epinephrine x 2 syringes"},
+            {text:"Dopamine Infusion at 5 mcg/kg/minute, start 30 minutes prior to decannulation"},
+            {text:"Epinephrine in line but not started"},
+          ]},
+          {text:"Ventilator Settings",
+          sub:[
+            {text:"Pressure mode, PC/AC PIP 23, PEEP 5, rate of 60, itime 0.35, FiO2 60%."}
+          ]},
+          {text:"Emergency Blood",
+          sub:[
+            {text:"1 Unit pRBCs, 1 Unit FFP in cooler  on standby"}
+          ]},
+          {text:"Decannulation Procedure",
+          sub:[
+            {text:"Surgeon to clamp on the field"},
+            {text:"ECMO specialist to clamp venous and arterial limbs of the circuit."},
+          ]}
+        ]},
+        {name:"Plan to separate without cannula removal",
+        data:[]},
+        {name:"ORDERS",
+        data:[
+          {text:"If bag suctioning was previously ordered, ensure to discontinue order"},
+          {text:"Medications",
+          sub:[
+            {text:"Dwindle Epinephrine x 2 syringes"},
+            {text:"Dopamine Infusion at 5 mcg/kg/minute, start 30 minutes prior to decannulation"},
+            {text:"Epinephrine in line but not started"},
+          ]},
+        ]},
+        {name:"PATIENT & ROOM PREPARATION",
+        data:[
+          {text:"Patient Position",
+          sub:[
+            {text:"Open warmer with side rails down"},
+            {text:"Head turned to left"},
+            {text:"Roll under shoulders with neck extended"},
+          ]},
+          {text:"Ventilator position",
+          sub:[{text:"Left side at foot of bed"}]
+          },
+          {text:"Clear space at head of bed",}
+        ]},
+        {name:"ORDERS",
+        data:[
+          {text:"If bag suctioning was previously ordered, ensure to discontinue order"},
+          {text:"Medications",
+          sub:[
+            {text:"Fentanyl 5 mg/kg x 2 5 minutes apart and Rocuronium 1 mg/kg x 2 5 minutes apart",
+            sub:[
+              {text:"Consider Ativan for vital sign changes following surgical incision"},
+              {text:"Consider addition Fentanyl 5 mcg/kg x1 for vital sign changes"},
+              {text:"Dwindle Epinephrine x 2 syringes"},
+              {text:"Dopamine Infusion at 5 mcg/kg/minute, start 30 minutes prior to decannulation"},
+              {text:"Epinephrine in line but not started"},
+            ]}
+          ]},
+          {text:"Ventilator Settings",
+          sub:[
+            {text:"Pressure mode, PC/AC PIP 23, PEEP 5, rate of 60, itime 0.35, FiO2 60%."}
+          ]},
+          {text:"Emergency Blood",
+          sub:[
+            {text:"1 Unit pRBCs, 1 Unit FFP in cooler  on standby"}
+          ]}
+        ]},
+        {name:"DECANNULATION PROCEDURE",
+        data:[
+          {text:"Surgeon to clamp on the field"},
+          {text:"ECMO specialist to clamp venous and arterial limbs of the circuit."},
+        ]},
+        {name:"SEPARATION",
+      data:[]},
+        {name:"CANNULA REMOVAL",
+        data:[]}
+
+      ]},
+      {name:"APPENDIX",
+      subPages:[
+        {name:"DECANNULATION CHECKLIST",
+        data:[
+          {text:"Medications",
+          sub:[
+            {text:"Fentanyl 5 mg/kg x 2 5 minutes apart and Rocuronium 1 mg/kg x 2 5 minutes apart"},
+            {text:"Consider Ativan for vital sign changes following surgical incision"},
+            {text:"Consider addition Fentanyl 5 mcg/kg x1 for vital sign changes"},
+            {text:"Dwindle Epinephrine x 2 syringes"},
+            {text:"Dopamine Infusion at 5 mcg/kg/minute, start 30 minutes prior to decannulation"},
+            {text:"Epinephrine in line but not started"},
+          ]},
+          {text:"Ventilator Settings",
+          sub:[
+            {text:"Pressure mode, PC/AC PIP 23, PEEP 5, rate of 60, itime 0.35, FiO2 60%."}
+          ]},
+          {text:"Emergency Blood",
+          sub:[
+            {text:"1 Unit pRBCs, 1 Unit FFP in cooler  on standby"}
+          ]},
+          {text:"Decannulation Procedure",
+          sub:[
+            {text:"Surgeon to clamp on the field"},
+            {text:"ECMO specialist to clamp venous and arterial limbs of the circuit."},
+          ]}
+        ]}
+      ]}
     ]
   }
 ];

@@ -1,19 +1,10 @@
 import React from "react";
 import { Box } from "@react-native-material/core";
 import { MaterialIcons, AntDesign } from "@expo/vector-icons";
-import { TouchableOpacity, Text, Linking } from "react-native";
+import { TouchableOpacity, Text, Linking, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
+import { LinearGradient } from 'expo-linear-gradient';
 
-// const Widget = ({item}) => {
-//     return (
-//         <Box justifyContent="center" alignItems="center" ph="5%" pv="1%">
-//             <Box style={{width:"100%"}} backgroundColor="#eee" pv="3%" ph="5%" borderRadius="8px">
-//                 <Text style={{fontSize:"20px"}}>{item.name}</Text>
-//                 <Text>{item.role}</Text>
-//             </Box>
-//         </Box>
-//     );
-// }
 const Widget = ({ item }) => {
   return (
     <Box
@@ -23,19 +14,21 @@ const Widget = ({ item }) => {
       pv="1%"
       flexDirection="row"
     >
-      <Box backgroundColor="#eee" pv="3%" ph="5%" w="100%" borderRadius="8px" flexDirection="column" justifyContent="space-between">
+      <Box backgroundColor="#eee" pv="3%" w="100%" ph="5%" borderRadius="8px" flexDirection="column" justifyContent="space-between">
         <Box>
+          <Box >
             <Text style={{ fontSize: "20px" }}>{item.name}</Text>
+            </Box>
             <Text>{item.role}</Text> 
         </Box>
               <Box pt="3%" borderRadius="8px" justifyContent="center">
                   <Box flexDirection="row">
                     <AntDesign name="mail" size={22} color="black" />
-                    <Text style={{marginLeft:5 ,marginTop:-2}}>sex@gmail.com</Text>
+                    <Text style={{marginLeft:5 ,marginTop:-2}}>mail@gmail.com</Text>
                   </Box>
                   <Box flexDirection="row">
                     <AntDesign name="phone" size={22} color="black" />
-                    <Text style={{marginLeft:5,marginTop:0}}>+1(720)-pee-pooo</Text>
+                    <Text style={{marginLeft:5,marginTop:0}}>+1(720)-000-0000</Text>
                 </Box>
         </Box>  
       </Box>
@@ -44,7 +37,6 @@ const Widget = ({ item }) => {
 };
 const Personnel = ({ route }) => {
   const { name } = route.params;
-  const { header } = route.params;
   const { color } = route.params;
   const { data } = route.params;
   const navigation = useNavigation();
@@ -99,7 +91,7 @@ const Personnel = ({ route }) => {
             style={{
               fontSize: "22px",
               padding: "5%",
-              marginLeft: 5,
+              marginLeft: 7,
               textDecorationLine: "underline",
               color: "#3CB9B7",
             }}
@@ -107,19 +99,32 @@ const Personnel = ({ route }) => {
             <AntDesign name="calendar" size={24} /> On call schedule
           </Text>
         </Box>
-        <Box w="100%" ph="5%" pv="2%" mt="3%">
+        <Box w="100%" ph="5%" pv="2%" mt="3%" mb={5}>
           <Text style={{ fontSize: "24px" }}>Contact Info:</Text>
         </Box>
+        <LinearGradient
+          style={{flex:1, width:"90%", height:20, position:"absolute", zIndex:999, marginTop:"38.3%"}}
+          locations={[0, 0]}
+          colors={['rgba(0, 0, 0, 0.01)', 'rgba(0, 0, 0, 0.1)','rgba(0, 0, 0, 0)']}
+          pointerEvents={'none'}
+        />
+        <ScrollView style={{}}>  
+        
         <Box
-          flexDirection="inline-grid"
-          justifyContent="space-between"
           w="100%"
+          h="100%"
+          pb={110}
+          mt={-3.5}
         >
           {data.map((item) => (
             <Widget item={item} />
           ))}
+         
         </Box>
+        </ScrollView>
       </Box>
+      
+      
     </>
   );
 };

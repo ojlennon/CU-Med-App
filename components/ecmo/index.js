@@ -35,7 +35,7 @@ const Widget = ({ name,item, color="#0F0", data }) => {
               <Text
                 style={{
                   paddingLeft: "1%",
-                  fontSize: "20px",
+                  fontSize: name==="POST-CANNULATION INTERMEDIATE MANAGEMENT"?"18px":"20px",
                 }}
               >
                 {name}
@@ -44,7 +44,7 @@ const Widget = ({ name,item, color="#0F0", data }) => {
               <AntDesign
                 name="right"
                 size={20}
-                style={{ paddingRight: "1%", marginTop: "1%" }}
+                style={{ paddingRight: "1%", marginTop: name==="IMMEDIATE POST-CANNULATION" || name==="POST-CANNULATION INTERMEDIATE MANAGEMENT" || name==="FLUIDS, ELECTROLYTES, & NUTRITION"?"5%":"1%" }}
               />
             </Box>
           </TouchableOpacity>
