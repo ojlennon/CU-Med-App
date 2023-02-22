@@ -25,7 +25,6 @@ export default function App() {
         <Stack.Screen name="Extra" component={Extra} />
         <Stack.Screen name="Personnel" component={Personnel} />
         <Stack.Screen name="Articles" component={Articles} />
-        <Stack.Screen name="ECMO" component={ECMO} />
       </Stack.Navigator>
     </NavigationContainer>
   )
