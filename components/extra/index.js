@@ -22,7 +22,7 @@ const Widget = ({ item, color }) => {
             </Box>
             <Box style={{backgroundColor: "#e0e0e0", padding:"4%", width:"100%", borderRadius:"5px"}}>
               <Text style={{ fontSize: "20px" }}>{item.text} </Text>
-              {item.text==="CDH Pain Algorithm" && <Image source={require("/Users/kylewandishin/Sites/CUSOM/secondtry/CU-Med-App/assets/appendixIII.jpg")} style={{width:310,height:405, marginTop:"3%"}}/>}
+              {item.text==="CDH Pain Algorithm" && <Image source={require("../../assets/appendixIII.jpg")} style={{width:310,height:405, marginTop:"3%"}}/>}
             </Box>
           </Box>
           {item.hasOwnProperty("sub") && 

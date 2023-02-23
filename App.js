@@ -9,7 +9,7 @@ import Appendix from './components/appendix';
 import Extra from './components/extra';
 import Personnel from './components/personnel';
 import Articles from './components/articles';
-
+import ECMO from './components/ecmo';
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -25,6 +25,7 @@ export default function App() {
         <Stack.Screen name="Extra" component={Extra} />
         <Stack.Screen name="Personnel" component={Personnel} />
         <Stack.Screen name="Articles" component={Articles} />
+        <Stack.Screen name="ECMO" component={ECMO} />
       </Stack.Navigator>
     </NavigationContainer>
   )

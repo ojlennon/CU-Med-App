@@ -181,7 +181,25 @@ const NonCrit = [
     },
     {
         name:"Personnel",
-        color:"#8e6152"
+        color: "#8e6152",
+        data: [
+            {
+                name: "Owen lennon",
+                role:"sexy man"
+            },
+            {
+                name: "Mr. Lein",
+                role: "Teacher"
+            },
+            {
+                name: "grill dad",
+                role: "cookin"
+            },
+            {
+                name: "Kyle Wandishin",
+                role: "chillin"
+            }
+        ]
     },
     {
         name:"Articles",

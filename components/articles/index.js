@@ -23,7 +23,7 @@ const Widget = ({ item, color }) => {
             <Box style={{backgroundColor: "#e0e0e0", padding:"4%", width:"100%", borderRadius:"5px"}}>
               <Text style={{ fontSize: "18px", fontWeight:"500" }}>{item.name} </Text>
               <Text style={{ fontSize: "16px", marginLeft:"3%", marginTop:5 }}>By: {item.author} </Text>
-              <Text style={{right:"-65%", fontSize: "14px", color:"#56C8C6",width:208,padding:5, marginTop:8,textDecorationLine: 'underline', borderRadius:"5px"}} onPress={() => Linking.openURL(item.link)}> Read More ...</Text>
+              <Text style={{right:"-65%", fontSize: "14px", color:"#3CB9B7",width:208,padding:5, marginTop:8,textDecorationLine: 'underline', borderRadius:"5px"}} onPress={() => Linking.openURL(item.link)}> Read More ...</Text>
             </Box>
           </Box>
         </Box>
