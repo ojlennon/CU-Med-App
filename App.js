@@ -9,7 +9,7 @@ import Appendix from './components/appendix';
 import Extra from './components/extra';
 import Personnel from './components/personnel';
 import Articles from './components/articles';
-import ECMO from './components/ecmo';
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
