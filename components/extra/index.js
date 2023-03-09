@@ -1,6 +1,6 @@
 import React from "react";
 import { Box } from "@react-native-material/core";
-import { TouchableOpacity, Text, ScrollView } from "react-native";
+import { TouchableOpacity, Text, ScrollView, Linking } from "react-native";
 import { MaterialIcons, FontAwesome } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
@@ -108,7 +108,7 @@ const Extra = ({route}) => {
                 <Text style={{fontSize:"20px"}}>14FOUR Technology</Text>
                 <Box mt="3%" mb="3%">
                 <Text style={{textAlign:"center", paddingHorizontal:"3%"}}>
-                    This app was created by Kyle Wandishin and Owen Lennon at 14FOUR Technology.
+                    This app was created by Kyle Wandishin and Owen Lennon at 14FOUR Technology. Please contact us at <Text style={{color:"#77c",textDecorationLine: 'underline'}} onPress={() => Linking.openURL("mailto: support@14fourtech.com")}>support@14fourtech.com</Text> to inquire about a project today.
                 </Text>
                 </Box>
 

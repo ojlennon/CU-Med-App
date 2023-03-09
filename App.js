@@ -9,7 +9,8 @@ import Appendix from './components/appendix';
 import Extra from './components/extra';
 import Personnel from './components/personnel';
 import Articles from './components/articles';
-import ECMO from './components/ecmo';
+import Pass from './components/pass';
+
 const Stack = createNativeStackNavigator();
 
 export default function App() {
@@ -17,7 +18,8 @@ export default function App() {
   LogBox.ignoreAllLogs()
   return (
     <NavigationContainer>
-      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Home">
+      <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Pass">
+        <Stack.Screen name="Pass" component={Pass}/>
         <Stack.Screen name="Home" component={Home}/>
         <Stack.Screen name="Second" component={SecondLayer} />
         <Stack.Screen name="Third" component={ThirdLayer}/>
