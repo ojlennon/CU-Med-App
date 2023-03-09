@@ -24,11 +24,11 @@ const Widget = ({ item }) => {
               <Box pt="3%" borderRadius="8px" justifyContent="center">
                   <Box flexDirection="row">
                     <AntDesign name="mail" size={22} color="black" />
-                    <Text style={{marginLeft:5 ,marginTop:-2}}>mail@gmail.com</Text>
+            <Text style={{ marginLeft: 5, marginTop: -2 }}>{item.email}</Text>
                   </Box>
                   <Box flexDirection="row">
                     <AntDesign name="phone" size={22} color="black" />
-                    <Text style={{marginLeft:5,marginTop:0}}>+1(720)-000-0000</Text>
+            <Text style={{ marginLeft: 5, marginTop: 0 }}>{item.phone}</Text>
                 </Box>
         </Box>  
       </Box>
