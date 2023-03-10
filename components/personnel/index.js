@@ -24,11 +24,11 @@ const Widget = ({ item }) => {
               <Box pt="3%" borderRadius="8px" justifyContent="center">
                   <Box flexDirection="row">
                     <AntDesign name="mail" size={22} color="black" />
-            <Text style={{ marginLeft: 5, marginTop: -2 }}>{item.email}</Text>
+            <Text style={{ marginLeft: 5, marginTop: -2 }}onPress={() => Linking.openURL(`mailto: ${item.email}`)}>{item.email}</Text>
                   </Box>
                   <Box flexDirection="row">
                     <AntDesign name="phone" size={22} color="black" />
-            <Text style={{ marginLeft: 5, marginTop: 0 }}>{item.phone}</Text>
+            <Text style={{ marginLeft: 5, marginTop: 0 }}onPress={() => Linking.openURL(`tel: ${item.phone}`)}>{item.phone}</Text>
                 </Box>
         </Box>  
       </Box>

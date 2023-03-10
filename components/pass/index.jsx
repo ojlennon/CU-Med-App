@@ -3,7 +3,8 @@ import { TextInput, Button} from "@react-native-material/core";
 import { Box } from "@react-native-material/core";
 import { FontAwesome5 } from '@expo/vector-icons'; 
 
-const Pass = () => {
+const Pass = ({ navigation }) => {
+    const [pass, setPass] = React.useState("")
     return (
     <>
     <Box w="100%" h="100%" ph="5%" alignContent="center" justifyContent="center">
@@ -18,7 +19,8 @@ const Pass = () => {
 
                 />
                 <Box h={5}/>
-                 <Button title="Submit" />
+                 <Button title="Submit" onPress={() => setPass("CUCDH")} />
+                 {pass==="CUCDH" ? navigation.navigate("Home") : ""}
             </Box>
         </Box>
     </Box>  
