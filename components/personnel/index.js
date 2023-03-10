@@ -3,36 +3,80 @@ import { Box } from "@react-native-material/core";
 import { MaterialIcons, AntDesign } from "@expo/vector-icons";
 import { TouchableOpacity, Text, Linking, ScrollView } from "react-native";
 import { useNavigation } from "@react-navigation/native";
-import { LinearGradient } from 'expo-linear-gradient';
+import { LinearGradient } from "expo-linear-gradient";
 
 const Widget = ({ item }) => {
   return (
-    <Box
-      justifyContent="left"
-      alignItems="left"
-      ph="5%"
-      pv="1%"
-      flexDirection="row"
-    >
-      <Box backgroundColor="#eee" pv="3%" w="100%" ph="5%" borderRadius="8px" flexDirection="column" justifyContent="space-between">
-        <Box>
-          <Box >
-            <Text style={{ fontSize: "20px" }}>{item.name}</Text>
+    <>
+      {item.hasOwnProperty("email") ? (
+        <Box
+          justifyContent="left"
+          alignItems="left"
+          ph="5%"
+          pv="1%"
+          flexDirection="row"
+        >
+          <Box
+            backgroundColor="#eee"
+            pv="3%"
+            w="100%"
+            ph="3%"
+            borderRadius="8px"
+            flexDirection="column"
+            justifyContent="space-between"
+          >
+            <Box>
+              <Box>
+                <Text style={{ fontSize: "20px" }}>{item.name}</Text>
+              </Box>
+              <Text>{item.role}</Text>
             </Box>
-            <Text>{item.role}</Text> 
+            <Box pt="3%" borderRadius="8px" justifyContent="center">
+              <Box flexDirection="row" w="95%">
+                <AntDesign name="mail" size={22} color="black" />
+                <Text style={{ marginLeft: 5, marginTop: -2, fontSize:12 }}>
+                  {item.email}
+                </Text>
+              </Box>
+              <Box flexDirection="row">
+                <AntDesign name="phone" size={22} color="black" />
+                <Text style={{ marginLeft: 5, marginTop: 0 }}>
+                  {item.phone}
+                </Text>
+              </Box>
+            </Box>
+          </Box>
         </Box>
-              <Box pt="3%" borderRadius="8px" justifyContent="center">
-                  <Box flexDirection="row">
-                    <AntDesign name="mail" size={22} color="black" />
-                    <Text style={{marginLeft:5 ,marginTop:-2}}>mail@gmail.com</Text>
-                  </Box>
-                  <Box flexDirection="row">
-                    <AntDesign name="phone" size={22} color="black" />
-                    <Text style={{marginLeft:5,marginTop:0}}>+1(720)-000-0000</Text>
-                </Box>
-        </Box>  
-      </Box>
-    </Box>
+      ) : (
+        <Box
+          justifyContent="left"
+          alignItems="left"
+          ph="5%"
+          pv="1%"
+          flexDirection="row"
+        >
+          <Box
+            backgroundColor="#eee"
+            pv="3%"
+            w="100%"
+            ph="5%"
+            borderRadius="8px"
+            flexDirection="column"
+            justifyContent="space-between"
+          >
+            <Box>
+              <Box>
+                <Text style={{ fontSize: "20px" }}>{item.name}</Text>
+              </Box>
+            </Box>
+            <Box flexDirection="row">
+              <AntDesign name="phone" size={22} color="black" />
+              <Text style={{ marginLeft: 5, marginTop: 0 }}>{item.phone}</Text>
+            </Box>
+          </Box>
+        </Box>
+      )}
+    </>
   );
 };
 const Personnel = ({ route }) => {
@@ -103,28 +147,30 @@ const Personnel = ({ route }) => {
           <Text style={{ fontSize: "24px" }}>Contact Info:</Text>
         </Box>
         <LinearGradient
-          style={{flex:1, width:"90%", height:20, position:"absolute", zIndex:999, marginTop:"38.3%"}}
+          style={{
+            flex: 1,
+            width: "90%",
+            height: 20,
+            position: "absolute",
+            zIndex: 999,
+            marginTop: "38.3%",
+          }}
           locations={[0, 0]}
-          colors={['rgba(0, 0, 0, 0.01)', 'rgba(0, 0, 0, 0.1)','rgba(0, 0, 0, 0)']}
-          pointerEvents={'none'}
+          colors={[
+            "rgba(0, 0, 0, 0.01)",
+            "rgba(0, 0, 0, 0.1)",
+            "rgba(0, 0, 0, 0)",
+          ]}
+          pointerEvents={"none"}
         />
-        <ScrollView style={{}}>  
-        
-        <Box
-          w="100%"
-          h="100%"
-          pb={110}
-          mt={-3.5}
-        >
-          {data.map((item) => (
-            <Widget item={item} />
-          ))}
-         
-        </Box>
+        <ScrollView style={{}}>
+          <Box w="100%" h="100%" pb={110} mt={-3.5}>
+            {data.map((item) => (
+              <Widget item={item} />
+            ))}
+          </Box>
         </ScrollView>
       </Box>
-      
-      
     </>
   );
 };

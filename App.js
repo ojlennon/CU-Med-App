@@ -9,6 +9,7 @@ import Appendix from './components/appendix';
 import Extra from './components/extra';
 import Personnel from './components/personnel';
 import Articles from './components/articles';
+
 import Pass from './components/pass';
 
 const Stack = createNativeStackNavigator();
