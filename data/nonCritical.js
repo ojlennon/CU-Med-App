@@ -355,55 +355,7 @@ const NonCrit = [
             role: "Respiratory Therapy",
             phone: "N/A",
             email: "Jennifer.Celardo@childrenscolorado.org",
-      },
-      {
-        name: "Blood Bank",
-        phone: "7207776701"
-      },
-      {
-        name: "CA North",
-        phone: "7207772431"
-      },
-      {
-        name: "CICU",
-        phone: "7207776992"
-      },
-      {
-        name: "Delivery RN",
-        phone: "7207771589"
-      },
-      {
-        name: "ECHO",
-        phone: "7207772954"
-      },
-      {
-        name: "ECMO Y1",
-        phone: "7207774059"
-      },
-      {
-        name: "ECMO Y2",
-        phone: "7207774060"
-      },
-      {
-        name: "Spanish Interpreter",
-        phone: "7207779800"
-      },
-      {
-        name: "NICU Charge",
-        phone: "7207776883"
-      },
-      {
-        name: "NICU North Resource",
-        phone: "7207771547"
-      },
-      {
-        name: "Pharmacy",
-        phone: "7207779525"
-      },
-      {
-        name: "X ray",
-        phone: "7207778688"
-      },
+        },
         
     ],
   },
