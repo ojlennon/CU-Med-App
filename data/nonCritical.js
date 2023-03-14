@@ -283,80 +283,128 @@ const NonCrit = [
         role: "Neonatal Nurse Practitioner",
         phone: 5633439699,
         email: "Sarah.Palau@childrenscolorado.org",
-        },
-        {
-            name: "Andrea Marazzi NNP",
-            role: "Neonatal Nurse Practitioner",
-            phone: 8138382900,
-            email: "Andrea.Marazzi@childrenscolorado.org",
-        },
-        {
-            name: "Michelle Chadbourne NNP",
-            role: "Neonatal Nurse Practitioner",
-            phone: 8506247285,
-            email: "Michelle.Chadbourne@childrenscolorado.org",
-        },
-        {
-            name: "Hellea Valadez NNP",
-            role: "Neonatal Nurse Practitioner",
-            phone: 8506247285,
-            email: "Hellea.Valadez@childrenscolorado.org",
-        },
-        {
-            name: "Mallory Meuller RN",
-            role: "Neonatal Nurse",
-            phone: "N/A",
-            email: "Mallory.Mueller@childrenscolorado.org",
-        },
-        {
-            name: "Jennifer Trujillo RN",
-            role: "Neonatal Nurse",
-            phone: "N/A",
-            email: "Jennifer.Trujillo@childrenscolorado.org",
-        },
-        {
-            name: "Rachel Hall RN",
-            role: "Neonatal Nurse",
-            phone: "N/A",
-            email: "Rachel.Hall@childrenscolorado.org",
-        },
-        {
-            name: "Chelsea Hunter RN",
-            role: "Neonatal Nurse",
-            phone: "N/A",
-            email: "Chelsea.Hunter@childrenscolorado.org",
-        },
-        {
-            name: "Adrienne Alter RN",
-            role: "Neonatal Nurse",
-            phone: "N/A",
-            email: "Adrienne.Alter@childrenscolorado.org",
-        },
-        {
-            name: "Tori Sudar RT",
-            role: "Respiratory Therapy",
-            phone: "N/A",
-            email: "Tori.Sudar@childrenscolorado.org",
-        },
-        {
-            name: "Martin Hailey",
-            role: "Respiratory Therapy",
-            phone: "N/A",
-            email: "Hailey.Martin@childrenscolorado.org",
-        },
-        {
-            name: "Bethany Wright",
-            role: "Respiratory Therapy",
-            phone: "N/A",
-            email: "bethany.wright@childrenscolorado.org",
-        },
-        {
-            name: " Jennifer Celardo RT",
-            role: "Respiratory Therapy",
-            phone: "N/A",
-            email: "Jennifer.Celardo@childrenscolorado.org",
-        },
-        
+      },
+      {
+        name: "Andrea Marazzi NNP",
+        role: "Neonatal Nurse Practitioner",
+        phone: 8138382900,
+        email: "Andrea.Marazzi@childrenscolorado.org",
+      },
+      {
+        name: "Michelle Chadbourne NNP",
+        role: "Neonatal Nurse Practitioner",
+        phone: 8506247285,
+        email: "Michelle.Chadbourne@childrenscolorado.org",
+      },
+      {
+        name: "Hellea Valadez NNP",
+        role: "Neonatal Nurse Practitioner",
+        phone: 8506247285,
+        email: "Hellea.Valadez@childrenscolorado.org",
+      },
+      {
+        name: "Mallory Meuller RN",
+        role: "Neonatal Nurse",
+        phone: "N/A",
+        email: "Mallory.Mueller@childrenscolorado.org",
+      },
+      {
+        name: "Jennifer Trujillo RN",
+        role: "Neonatal Nurse",
+        phone: "N/A",
+        email: "Jennifer.Trujillo@childrenscolorado.org",
+      },
+      {
+        name: "Rachel Hall RN",
+        role: "Neonatal Nurse",
+        phone: "N/A",
+        email: "Rachel.Hall@childrenscolorado.org",
+      },
+      {
+        name: "Chelsea Hunter RN",
+        role: "Neonatal Nurse",
+        phone: "N/A",
+        email: "Chelsea.Hunter@childrenscolorado.org",
+      },
+      {
+        name: "Adrienne Alter RN",
+        role: "Neonatal Nurse",
+        phone: "N/A",
+        email: "Adrienne.Alter@childrenscolorado.org",
+      },
+      {
+        name: "Tori Sudar RT",
+        role: "Respiratory Therapy",
+        phone: "N/A",
+        email: "Tori.Sudar@childrenscolorado.org",
+      },
+      {
+        name: "Martin Hailey",
+        role: "Respiratory Therapy",
+        phone: "N/A",
+        email: "Hailey.Martin@childrenscolorado.org",
+      },
+      {
+        name: "Bethany Wright",
+        role: "Respiratory Therapy",
+        phone: "N/A",
+        email: "bethany.wright@childrenscolorado.org",
+      },
+      {
+        name: " Jennifer Celardo RT",
+        role: "Respiratory Therapy",
+        phone: "N/A",
+        email: "Jennifer.Celardo@childrenscolorado.org",
+      },
+
+      {
+        name: "Blood Bank",
+        phone: "7207776701",
+      },
+      {
+        name: "CA North",
+        phone: "7207772431",
+      },
+      {
+        name: "CICU",
+        phone: "7207776992",
+      },
+      {
+        name: "Delivery RN",
+        phone: "7207771589",
+      },
+      {
+        name: "ECHO",
+        phone: "7207772954",
+      },
+      {
+        name: "ECMO Y1",
+        phone: "7207774059",
+      },
+      {
+        name: "ECMO Y2",
+        phone: "7207774060",
+      },
+      {
+        name: "Spanish Interpreter",
+        phone: "7207779800",
+      },
+      {
+        name: "NICU Charge",
+        phone: "7207776883",
+      },
+      {
+        name: "NICU North Resource",
+        phone: "7207771547",
+      },
+      {
+        name: "Pharmacy",
+        phone: "7207779525",
+      },
+      {
+        name: "X ray",
+        phone: "7207778688",
+      },
     ],
   },
   {

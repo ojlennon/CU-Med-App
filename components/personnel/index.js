@@ -7,32 +7,76 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const Widget = ({ item }) => {
   return (
-    <Box
-      justifyContent="left"
-      alignItems="left"
-      ph="5%"
-      pv="1%"
-      flexDirection="row"
-    >
-      <Box backgroundColor="#eee" pv="3%" w="100%" ph="5%" borderRadius="8px" flexDirection="column" justifyContent="space-between">
-        <Box>
-          <Box >
-            <Text style={{ fontSize: "20px" }}>{item.name}</Text>
+    <>
+    {item.hasOwnProperty("email") ? (
+      <Box
+        justifyContent="left"
+        alignItems="left"
+        ph="5%"
+        pv="1%"
+        flexDirection="row"
+      >
+        <Box
+          backgroundColor="#eee"
+          pv="3%"
+          w="100%"
+          ph="3%"
+          borderRadius="8px"
+          flexDirection="column"
+          justifyContent="space-between"
+        >
+          <Box>
+            <Box>
+              <Text style={{ fontSize: "20px" }}>{item.name}</Text>
             </Box>
-            <Text>{item.role}</Text> 
+            <Text>{item.role}</Text>
+          </Box>
+          <Box pt="2%" borderRadius="8px" justifyContent="center">
+            <Box flexDirection="row" w="95%">
+              <AntDesign name="mail" size={22} color="black" />
+                <Text style={{ marginLeft: 5, marginTop: -2, fontSize: 12,color:"#333377" }} onPress={() => Linking.openURL(`mailto: ${item.email}`)}>
+                {item.email}
+              </Text>
+            </Box>
+            <Box flexDirection="row">
+              <AntDesign name="phone" size={22} color="black" />
+                <Text style={{ marginLeft: 5, marginTop: 0,color:"#333377" }} onPress={() => Linking.openURL(`tel: ${item.phone}`)}>
+                {item.phone}
+              </Text>
+            </Box>
+          </Box>
         </Box>
-              <Box pt="3%" borderRadius="8px" justifyContent="center">
-                  <Box flexDirection="row">
-                    <AntDesign name="mail" size={22} color="black" />
-            <Text style={{ marginLeft: 5, marginTop: -2 }}onPress={() => Linking.openURL(`mailto: ${item.email}`)}>{item.email}</Text>
-                  </Box>
-                  <Box flexDirection="row">
-                    <AntDesign name="phone" size={22} color="black" />
-            <Text style={{ marginLeft: 5, marginTop: 0 }}onPress={() => Linking.openURL(`tel: ${item.phone}`)}>{item.phone}</Text>
+        </Box>
+         ) : (
+          <Box
+            justifyContent="left"
+            alignItems="left"
+            ph="5%"
+            pv="1%"
+            flexDirection="row"
+          >
+            <Box
+              backgroundColor="#eee"
+              pv="3%"
+              w="100%"
+              ph="5%"
+              borderRadius="8px"
+              flexDirection="column"
+              justifyContent="space-between"
+            >
+              <Box>
+                <Box>
+                  <Text style={{ fontSize: "20px" }}>{item.name}</Text>
                 </Box>
-        </Box>  
-      </Box>
-    </Box>
+              </Box>
+              <Box flexDirection="row">
+                <AntDesign name="phone" size={22} color="black" />
+                <Text style={{ marginLeft: 5, marginTop: 0, color:"#333377" }} onPress={() => Linking.openURL(`tel: ${item.phone}`)}>{item.phone}</Text>
+              </Box>
+            </Box>
+          </Box>
+        )}
+      </>
   );
 };
 const Personnel = ({ route }) => {
