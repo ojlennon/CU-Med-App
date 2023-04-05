@@ -131,7 +131,7 @@ const Personnel = ({ route }) => {
           borderRadius="10px"
         >
           <Text
-            onPress={() => Linking.openURL("https://google.com")}
+            onPress={() => Linking.openURL("http://prdspoksslb-vip.thechildrenshospital.org/smartweb/pages/oncallGlobalSearch/oncallToday.jsf")}
             style={{
               fontSize: "22px",
               padding: "5%",
@@ -140,7 +140,7 @@ const Personnel = ({ route }) => {
               color: "#3CB9B7",
             }}
           >
-            <AntDesign name="calendar" size={24} /> On call schedule
+            <AntDesign name="calendar" size={24} /> On Call Schedule
           </Text>
         </Box>
         <Box w="100%" ph="5%" pv="2%" mt="3%" mb={5}>
