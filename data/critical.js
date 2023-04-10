@@ -53,7 +53,7 @@ const Crit = [
               },
               { text: "Preductal saturations < 85%" },
               {
-                text: "Persistent respiratory acidosis at 1 hour (pH <7.2, CO2 >65, Base deficit less <  than -6)",
+                text: "Persistent respiratory acidosis at 1 hour (pH <7.25, CO2 >65, Base deficit less <  than -6)",
               },
               { text: "Cerebral NIRS < 70" },
               {
