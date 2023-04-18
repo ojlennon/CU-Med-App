@@ -1,10 +1,10 @@
 {
   "expo": {
-    "name": "CUCDH",
+    "name": "CDH",
     "slug": "cu-som-app",
-    "version": "1.0.1",
+    "version": "1.0.0",
     "orientation": "portrait",
-    "icon": "assets/CDH.png",
+    "icon": "./assets/CDH.png",
     "userInterfaceStyle": "light",
     "splash": {
       "image": "./assets/splash2.png",
@@ -18,8 +18,7 @@
       "**/*"
     ],
     "ios": {
-      "supportsTablet": false,
-      "bundleIdentifier": "com.olennon.cusomapp"
+      "supportsTablet": false
     },
     "android": {
       "adaptiveIcon": {
@@ -29,11 +28,6 @@
     },
     "web": {
       "favicon": "./assets/favicon.png"
-    },
-    "extra": {
-      "eas": {
-        "projectId": "a2a8ebcf-b2cb-475e-82e2-81e0d431de40"
-      }
     }
   }
 }
