@@ -17,6 +17,8 @@ const Stack = createNativeStackNavigator();
 export default function App() {
   LogBox.ignoreLogs(['Warning: ...'])
   LogBox.ignoreAllLogs()
+  
+  
   return (
     <NavigationContainer>
       <Stack.Navigator screenOptions={{ headerShown: false }} initialRouteName="Pass">
