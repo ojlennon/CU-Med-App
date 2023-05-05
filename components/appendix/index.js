@@ -93,12 +93,12 @@ const Appendix = ({route}) => {
         </Box>
     </Box>
     <Box>
-        {name==="Appendix III" &&
+        {name==="Appendix V" &&
         <>
             <Box alignItems="center" justifyContent="center" minH="15%" style={{maxHeight:50}} backgroundColor="#fff" mh="3%" mt="8%">
                 <Text style={{fontSize:20}}>CDH Pain Algorithm</Text>
             </Box>
-         <Image source={require("../../assets/appendixIII.jpg")} style={{width:390,height:510, marginTop:"3%"}}/>
+         <Image source={require("../../assets/appendixV.png")} style={{width:390,height:510, marginTop:"3%"}}/>
         </>
         }
         {name==="Appendix II" &&

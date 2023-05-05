@@ -234,7 +234,7 @@ const NonCrit = [
     ],
   },
   {
-    name: "Appendix III",
+    name: "Appendix V",
     color: "#a05f58",
     text: "even more stuff here",
   },
