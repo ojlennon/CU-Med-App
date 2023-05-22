@@ -22,7 +22,7 @@ const Widget = ({ item, color }) => {
             </Box>
             <Box style={{backgroundColor: "#e0e0e0", padding:"4%", width:"100%", borderRadius:"5px"}}>
               <Text style={{ fontSize: "20px" }}>{item.text} </Text>
-              {item.text==="CDH Pain Algorithm" && <Image source={require("../../assets/appendixIII.jpg")} style={{width:310,height:405, marginTop:"3%"}}/>}
+              {item.text==="CDH Pain Algorithm" && <Image source={require("../../assets/appendixIII.png")} style={{width:310,height:405, marginTop:"3%"}}/>}
             </Box>
           </Box>
           {item.hasOwnProperty("sub") && 
@@ -99,6 +99,32 @@ const Appendix = ({route}) => {
                 <Text style={{fontSize:20}}>CDH Pain Algorithm</Text>
             </Box>
          <Image source={require("../../assets/appendixV.png")} style={{width:390,height:510, marginTop:"3%"}}/>
+        </>
+          }
+        {name==="Appendix III" &&
+        <>
+            <Box alignItems="center" justifyContent="center" minH="15%" style={{maxHeight:50}} backgroundColor="#fff" mh="3%" mt="8%">
+                <Text style={{fontSize:20}}>CDH Pain Algorithm</Text>
+            </Box>
+         <Image source={require("../../assets/appendixIII.png")} style={{width:370,height:420, marginTop:"3%", marginLeft:"3%"}}/>
+        </>
+          }
+          {name==="Appendix IV" &&
+        <>
+            <Box alignItems="center" justifyContent="center" minH="15%" style={{maxHeight:50}} backgroundColor="#fff" mh="3%" mt="8%">
+                <Text style={{fontSize:20}}>CDH Pain Algorithm</Text>
+            </Box>
+         <Image source={require("../../assets/appendixIV.png")} style={{width:370,height:420, marginTop:"3%", marginLeft:"3%"}}/>
+        </>
+          }
+          {name==="Pre Brief" &&
+        <>
+            <Box alignItems="center" justifyContent="center" minH="15%" style={{maxHeight:50}} backgroundColor="#fff" mh="3%" mt="8%">
+                <Text style={{fontSize:20}}>Pre Brief</Text>
+            </Box>
+            <Image source={require("../../assets/pre1.png")} style={{ width: 365, height: 271, marginTop: "3%", marginLeft: "3%" }} />
+            <Image source={require("../../assets/pre2.png")} style={{width:365,height:187, marginLeft:"3%"}}/>
+
         </>
         }
         {name==="Appendix II" &&

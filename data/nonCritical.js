@@ -234,7 +234,22 @@ const NonCrit = [
     ],
   },
   {
+    name: "Appendix III",
+    color: "#a05f58",
+    text: "even more stuff here",
+  },
+  {
+    name: "Appendix IV",
+    color: "#a05f58",
+    text: "even more stuff here",
+  },
+  {
     name: "Appendix V",
+    color: "#a05f58",
+    text: "even more stuff here",
+  },
+  {
+    name: "Appendix VI",
     color: "#a05f58",
     text: "even more stuff here",
   },

@@ -6,7 +6,7 @@ import TopBar from '../topBar';
 import { FontAwesome5,MaterialIcons,Fontisto, MaterialCommunityIcons,AntDesign,Entypo, Ionicons } from '@expo/vector-icons'; 
 import Crit from '../../data/critical'
 import NonCrit from '../../data/nonCritical'
-
+import Pre from '../../data/pre'
 const Widget = ({name, icon="", color="#fff"}) => {
     return(
         <Box width="100%" mt="3%" ml="-5%" h={60} p ="3.5%" borderRadius="5px" backgroundColor="#ddd" flexDirection="row" justifyContent="space-between">
@@ -160,7 +160,12 @@ const Home = ({ navigation }) => {
         <TopBar />
         <Box height="70%" backgroundColor="#eee" width="100%" justifyContent="top" alignItems="center" >
             <ScrollView showsVerticalScrollIndicator={false} width={"100%"}>
-            <Box height="100%" width="110%" pv="7%" ph="10%" ml="-1%" marginTop="-4%">
+                      <Box height="100%" width="110%" pv="7%" ph="10%" ml="-1%" marginTop="-4%">
+                      {
+                    Pre.map((item) => (
+                            <NonCritWidget name={item.name} navigation={navigation} item={item} color={item.color}/>
+                    ))
+                }
                 {
                     Crit.map((item) => (
                         <TouchableOpacity onPress={() => navigation.navigate("Second", {
