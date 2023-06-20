@@ -9,24 +9,30 @@ const Crit = [
         name: "Respiratory",
         subPages: [
           {
-            name: "CMV settings",
+            name: "Conventional Mechanical Ventilation (CMV) Settings",
             data: [
               {
-                text: "Intubate- ventilation via neopuff with transition to CMV once HR is stable. Initial ventilator settings and range based on prenatal severity profile",
+                text: "ntubate- ventilation via neopuff with transition to CMV once HR is stable. Initial ventilator settings and range based on prenatal severity profile",
+                sub:[
+                  {text:"Do not inflate cuff of cuffed ETT"},
+                  {text:"Appropriate ETT placement is T2 on x-ray"},
+                ]
               },
-              {
-                text: "Mild: 20/5 (PIP not to exceed 25), RR 60 (up to 80), PS 10 (8-12), FiO2 50%",
-              },
-              {
-                text: "Moderate: 23/4 (PIP not to exceed 25), RR 80, PS 12 (8-15), FiO2 100%",
-              },
-              {
-                text: "Severe: 23/4 PIP (not to exceed 25), RR 80, PS 15 (10-15) FiO2 100%",
-                sub: [
-                  { text: "1) Adjust iTime to maintain I:E 1:2 (0.2-0.5)" },
-                  { text: "2) iTime Calculation: 60/RR/3= iTime " },
-                ],
-              },
+              {text:"Mode: AC/PC",sub:[
+                {
+                  text: "Mild: 20/5 (PIP not to exceed 25), RR 60 (up to 80), FiO2 50%",
+                },
+                {
+                  text: "Moderate: 23/4 (PIP not to exceed 25), RR 80, FiO2 100%",
+                },
+                {
+                  text: "Severe: 23/4 PIP (not to exceed 25), RR 80, FiO2 100%",
+                  sub: [
+                    { text: "1) Adjust iTime to maintain I:E 1:2 (0.2-0.5)" },
+                    { text: "2) iTime Calculation: 60/RR/3= iTime " },
+                  ],
+                },
+              ]},
             ],
           },
           {
@@ -51,11 +57,9 @@ const Crit = [
               {
                 text: "Failure to achieve adequate ventilation demonstrated by two consecutive blood gasses at least 15 min apart after achieving max CMV settings, s/p sedation, s/p bicarb",
               },
-              { text: "Preductal saturations < 85%" },
-              {
-                text: "Persistent respiratory acidosis at 1 hour (pH <7.2, CO2 >65, Base deficit less <  than -6)",
-              },
+              { text: "Persistent respiratory acidosis (pH <7.2, CO2 >65, Base deficit less than -6); not seeing consecutive improvement on ABGs" },
               { text: "Cerebral NIRS < 70" },
+              {text:"Preductal saturations < 85%"},
               {
                 text: "Severe respiratory distress - unable to capture with CMV",
               },
@@ -187,10 +191,18 @@ const Crit = [
               {
                 text: "3rd line: Vasopressin at 0.0005 units/kg/min",
                 sub: [
-                  { text: "1) Titrate by 0.0005 units/kg/min" },
-                  {text: "2) Consider adding sooner for brisk urine output and is fluid responsive "}
+                  { text: "Titrate by 0.0005 units/kg/min. to max ___" },
+                  {text: "Consider adding sooner for brisk urine output and is fluid responsive."}
                 ]
               },
+              {text:"Hydrocortisone:",
+            sub:[
+              {text:"Administer 2 mg/kg IV after trough obtained and assess need for vasopressor support. If no vasopressors, hold scheduled hydrocortisone."},
+              {text:"If requiring vasopressors and cortisol level < 15, schedule 2 mg/kg every 8 hours with max 2 mg/kg every 6 hours."},
+              {text:"If requiring vasopressors and cortisol level > 15, schedule 1 mg/kg every 8 hours."},
+              {text:"Check PRN trough cortisol level and adjust dosing accordingly. "},
+              {text:"All patients increase to 2 mg/kg prior to surgery for 24 hours."},
+            ]}
           ]},
           {
             name: "Pulmonary Hypertension",
@@ -268,18 +280,36 @@ const Crit = [
     color: "#688B58",
     subData: [
       {
+        name:"criteria for CDH repair",
+        subPages:[
+          {name: "Respitory",
+          data:[
+            {text:"Vent RR < 60bpm"},
+            {text:"FiO2 <60%"}
+          ]},
+          {name: "Cardiovascular",
+          data:[
+            {text:"ystemic or subsystemic by TR jet or PDA shunt",
+            sub:[{text:"If systemic with restrictive PDA, consider PGE"}]},
+            {text:"Inotropic support: Dopamine < 10 mcg/kg/min and epinephrine < 0.15 mcg/kg/min"}
+          ]}
+        ]
+      },
+      {
         name: "Respiratory",
         subPages: [
           { name: "CMV Settings",
-            header:"Ventilation via pressure mode with Servo ventilator",
+            header:"Ventilation via pressure with Servo ventilator",
             data:[
-              {text:"Mild: 20/5 (PIP not to exceed 25), RR 60 (up to 80), PS 10 (8-12), FiO2 50%"},
-              {text:"Moderate: 23/4 (PIP not to exceed 25), RR 80, PS 12 (8-15), FiO2 100%"},
-              {
-              text:"Severe: 23/4 PIP (not to exceed 25), RR 80, PS 15 (10-15) FiO2 100%",
-              sub:[
-                {text:"Adjust iTime to maintain I:E 1:2 (0.25-0.5)"},
-                {text:"iTime Calculation: 60/RR/3= iTime"}
+              {text:"Mode: SIMV-PC for RR <60 or PC/AC for RR >60",sub:[
+                {text:"Mild: 20/5 (PIP not to exceed 25), RR 60 (up to 80), PS 10 (8-12), FiO2 50%"},
+                {text:"Moderate: 23/4 (PIP not to exceed 25), RR 80, PS 12 (8-15), FiO2 100%"},
+                {
+                text:"Severe: 23/4 PIP (not to exceed 25), RR 80, PS 15 (10-15) FiO2 100%",
+                sub:[
+                  {text:"Adjust iTime to maintain I:E 1:2 (0.25-0.5)"},
+                  {text:"iTime Calculation: 60/RR/3= iTime"}
+                ]}
               ]}
             ]
            },
@@ -374,7 +404,11 @@ const Crit = [
               },
               {
                 text:"Indication to initiate PGE",
-                sub:[{text:"PDA shunt right to left in Moderate/Severe CDH profile"}]
+                sub:[
+                  {text:"PDA shunt right to left or bidirectional in Moderate/Severe CDH profile."},                  
+                  {text:"Persistent right to left atrial level shunt on iNO"},
+                  {text:"Consider stopping PGE with signs of overcirculation"},
+                ]
               },
               {
                 text:"Indications to initiate PGE + Milrinone",
@@ -410,7 +444,7 @@ const Crit = [
         subPages: [
           { name: "IV Fluids",
           data:[
-            {text:"Begin total fluids at 80 mL/kg/day (Include all drips) with starter TPN. Keep total fluids 80 mL/kg/day until repair."},
+            {text:"Begin total fluids at 80 mL/kg/day (Include all drips) with TPN. Keep total fluids 80 mL/kg/day until repair."},
             {text:"Utilize NaAC via arterial line",
             sub:[{text:"Consider adding papaverine to PAL if spasming (can only be used with NaCl)"}]}
           ]  
@@ -424,9 +458,7 @@ const Crit = [
           { name: "Electrolytes (during acute phase)",
           data:[
             {text:"Treat metabolic acidosis (pH < 7.2 and/or base deficit greater than -6) with sodium bicarbonate 2mEq/kg dosing regardless of respiratory acidosis."},
-            {text:"Maintain iCal >1.2"},
-            {text:"Magnesium level >2"},
-            {text:"Potassium level >3.4"},
+            {text:"Goal iCa >1.2 mg/dL, Mg >2 mEq/L,  K >3.4 mEq/L"},
           ]  
         },
           { name: "Lab Schedule",
@@ -434,18 +466,17 @@ const Crit = [
             {text:"QD RFP until stable"},
             {text:"PRN Mag, Lytes, iCal to be obtained after repletion"},
             {text:"QMon CMP, Mag, Phos,"},
-            {text:"QThurs RFP"}
           ]  
         },
           { name: "TPN Goals",
           data:[
-            {text:"Protein- 3 g/kg AA"},
+            {text:"Protein-: 3-3.5 g/kg AA"},
             {text:"GIR 12 with goal glucose 60-150 mg/dL"},
-            {text:"IL- Initiate at 2 g/kg/day and increase to goal 3 g/kg/day on DOL 2",
+            {text:"IL-: Initiate at 2 g/kg/day and increase to goal 3 g/kg/day on DOL 2",
             sub:[{text:"Consider SMOF if not able to start feeds by 2 weeks"}]},
             {text:"Add levocarnitine at 7 days if still NPO"},
-            {text:"Famotidine 0.5mg/kg in TPN",
-            sub:[{text:"Transition to PO when TPN d/c"}]},
+            {text:"Famotidine 0.5 mg/kg in TPN (Check compatibility with IV medications/drips)",
+            sub:[{text:"Transition to enteral once to tolerating feeds"}]},
           ]  
         },
         ],
@@ -571,14 +602,16 @@ const Crit = [
         subPages: [
           { name: "Total Fluids",
           data:[
-            {text:"Day of repair: Increase total fluids by 30-50 mL/kg using Plasma-lyte to make up for insensible losses related to repair.",
-              sub:[{text:"Monitor UO and BP to adjust TF overnight."}]
+            {text:"Day of repair: Increase total fluids by 30-50 mL/kg over 12-24 hours using Plasma-lyte until euvolemic..",
+              sub:[{text:"Monitor urine output and BP to adjust TF overnight."}]
             },
-            {text:"Day after repair: Return TF goal to 80-100 mL/kg/day including all drips"},
+            {text:"Day after repair: Return TF goal to 80-120 mL/kg/day including all drips"},
             {text:"48 hours post-repair: Monitor fluid balance/weight",
-            sub:[{text:"Fluid overload >10%- Initiate Lasix 1 mg/kg IV QD-TID"}]
+            sub:[{text:"Consider Lasix 1 mg/kg IV as spot dose for evidence of fluid overload",
+            sub:[{text:"If diuretic responsive, may consider scheduling depending on fluid status"}]}]
             },
             {text:"Titrate fluids as needed to max 120 mL/kg/day."},
+            {text:"Continue to optimize TPN as able within fluid allowance"},
             {text:"When feeds are added in, maintain TF goal  ≤ 130-140 mL/kg/day."}
           ] },
           { name: "GI",
@@ -589,20 +622,19 @@ const Crit = [
           { name: "Enteral Feeding Guidelines",
           data:[
             {text:"Initiate feeding on return of bowel function (usually 48 hours post-surgery) or when hemodynamically stable (less than 5 mcg/kg/min dopamine).",
-              sub:[{text:"Goal is to use maternal breast milk; if not available, utilize Good Start or Similac total comfort (whey based)"}]
+              sub:[{text:"Goal is to use human milk; if not available, consider using whey based formula",
+                sub:[{text:"Special Considerations: Cholestatic infants- consider a high MCT extensively hydrolyzed formula. Infant with chylothorax- Change to low LCT containing formula (extensively hydrolyzed)"}]}]
             },
+            {text:"Transition from H2 blocker to oral PPI when tolerating 60ml/kg/day of feeding",
+            sub:[{text:"Ensure treatment adequacy with gastric pH after 72 hours; goal gastric pH >"}]},
             {text:"Tolerance of feeds considered 3 or less emesis daily."},
-            {text:"Mild-Moderate:",
+            {text:"Mild:",
             sub:[
-              {text:"Route- Nasogastric",
-              sub:[
-                {text:"Consider TP for moderate (PPLV closer to 15%)"}
-              ]},
+              {text:"Route- Nasogastric"},
               {text:"Initiate bolus gastric feeds at 20 ml/kg/day."},
               {text:"Fortify daily once above trophics to goal of 24 kcal/oz"},
-              {text:"Advance by 30 mL/kg/day daily as tolerated."},
-              {text:"Goal 140 mL/kg/day of 24 kcal/oz for targeted 110-120 kcal/kg/day"},
-              {text:"Consider liquid protein for moderate (may initiate >trophics)"},
+              {text:"Advance by up to 30 mL/kg/day daily as tolerated."},
+              {text:"Goal 140 mL/kg/day of 24-26 kcal/oz for targeted 110-120 kcal/kg/day"},
               {text:"Intolerance",
               sub:[
                 {text:"Step 1: Continuous feeds"},
@@ -610,36 +642,50 @@ const Crit = [
                 {text:"May need NGT to vent"}
               ]}
             ]},
-            {text:"Severe CDH:",
+            {text:"Moderate-Severe CDH:",
             sub:[
-              {text:"Route- TP placed at time of surgery"},
+              {text:"For Severe: Route- TP placed at time of surgery"},
               {text:"Initiate continuous feeds at 20 mL/kg/day via TP tube."},
               {text:"Fortify by 2 kcal/oz daily once above trophics to goal of 26 kcal/oz"},
               {text:"Advance by 20 mL/kg/day"},
-              {text:"Goal 140 mL/kg/day of 26 kcal/oz for targeted 120 kcal/kg/day"},
-              {text:"(For Term infants) Add liquid protein above trophics"},
+              {text:"Goal 140 mL/kg/day of 24-26 kcal/oz for targeted 120 kcal/kg/day"},
+              {text:"Additional liquid protein can be added once above trophics "},
               {text:"Intolerance",
               sub:[
                 {text:"May need NGT to vent"},
-                {text:"Hold at previously tolerated volume"}
+                {text:"Hold at previously tolerated volume and consider supplemental TPN/IL to meet estimated nutrient needs"}
               ]}
             ]},
             {text:"Fortification",
             sub:[
-              {text:"Term infants- Fortify with Gerber Good Start or Similac Total Comfort (when available)",
-              sub:[{text:"May need to trial extensively hydrolyzed formula"}]},
-              {text:"<36 weeks utilize HMF"},
+              {text:"Term infants- Consider Ffortifyying with whey based formula",
+              sub:[{text:"May need to trial extensively hydrolyzed formula if patient has continued feeding intolerance or patient is cholestatic"}
+                  ,{text:"Change to low LCT formula if patient develops chylothorax"}]},
+              {text:"Preterm infants ≤ 36 weeks amd < 3.5 kg utilize HMF"},
               {text:"Consider increased caloric density for suboptimal growth"}
             ]},
-            {text:"Failure to thrive",
+            {text:"High risk patient population for growth failure",
             sub:[
-              {text:"Advance to 26-27 kcal/oz maintaining 140 mL/kg/day prior to advancing total fluids",
-              sub:[
-                {text:"For infants already receiving above goal- evaluate respiratory support"},
-                {text:"Advance by 10 mL/kg/day increments to max 160 mL/kg/day   --(Initiate Lasix to avoid fluid overload)"},
-                {text:"Consider transitioning to gastric feeds for TP fed infants to optimize growth"}
-              ]},
-              {text:"If caloric density and/or feeding volumes are limited secondary to patient status and the patient is unable to meet nutritional needs for ≥48 hours, may need to decrease feed volumes to allow for at least 40-60 mL/kg of TPN until enteral feedings can be advanced to goal"}
+              {text:"Growth Goals",
+                sub:[
+                  {text:"AGA, Term infants- Gain 25 to 40 g/day"},
+                  {text:"Premature infants < 2 kg- Gain 18 to 20 g/kg/day"},
+                  {text:"Maintain growth percentile within 10-15% if born AGA"},
+                ]},
+              {text:"Critical points of assessment",
+                sub:[
+                  {text:"Transition to full feedings off of TPN"},
+                  {text:"Changes in respiratory support"},
+                ]},
+              {text:"Intervention for growth failure",
+                sub:[
+                  {text:"Evaluate respiratory support"},
+                  {text:"Advance to 26-27 kcal/oz maintaining 140 mL/kg/day prior to advancing total fluids"},
+                  {text:"Next, advance by 10 mL/kg/day increments to max 160 mL/kg/day -- Consider Lasix to avoid fluid overload"},
+                  {text:"Consider transitioning to gastric feeds for TP fed infants to optimize growth"},
+                  {text:"If caloric density and/or feeding volumes are limited secondary to patient status and the patient is unable to meet nutritional needs for ≥48 hours, may need to decrease feed volumes to allow for at least 40-60 mL/kg of TPN until enteral feedings can be advanced to goal"},
+                  {text:"Assess sodium status by obtaining serum and urine sodium levels. -- Serum Na <135 mg/dL and/or uNa <20-30 mmol/L- consider Sodium supplementation (uNa may not be beneficial in the setting of diuretic use)"},
+                ]},
             ]},
             {text:"Transition from TP to gastric",
             sub:[
@@ -683,6 +729,8 @@ const Crit = [
             ] }
         ],
       },
+      {name:"NEURO/PAIN",
+        subPages:[{name:"Reference NICU post-op pain guideline",data:[]}]}
     ],
   },
   {
@@ -853,7 +901,7 @@ const Crit = [
               {text:"GIR 12 with goal glucose 60-150 mg/dL"},
               {text:"IL 3 g/kg/day -- Consider SMOF if not able to start feeds within 2 weeks"},
               {text:"Add levocarnitine at 7 days if still NPO "},
-              {text:"Famotidine 0.5 mg/kg in TPN -- Transition to enteral when off TPN"},
+              {text:"Famotidine 0.5 mg/kg in TPN (Check compatibility with IV medications/drips"}
             ]},
             {text:"Enteral Feeding",
             sub:[
