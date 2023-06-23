@@ -12,7 +12,7 @@ const Crit = [
             name: "Conventional Mechanical Ventilation (CMV) Settings",
             data: [
               {
-                text: "ntubate- ventilation via neopuff with transition to CMV once HR is stable. Initial ventilator settings and range based on prenatal severity profile",
+                text: "intubate- ventilation via neopuff with transition to CMV once HR is stable. Initial ventilator settings and range based on prenatal severity profile",
                 sub: [
                   { text: "Do not inflate cuff of cuffed ETT" },
                   { text: "Appropriate ETT placement is T2 on x-ray" },
@@ -159,16 +159,17 @@ const Crit = [
                 ],
               },
               {
-                text: "Goal mean arterial blood pressure (MAP) 40-45 mmHg",
+                text: "Target mean arterial blood pressure (MAP)",
                 sub: [
                   {
-                    text: "1) If pulse pressure <15 mmHg target systolic BP 60-70 mmHg",
+                    text: "Mild: 40-45 mmHg",
                   },
+                  {text:"Moderate-Severe: 45 to 55 mmHg",sub:[{text:"If pulse pressure <15 mmHg target systolic BP 60-70 mmHg"}]},
                 ],
               },
               {
                 text: "Send cortisol level",
-                sub: [{ text: "1) Administer hydrocortisone 2 mg/kg IV" }],
+                sub: [{ text: "Administer hydrocortisone 2 mg/kg IV once (see CV section below for subsequent hydrocortisone utilization)" }],
               },
             ],
           },
@@ -212,7 +213,7 @@ const Crit = [
               {
                 text: "3rd line: Vasopressin at 0.0005 units/kg/min",
                 sub: [
-                  { text: "Titrate by 0.0005 units/kg/min. to max ___" },
+                  { text: "Titrate by 0.0005 units/kg/min - to max ___" },
                   {
                     text: "Consider adding sooner for brisk urine output and is fluid responsive.",
                   },
@@ -250,8 +251,9 @@ const Crit = [
                 text: "Preductal SaO2 < 85% with adequate ventilation and pH >7.2",
                 sub: [
                   {
-                    text: "1) Start iNO at 5 ppm, up titrate to 20 ppm to achieve preductal saturations",
+                    text: "Obtain echocardiogram in delivery room  if stable",
                   },
+                  {text:"If unstable, start iNO at 5 ppm, up titrate to 20 ppm to achieve preductal saturations and obtain echocardiogram"}
                 ],
               },
             ],
@@ -352,7 +354,7 @@ const Crit = [
             name: "Cardiovascular",
             data: [
               {
-                text: "ystemic or subsystemic by TR jet or PDA shunt",
+                text: "Systemic or subsystemic by TR jet or PDA shunt",
                 sub: [
                   { text: "If systemic with restrictive PDA, consider PGE" },
                 ],
