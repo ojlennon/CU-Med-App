@@ -93,12 +93,20 @@ const Appendix = ({route}) => {
         </Box>
     </Box>
     <Box>
+          {name==="Appendix VI" &&
+              <>
+                  <Box alignItems="center" justifyContent="center" minH="15%" style={{maxHeight:50}} backgroundColor="#fff" mh="3%" mt="8%">
+                      <Text style={{fontSize:20}}>Seperation Trial Algorithm</Text>
+                  </Box>
+              <Image source={require("../../assets/appendixVI.png")} style={{width:365,height:280, marginLeft:"3%", marginTop:"3%"}}/>
+              </>
+          }
         {name==="Appendix V" &&
         <>
             <Box alignItems="center" justifyContent="center" minH="15%" style={{maxHeight:50}} backgroundColor="#fff" mh="3%" mt="8%">
-                <Text style={{fontSize:20}}>CDH Pain Algorithm</Text>
+                <Text style={{fontSize:20}}>Perioperative guideline</Text>
             </Box>
-         <Image source={require("../../assets/appendixV.png")} style={{width:390,height:510, marginTop:"3%"}}/>
+         <Image source={require("../../assets/appendixV.png")} style={{width:365,height:400, marginLeft:"3%", marginTop:"3%"}}/>
         </>
           }
         {name==="Appendix III" &&
@@ -112,7 +120,7 @@ const Appendix = ({route}) => {
           {name==="Appendix IV" &&
         <>
             <Box alignItems="center" justifyContent="center" minH="15%" style={{maxHeight:50}} backgroundColor="#fff" mh="3%" mt="8%">
-                <Text style={{fontSize:20}}>CDH Pain Algorithm</Text>
+                <Text style={{fontSize:20}}>Cannulation Prep</Text>
             </Box>
          <Image source={require("../../assets/appendixIV.png")} style={{width:370,height:420, marginTop:"3%", marginLeft:"3%"}}/>
         </>
