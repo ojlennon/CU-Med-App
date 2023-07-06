@@ -89,6 +89,7 @@ const Crit = [
           {
             name: "ECMO Criteria",
             data: [
+              { text:"Percent predicted lung volume (PPLV) < 15%" },
               {
                 text: "HFOV MAP greater than 18, Amplitude 40, Hz 8 with worsening gasses",
               },
