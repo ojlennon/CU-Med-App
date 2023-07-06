@@ -114,7 +114,7 @@ const Appendix = ({route}) => {
             <Box alignItems="center" justifyContent="center" minH="15%" style={{maxHeight:50}} backgroundColor="#fff" mh="3%" mt="8%">
                 <Text style={{fontSize:20}}>CDH Pain Algorithm</Text>
             </Box>
-         <Image source={require("../../assets/appendixIII.png")} style={{width:370,height:420, marginTop:"3%", marginLeft:"3%"}}/>
+         <Image source={require("../../assets/appendixIII.png")} style={{width:365,height:420, marginTop:"3%", marginLeft:"3%"}}/>
         </>
           }
           {name==="Appendix IV" &&
@@ -122,7 +122,7 @@ const Appendix = ({route}) => {
             <Box alignItems="center" justifyContent="center" minH="15%" style={{maxHeight:50}} backgroundColor="#fff" mh="3%" mt="8%">
                 <Text style={{fontSize:20}}>Cannulation Prep</Text>
             </Box>
-         <Image source={require("../../assets/appendixIV.png")} style={{width:370,height:420, marginTop:"3%", marginLeft:"3%"}}/>
+         <Image source={require("../../assets/appendixIV.png")} style={{width:365,height:420, marginTop:"3%", marginLeft:"3%"}}/>
         </>
           }
           {name==="Pre Brief" &&
