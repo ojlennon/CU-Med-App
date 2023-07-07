@@ -2,7 +2,7 @@
   "expo": {
     "name": "CDH",
     "slug": "cu-som-app",
-    "version": "1.0.5",
+    "version": "1.0.6",
     "orientation": "portrait",
     "icon": "./assets/CDH.png",
     "userInterfaceStyle": "light",
@@ -32,8 +32,9 @@
     },
     "extra": {
       "eas": {
-        "projectId": "a2a8ebcf-b2cb-475e-82e2-81e0d431de40"
+        "projectId": "85afb419-f901-4031-b4b4-6e9fb87f18aa"
       }
-    }
+    },
+    "owner": "gienjas"
   }
 }
