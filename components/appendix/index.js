@@ -55,11 +55,12 @@ const Widget = ({ item, color }) => {
 
 const Appendix = ({route}) => {
     
-  const { appendix } = route.params;
-  const { name } = route.params;
+  
+    const { name } = route.params;
     const { header } = route.params;
     const { color } = route.params;
     const {data} = route.params
+    const { appendix } = route.params;
     const navigation = useNavigation();
     return (
         <>
