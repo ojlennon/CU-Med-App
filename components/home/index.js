@@ -129,7 +129,8 @@ const NonCritWidget = ({name, color="#fff", item, navigation}) => {
             name:item.name,
             header:item.header,
             color:item.color,
-            data:item.data
+            data:item.data,
+            appendix:item.appendix
         })}>
         <Box width="100%" mt="3%" ml="-5%" mb="0%" p ="3.5%" borderRadius="5px" backgroundColor="#ddd" flexDirection="row" justifyContent="space-between">
             <Box flexDirection="row" justifyContent="center">
