@@ -94,6 +94,7 @@ const NonCrit = [
   },
   {
     name: "Delivery Room Equipment I",
+    appendix: "Appendix I",
     color: "#BB7E5D",
     header: "Delivery Room Equipment",
     data: [
@@ -173,6 +174,7 @@ const NonCrit = [
   },
   {
     name: "Delivery Room Roles II",
+    appendix:"Appendix II",
     color: "#a06d50",
     header: "Delivery Room Roles",
     data: [
@@ -235,21 +237,25 @@ const NonCrit = [
   },
   {
     name: "Pain Algorithm III",
+    appendix:"Appendix III",
     color: "#a05f58",
     text: "even more stuff here",
   },
   {
     name: "Cannulation Prep IV",
+    appendix:"Appendix IV",
     color: "#a05f58",
     text: "even more stuff here",
   },
   {
     name: "Perioperative Coagulation V",
+    appendix:"Appendix V",
     color: "#a05f58",
     text: "even more stuff here",
   },
   {
     name: "Separation Trial VI",
+    appendix:"Appendix VI",
     color: "#a05f58",
     text: "even more stuff here",
   },

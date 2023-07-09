@@ -55,7 +55,7 @@ const Widget = ({ item, color }) => {
 
 const Appendix = ({route}) => {
     
-    const { name } = route.params;
+    const { appendix } = route.params;
     const { header } = route.params;
     const { color } = route.params;
     const {data} = route.params
@@ -93,7 +93,7 @@ const Appendix = ({route}) => {
         </Box>
     </Box>
     <Box>
-          {name==="Appendix VI" &&
+          {appendix==="Appendix VI" &&
               <>
                   <Box alignItems="center" justifyContent="center" minH="15%" style={{maxHeight:50}} backgroundColor="#fff" mh="3%" mt="8%">
                       <Text style={{fontSize:20}}>Seperation Trial Algorithm</Text>
@@ -101,7 +101,7 @@ const Appendix = ({route}) => {
               <Image source={require("../../assets/appendixVI.png")} style={{width:365,height:280, marginLeft:"3%", marginTop:"3%"}}/>
               </>
           }
-        {name==="Appendix V" &&
+        {appendix==="Appendix V" &&
         <>
             <Box alignItems="center" justifyContent="center" minH="15%" style={{maxHeight:50}} backgroundColor="#fff" mh="3%" mt="8%">
                 <Text style={{fontSize:20}}>Perioperative guideline</Text>
@@ -109,7 +109,7 @@ const Appendix = ({route}) => {
          <Image source={require("../../assets/appendixV.png")} style={{width:365,height:400, marginLeft:"3%", marginTop:"3%"}}/>
         </>
           }
-        {name==="Appendix III" &&
+        {appendix==="Appendix III" &&
         <>
             <Box alignItems="center" justifyContent="center" minH="15%" style={{maxHeight:50}} backgroundColor="#fff" mh="3%" mt="8%">
                 <Text style={{fontSize:20}}>CDH Pain Algorithm</Text>
@@ -117,7 +117,7 @@ const Appendix = ({route}) => {
          <Image source={require("../../assets/appendixIII.png")} style={{width:365,height:420, marginTop:"3%", marginLeft:"3%"}}/>
         </>
           }
-          {name==="Appendix IV" &&
+          {appendix==="Appendix IV" &&
         <>
             <Box alignItems="center" justifyContent="center" minH="15%" style={{maxHeight:50}} backgroundColor="#fff" mh="3%" mt="8%">
                 <Text style={{fontSize:20}}>Cannulation Prep</Text>
@@ -135,7 +135,7 @@ const Appendix = ({route}) => {
 
         </>
         }
-        {name==="Appendix II" &&
+        {appendix==="Appendix II" &&
         <>
             <ScrollView style={{backgroundColor:"#eee", width:"100%"}}>
             <Box
@@ -164,7 +164,7 @@ const Appendix = ({route}) => {
             </ScrollView>
         </>
         }
-        {name==="Appendix I" &&
+        {appendix==="Appendix I" &&
         <>
             <ScrollView style={{backgroundColor:"#eee", width:"100%"}}>
             <Box
