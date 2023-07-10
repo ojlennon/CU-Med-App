@@ -155,6 +155,7 @@ const NonCrit = [
           { text: "Saline flush" },
           { text: "Transilluminator" },
           { text: "Duoderm & Tegaderm" },
+          { text: "Sorbaview Dressing - Nano" },
         ],
       },
       {
