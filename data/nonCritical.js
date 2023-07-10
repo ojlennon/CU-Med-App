@@ -129,7 +129,7 @@ const NonCrit = [
           { text: "3.5 uncuffed ETT + stylet" },
           { text: "3.0 cuffed ETT + stylet" },
           { text: "Pedicap x 2" },
-          { text: "Tape (Pink + cloth)" },
+          { text: "Tape (3M)" },
         ],
       },
       {
