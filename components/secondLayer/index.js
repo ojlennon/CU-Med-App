@@ -6,9 +6,10 @@ import { useState } from "react";
 import { AntDesign } from "@expo/vector-icons";
 import { useNavigation } from "@react-navigation/native";
 
-const Widget = ({ name, pages, color="#0F0" }) => {
+const Widget = ({ name, pages, color="#0F0", appendix=false }) => {
   const [shown, toggleShown] = useState(true);
   const navigation = useNavigation();
+  if (!appendix){
   return (
     <>
       {shown ? (
@@ -112,7 +113,51 @@ const Widget = ({ name, pages, color="#0F0" }) => {
         </>
       )}
     </>
-  );
+  );}
+  else {
+    return(
+    <>
+    <Box>
+          <TouchableOpacity
+            onPress={() => navigation.navigate("Appendix", {
+              name:"Cannulation Prep IV",
+              header:"",
+              color:"#a05f58",
+              data:[],
+              appendix:"Appendix IV"
+          })}
+            style={{ borderRadius: "4px" }}
+          >
+            <Box
+              width="92%"
+              mt="3%"
+              ml="4%"
+              p="4%"
+              borderRadius="4px"
+              backgroundColor="#d7d7d7"
+              flexDirection="row"
+              justifyContent="space-between"
+              alignContent="center"
+            >
+              <Text
+                style={{
+                  paddingLeft: "1%",
+                  fontSize: "20px",
+                }}
+              >
+                {name}
+              </Text>
+
+              <AntDesign
+                name="right"
+                size={20}
+                style={{ paddingRight: "1%", marginTop: "1%" }}
+              />
+            </Box>
+          </TouchableOpacity>
+        </Box>
+      </>
+  )}
 };
 const SecondTry = ({ route }) => {
   const { name } = route.params;
@@ -161,12 +206,13 @@ const SecondTry = ({ route }) => {
               pages={item.subPages}
               style={{ marginLeft: "3%" }}
               color={color}
+              appendix = {true ? item.name === "Pre-Cannulation" : false}
             />
           ))}
         </Box>
       </ScrollView>
     </>
-  );
+  ) ;
 };
 
 export default SecondTry;

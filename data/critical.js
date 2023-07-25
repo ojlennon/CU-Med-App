@@ -1129,7 +1129,8 @@ const Crit = [
     icon: "air",
     color: "#91123C",
     subData: [
-      { name: "Pre-Cannulation" },
+      { name: "Pre-Cannulation",
+      subPages:[{name:"NONE", data:[]}]},
 
       {
         name: "Immediate Post-Cannulation",
@@ -1705,8 +1706,8 @@ const Crit = [
             ],
           },
           {
-            text: "OTHER",
-            sub: [
+            name: "OTHER",
+            data: [
               {
                 text: "Troubleshooting",
                 sub: [{ text: "Call for ECMO escalation huddle" }],
